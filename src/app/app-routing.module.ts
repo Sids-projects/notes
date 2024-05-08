@@ -5,6 +5,7 @@ import { JavascriptComponent } from './screens/javascript/javascript.component';
 import { CssComponent } from './screens/css/css.component';
 import { ScssComponent } from './screens/scss/scss.component';
 import { TypescriptComponent } from './screens/typescript/typescript.component';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 const routes: Routes = [
   { path: 'angular', component: AngularComponent },
@@ -20,5 +21,6 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
+  providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy }],
 })
 export class AppRoutingModule {}
