@@ -1,0 +1,44 @@
+<section class="js-content">
+  <nav>
+    <div class="nav-links">
+      <p
+        *ngFor="let title of getData.titles"
+        [ngClass]="content === title ? 'active-link' : ''"
+        (click)="showContent(title)"
+      >
+        {{ title }}
+      </p>
+    </div>
+    <div class="d-flex align-items-center gap-1">
+      <span>thanglish</span>
+      <input type="checkbox" [(ngModel)]="showSecondLi" />
+    </div>
+  </nav>
+  <div class="js-container">
+    <div *ngIf="content === 'Intro'" class="js-topics">
+      <ul *ngIf="!showSecondLi" class="regular-ul">
+        <li *ngFor="let ul of getData.data01.ul">
+          {{ ul.li1 }}
+        </li>
+      </ul>
+      <ul *ngIf="showSecondLi">
+        <li *ngFor="let ul of getData.data01.ul">
+          {{ ul.li2 }}
+        </li>
+      </ul>
+    </div>
+
+    <div *ngIf="content === 'Releases'" class="js-topics">
+      <ul class="history-ul">
+        <li *ngFor="let ul of getData.data02.ul">
+          {{ ul.li }}
+          <span>{{ ul.span }}</span>
+          <small>{{ ul.small }}</small>
+          <div class="triangle-bottomright"></div>
+          <div class="triangle-topleft"></div>
+          <i [class]="ul.icon"></i>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>

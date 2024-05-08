@@ -1,0 +1,85 @@
+<section class="js-content">
+  <nav>
+    <div class="nav-links">
+      <p
+        *ngFor="let title of getData.titles"
+        [ngClass]="content === title ? 'active-link' : ''"
+        (click)="showContent(title)"
+      >
+        {{ title }}
+      </p>
+    </div>
+    <div class="d-flex align-items-center gap-1">
+      <span>thanglish</span>
+      <input type="checkbox" [(ngModel)]="showSecondLi" />
+    </div>
+  </nav>
+
+  <div class="js-container">
+    <div *ngIf="content === 'Variable'" class="js-topics">
+      <ul *ngIf="!showSecondLi">
+        <li *ngFor="let ul of getData.data01.ul">
+          {{ ul.li1 }}
+        </li>
+      </ul>
+      <ul *ngIf="showSecondLi">
+        <li *ngFor="let ul of getData.data01.ul">
+          {{ ul.li2 }}
+        </li>
+      </ul>
+      <app-js-code [showCode]="'var-data01'"></app-js-code>
+    </div>
+
+    <div *ngIf="content === 'Declaring Variable'" class="js-declarVar">
+      <h3>{{ getData.data02.h3 }}</h3>
+      <ul *ngIf="!showSecondLi">
+        <li>
+          {{ getData.data02.ul01.ulTitle01 }}
+        </li>
+        <li *ngFor="let data02 of getData.data02.ul01.ul01">
+          {{ data02.li1 }}
+        </li>
+      </ul>
+      <ul *ngIf="!showSecondLi">
+        <li>
+          {{ getData.data02.ul02.ulTitle02 }}
+        </li>
+        <li *ngFor="let data02 of getData.data02.ul02.ul02">
+          {{ data02.li1 }}
+        </li>
+      </ul>
+      <ul *ngIf="!showSecondLi">
+        <li>
+          {{ getData.data02.ul03.ulTitle03 }}
+        </li>
+        <li *ngFor="let data02 of getData.data02.ul03.ul03">
+          {{ data02.li1 }}
+        </li>
+      </ul>
+      <ul *ngIf="showSecondLi">
+        <li>
+          {{ getData.data02.ul01.ulTitle01 }}
+        </li>
+        <li *ngFor="let data02 of getData.data02.ul01.ul02">
+          {{ data02.li2 }}
+        </li>
+      </ul>
+      <ul *ngIf="showSecondLi">
+        <li>
+          {{ getData.data02.ul02.ulTitle02 }}
+        </li>
+        <li *ngFor="let data02 of getData.data02.ul02.ul02">
+          {{ data02.li2 }}
+        </li>
+      </ul>
+      <ul *ngIf="showSecondLi">
+        <li>
+          {{ getData.data02.ul03.ulTitle03 }}
+        </li>
+        <li *ngFor="let data02 of getData.data02.ul03.ul03">
+          {{ data02.li2 }}
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>

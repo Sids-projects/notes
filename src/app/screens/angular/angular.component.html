@@ -1,0 +1,64 @@
+<section
+  class="app-container"
+  [ngStyle]="
+    hideTopics
+      ? { 'grid-template-columns': '300px auto' }
+      : { 'grid-template-columns': 'auto' }
+  "
+>
+  <section class="app-topics" *ngIf="hideTopics">
+    <header>
+      <h3>Topics</h3>
+    </header>
+    <div class="topics-list">
+      <div class="topic-item topic-active">
+        <h4>Intro</h4>
+        <small>About Js</small>
+      </div>
+      <div class="topic-item">
+        <h4>Variables</h4>
+        <small>Var, Let, and Const</small>
+      </div>
+      <div class="topic-item">
+        <h4>Data Types</h4>
+        <small>String, Number, and Etc.</small>
+      </div>
+    </div>
+  </section>
+
+  <section class="app-content">
+    <header>
+      <div class="head-1">
+        <h3>
+          <i class="fa-solid fa-bars" (click)="navControl()"></i>&nbsp;&nbsp;
+          Angular Topics
+        </h3>
+        <button>Tasks</button>
+      </div>
+      <nav>
+        <p class="content-active">Intro</p>
+      </nav>
+    </header>
+    <div class="app-screen">
+      <ul>
+        <li>
+          JavaScript is a versatile programming language primarily used for
+          client-side scripting in web development.
+        </li>
+        <li>
+          It enables developers to add interactivity, dynamic content, and
+          event-driven behavior to web pages.
+        </li>
+        <li>
+          With JavaScript, you can respond to user actions, modify page content
+          in real-time, and create engaging user experiences without reloading
+          the entire page.
+        </li>
+        <li>
+          It is also used for server-side proramming, mobile app development,
+          and game development.
+        </li>
+      </ul>
+    </div>
+  </section>
+</section>

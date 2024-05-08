@@ -1,0 +1,44 @@
+<section
+  class="app-container"
+  [ngStyle]="
+    hideTopics
+      ? { 'grid-template-columns': '300px auto' }
+      : { 'grid-template-columns': 'auto' }
+  "
+>
+  <section class="app-topics" *ngIf="hideTopics">
+    <header>
+      <h3>Topics</h3>
+    </header>
+    <div class="topics-list">
+      <div
+        [ngClass]="{
+          'topic-item': true,
+          'topic-active': hideMainTopic === topics.key
+        }"
+        *ngFor="let topics of topicList"
+        (click)="matchTopic(topics.key)"
+      >
+        <h4>{{ topics.h3 }}</h4>
+        <small>{{ topics.small }}</small>
+      </div>
+    </div>
+  </section>
+
+  <section class="app-content">
+    <header>
+      <h3>
+        <i class="fa-solid fa-bars" (click)="navControl()"></i>&nbsp;&nbsp;
+        Javascript Topics
+      </h3>
+      <button>Tasks</button>
+    </header>
+
+    <div class="app-screen">
+      <app-js-intro *ngIf="hideMainTopic === 'js-Intro'"></app-js-intro>
+      <app-js-variables
+        *ngIf="hideMainTopic === 'js-Variables'"
+      ></app-js-variables>
+    </div>
+  </section>
+</section>
