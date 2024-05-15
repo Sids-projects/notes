@@ -15,7 +15,7 @@
   </nav>
 
   <div class="js-container">
-    <div *ngIf="content === 'Typeof'" class="js-topics">
+    <div *ngIf="content === 'Loose Equality Opeartor'" class="js-topics">
       <ul *ngIf="!showSecondLi" class="regular-ul">
         <li *ngFor="let ul of getData.data01.ul">
           {{ ul.li1 }}
@@ -26,15 +26,10 @@
           {{ ul.li2 }}
         </li>
       </ul>
-      <app-js-code [showCode]="'operators-typeof'"></app-js-code>
+      <app-js-code [showCode]="'Loose Equality'"></app-js-code>
     </div>
-
-    <div *ngIf="content === 'Assignment'" class="js-topics">
-      <app-js-code [showCode]="'operators-assignment'"></app-js-code>
-    </div>
-
-    <div *ngIf="content === 'Comparison'" class="js-topics">
-      <app-js-code [showCode]="'operators-comparison'"></app-js-code>
+    <div *ngIf="content === 'Strict Equality Opeartor'" class="js-topics">
+      <app-js-code [showCode]="'Strict Equality'"></app-js-code>
     </div>
   </div>
 </section>

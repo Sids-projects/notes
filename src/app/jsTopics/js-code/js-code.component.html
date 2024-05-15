@@ -207,3 +207,22 @@ if (money) &#123;
 </code>
 </pre>
 </div>
+
+<div *ngIf="showCode === 'Loose Equality'" style="width: 800px">
+  <pre class="line-numbers">
+<code class="language-html">
+'18' == 18
+Output : True
+</code>
+</pre>
+</div>
+
+<div *ngIf="showCode === 'Strict Equality'" style="width: 800px">
+  <pre class="line-numbers">
+<code class="language-html">
+Const age = 18;
+if (age === 18) console.log(`You are an adult`);
+Output : You are an adult
+</code>
+</pre>
+</div>

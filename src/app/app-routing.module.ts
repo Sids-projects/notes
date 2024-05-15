@@ -15,6 +15,7 @@ import { JsHelloComponent } from './jsTopics/js-hello/js-hello.component';
 import { JsIfelseComponent } from './jsTopics/js-ifelse/js-ifelse.component';
 import { JsSwitchComponent } from './jsTopics/js-switch/js-switch.component';
 import { JsTruefalseComponent } from './jsTopics/js-truefalse/js-truefalse.component';
+import { JsEqualityComponent } from './jsTopics/js-equality/js-equality.component';
 
 const routes: Routes = [
   // Screens
@@ -35,6 +36,7 @@ const routes: Routes = [
   { path: 'jsIfelseComponent', component: JsIfelseComponent },
   { path: 'jsSwitchComponent', component: JsSwitchComponent },
   { path: 'jsTruefalseComponent', component: JsTruefalseComponent },
+  { path: 'jsEqualityComponent', component: JsEqualityComponent },
 ];
 
 @NgModule({

@@ -56,6 +56,12 @@ export class SharedService {
         small: 'Truthy value & Falsy value',
         route: 'jsTruefalseComponent',
       },
+      {
+        key: 'js-Equality',
+        h3: 'Equality Operator',
+        small: 'Strict & Loose equality operator',
+        route: 'jsEqualityComponent',
+      },
     ],
   };
 
@@ -195,19 +201,12 @@ export class SharedService {
   jsOperators: any = {
     titles: ['Typeof', 'Assignment', 'Comparison'],
     data01: {
-      h3: 'typeof',
       ul: [
         {
           li1: 'We can use to show the type of a value.',
           li2: 'Ena type of value nu show panum',
         },
       ],
-    },
-    data02: {
-      h3: 'Assignment',
-    },
-    data03: {
-      h3: 'Comparison',
     },
   };
 
@@ -333,6 +332,18 @@ export class SharedService {
         {
           li1: 'falsy values: 0, "", undefined, null, nan',
           li2: 'falsy values: 0, "", undefined, null, nan',
+        },
+      ],
+    },
+  };
+
+  jsEquality: any = {
+    titles: ['Loose Equality Opeartor', 'Strict Equality Opeartor'],
+    data01: {
+      ul: [
+        {
+          li1: 'Loose Equality Operator does type coercion',
+          li2: 'Loose Equality Operator type coercion panum',
         },
       ],
     },

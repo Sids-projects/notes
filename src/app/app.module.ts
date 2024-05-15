@@ -23,6 +23,7 @@ import { JsHelloComponent } from './jsTopics/js-hello/js-hello.component';
 import { JsIfelseComponent } from './jsTopics/js-ifelse/js-ifelse.component';
 import { JsSwitchComponent } from './jsTopics/js-switch/js-switch.component';
 import { JsTruefalseComponent } from './jsTopics/js-truefalse/js-truefalse.component';
+import { JsEqualityComponent } from './jsTopics/js-equality/js-equality.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { JsTruefalseComponent } from './jsTopics/js-truefalse/js-truefalse.compo
     JsIfelseComponent,
     JsSwitchComponent,
     JsTruefalseComponent,
+    JsEqualityComponent,
   ],
   imports: [
     BrowserModule,
