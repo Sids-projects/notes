@@ -13,11 +13,12 @@
       <mat-slide-toggle [(ngModel)]="showSecondLi"></mat-slide-toggle>
     </div>
   </nav>
+
   <div class="js-container">
-    <div *ngIf="content === 'Intro'" class="js-topics">
+    <div *ngIf="content === 'Type Conversion'" class="js-topics">
       <ul *ngIf="!showSecondLi" class="regular-ul">
         <li *ngFor="let ul of getData.data01.ul">
-          <p [innerHTML]="sanitizeHtml(ul.li1)">{{ ul.li1 }}</p>
+          {{ ul.li1 }}
         </li>
       </ul>
       <ul *ngIf="showSecondLi" class="regular-ul">
@@ -25,19 +26,21 @@
           {{ ul.li2 }}
         </li>
       </ul>
+      <app-js-code [showCode]="'type-conversion'"></app-js-code>
     </div>
 
-    <div *ngIf="content === 'Releases'" class="js-topics">
-      <ul class="history-ul">
+    <div *ngIf="content === 'Type Coercion'" class="js-topics">
+      <ul *ngIf="!showSecondLi" class="regular-ul">
         <li *ngFor="let ul of getData.data02.ul">
-          {{ ul.li }}
-          <span>{{ ul.span }}</span>
-          <small>{{ ul.small }}</small>
-          <div class="triangle-bottomright"></div>
-          <div class="triangle-topleft"></div>
-          <i [class]="ul.icon"></i>
+          {{ ul.li1 }}
         </li>
       </ul>
+      <ul *ngIf="showSecondLi" class="regular-ul">
+        <li *ngFor="let ul of getData.data02.ul">
+          {{ ul.li2 }}
+        </li>
+      </ul>
+      <app-js-code [showCode]="'type-coercion'"></app-js-code>
     </div>
   </div>
 </section>

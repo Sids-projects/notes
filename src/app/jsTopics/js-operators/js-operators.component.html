@@ -13,11 +13,13 @@
       <mat-slide-toggle [(ngModel)]="showSecondLi"></mat-slide-toggle>
     </div>
   </nav>
+
   <div class="js-container">
-    <div *ngIf="content === 'Intro'" class="js-topics">
+    <div *ngIf="content === 'Typeof'" class="js-topics">
+      <h3>{{ getData.data01.h3 }}</h3>
       <ul *ngIf="!showSecondLi" class="regular-ul">
         <li *ngFor="let ul of getData.data01.ul">
-          <p [innerHTML]="sanitizeHtml(ul.li1)">{{ ul.li1 }}</p>
+          {{ ul.li1 }}
         </li>
       </ul>
       <ul *ngIf="showSecondLi" class="regular-ul">
@@ -25,19 +27,17 @@
           {{ ul.li2 }}
         </li>
       </ul>
+      <app-js-code [showCode]="'operators-typeof'"></app-js-code>
     </div>
 
-    <div *ngIf="content === 'Releases'" class="js-topics">
-      <ul class="history-ul">
-        <li *ngFor="let ul of getData.data02.ul">
-          {{ ul.li }}
-          <span>{{ ul.span }}</span>
-          <small>{{ ul.small }}</small>
-          <div class="triangle-bottomright"></div>
-          <div class="triangle-topleft"></div>
-          <i [class]="ul.icon"></i>
-        </li>
-      </ul>
+    <div *ngIf="content === 'Assignment'" class="js-topics">
+      <h3>{{ getData.data02.h3 }}</h3>
+      <app-js-code [showCode]="'operators-assignment'"></app-js-code>
+    </div>
+
+    <div *ngIf="content === 'Comparison'" class="js-topics">
+      <h3>{{ getData.data03.h3 }}</h3>
+      <app-js-code [showCode]="'operators-comparison'"></app-js-code>
     </div>
   </div>
 </section>

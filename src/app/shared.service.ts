@@ -17,6 +17,21 @@ export class SharedService {
       h3: 'Variables',
       small: 'Var, Let, and Const',
     },
+    {
+      key: 'js-Operators',
+      h3: 'Operators',
+      small: 'Mathematical, Assignment, & Etc.',
+    },
+    {
+      key: 'js-TemplateLiterals',
+      h3: 'Template Literals',
+      small: 'Strings & Template Literals',
+    },
+    {
+      key: 'js-Conversion',
+      h3: 'Conversion & Coercion',
+      small: 'Convert one type to another',
+    },
   ];
 
   jsIntro: any = {
@@ -24,7 +39,7 @@ export class SharedService {
     data01: {
       ul: [
         {
-          li1: 'JavaScript is a versatile programming language primarily used for client-side scripting in web development.',
+          li1: 'JavaScript is a versatile programming language primarily used for <span class="blue-txt">client-side</span> scripting in web development.',
           li2: 'Javascript client-side scripting web development kaga use panuvanga',
         },
         {
@@ -82,7 +97,7 @@ export class SharedService {
   };
 
   jsVariables: any = {
-    titles: ['Variable', 'Declaring Variable'],
+    titles: ['Variable', 'Declaration'],
     data01: {
       p: {
         p1: 'We can store a value into a variables and this way we can reuse them over and over again.',
@@ -119,11 +134,11 @@ export class SharedService {
         ul01: [
           {
             li1: "When you need to mutate (reassign) a variable, that's the perfect use case for using let.",
-            li2: 'Use camelCase.',
+            li2: 'Namba oru variable ah reasign panom na let use panikala,',
           },
           {
-            li1: 'To declare empty variable. We can declare a empty variable and then reassign  that variable.',
-            li2: 'Variable names lam verum letters, Underscore aprm dollar symbol la start aagalam',
+            li1: 'We can declare a empty variable and then reassign  that variable.',
+            li2: 'Initial ah oru empty variable declare panitu namba adha reassign panikalam',
           },
         ],
       },
@@ -132,11 +147,11 @@ export class SharedService {
         ul02: [
           {
             li1: 'We use the const keyword to declare variable that are not suppose to change.',
-            li2: 'Use camelCase.',
+            li2: 'Const keywrod use pana nambalala andha variable change pana mudiyadhu',
           },
           {
             li1: 'Const cannot accept empty variable, const need a initial value',
-            li2: 'Variable names lam verum letters, Underscore aprm dollar symbol la start aagalam',
+            li2: 'Const variable empty ah iruka kudadhu, const ku initial value kandipa irukanum',
           },
         ],
       },
@@ -145,10 +160,73 @@ export class SharedService {
         ul03: [
           {
             li1: 'var keyword is the old way of defining variables prior to ES6. It works same as let.',
-            li2: 'Use camelCase.',
+            li2: 'Var keyword let mathriye dha work aagum ES6 mudinadi use panadhu old method',
           },
         ],
       },
+    },
+  };
+
+  jsOperators: any = {
+    titles: ['Typeof', 'Assignment', 'Comparison'],
+    data01: {
+      h3: 'typeof',
+      ul: [
+        {
+          li1: 'We can use to show the type of a value.',
+          li2: 'Ena type of value nu show panum',
+        },
+      ],
+    },
+    data02: {
+      h3: 'Assignment',
+    },
+    data03: {
+      h3: 'Comparison',
+    },
+  };
+
+  jsTliterals: any = {
+    titles: ['Template Literals ES6'],
+    data01: {
+      ul: [
+        {
+          li1: 'A template literal can assemble multiple pieces into one final string.',
+          li2: 'Nariya piece ah seathu oru string create panum',
+        },
+      ],
+    },
+  };
+
+  jsConversion: any = {
+    titles: ['Type Conversion', 'Type Coercion'],
+    data01: {
+      ul: [
+        {
+          li1: 'Type Conversion is when we manually convert from one type to another.',
+          li2: 'Nambalave oru type la irundhu inoru type ku value va convert panuvom',
+        },
+      ],
+    },
+    data02: {
+      ul: [
+        {
+          li1: 'In type coercion the js automatically convert type behind the scene for us.',
+          li2: 'Javascript automatic type convert panikum',
+        },
+        {
+          li1: 'Whenever there is a operator between a string and the number will be converted to a string.',
+          li2: 'String nadula oru number irundha andha number string ah convert aagidum',
+        },
+        {
+          li1: "If js don't have type coercion we need to use the string function in between them.",
+          li2: 'String nadula oru number irundha andha number string ah convert aagidum',
+        },
+        {
+          li1: 'Not all operators have type coercion',
+          li2: 'Ella operator um type coercion panadhu',
+        },
+      ],
     },
   };
 }

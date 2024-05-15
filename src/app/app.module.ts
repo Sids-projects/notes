@@ -13,6 +13,12 @@ import { JsIntroComponent } from './jsTopics/js-intro/js-intro.component';
 import { JsVariablesComponent } from './jsTopics/js-variables/js-variables.component';
 import { JsCodeComponent } from './jsTopics/js-code/js-code.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { JsOperatorsComponent } from './jsTopics/js-operators/js-operators.component';
+import { JsTliteralsComponent } from './jsTopics/js-tliterals/js-tliterals.component';
+import { JsConversionComponent } from './jsTopics/js-conversion/js-conversion.component';
+
+// Matrial
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 @NgModule({
   declarations: [
@@ -25,8 +31,17 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     JsIntroComponent,
     JsVariablesComponent,
     JsCodeComponent,
+    JsOperatorsComponent,
+    JsTliteralsComponent,
+    JsConversionComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, BrowserAnimationsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    BrowserAnimationsModule,
+    MatSlideToggleModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { SharedService } from 'src/app/shared.service';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-js-intro',
@@ -11,10 +12,17 @@ export class JsIntroComponent {
   getData: any;
   showSecondLi: any = false;
 
-  constructor(private sharedService: SharedService) {}
+  constructor(
+    private sharedService: SharedService,
+    private sanitizer: DomSanitizer
+  ) {}
 
   ngOnInit() {
     this.getData = this.sharedService.jsIntro;
+  }
+
+  sanitizeHtml(html: string): any {
+    return this.sanitizer.bypassSecurityTrustHtml(html);
   }
 
   showContent(param: any) {

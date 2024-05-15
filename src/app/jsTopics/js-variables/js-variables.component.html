@@ -10,19 +10,18 @@
       </p>
     </div>
     <div class="d-flex align-items-center gap-1">
-      <span>thanglish</span>
-      <input type="checkbox" [(ngModel)]="showSecondLi" />
+      <mat-slide-toggle [(ngModel)]="showSecondLi"></mat-slide-toggle>
     </div>
   </nav>
 
   <div class="js-container">
     <div *ngIf="content === 'Variable'" class="js-topics">
-      <ul *ngIf="!showSecondLi">
+      <ul *ngIf="!showSecondLi" class="regular-ul">
         <li *ngFor="let ul of getData.data01.ul">
           {{ ul.li1 }}
         </li>
       </ul>
-      <ul *ngIf="showSecondLi">
+      <ul *ngIf="showSecondLi" class="regular-ul">
         <li *ngFor="let ul of getData.data01.ul">
           {{ ul.li2 }}
         </li>
@@ -30,9 +29,9 @@
       <app-js-code [showCode]="'var-data01'"></app-js-code>
     </div>
 
-    <div *ngIf="content === 'Declaring Variable'" class="js-declarVar">
+    <div *ngIf="content === 'Declaration'" class="js-topics">
       <h3>{{ getData.data02.h3 }}</h3>
-      <ul *ngIf="!showSecondLi">
+      <ul *ngIf="!showSecondLi" class="js-declarVar">
         <li>
           {{ getData.data02.ul01.ulTitle01 }}
         </li>
@@ -40,7 +39,8 @@
           {{ data02.li1 }}
         </li>
       </ul>
-      <ul *ngIf="!showSecondLi">
+      <app-js-code *ngIf="!showSecondLi" [showCode]="'var-let'"></app-js-code>
+      <ul *ngIf="!showSecondLi" class="js-declarVar">
         <li>
           {{ getData.data02.ul02.ulTitle02 }}
         </li>
@@ -48,7 +48,8 @@
           {{ data02.li1 }}
         </li>
       </ul>
-      <ul *ngIf="!showSecondLi">
+      <app-js-code *ngIf="!showSecondLi" [showCode]="'var-const'"></app-js-code>
+      <ul *ngIf="!showSecondLi" class="js-declarVar">
         <li>
           {{ getData.data02.ul03.ulTitle03 }}
         </li>
@@ -56,15 +57,17 @@
           {{ data02.li1 }}
         </li>
       </ul>
-      <ul *ngIf="showSecondLi">
+      <!-- Tamil -->
+      <ul *ngIf="showSecondLi" class="js-declarVar">
         <li>
           {{ getData.data02.ul01.ulTitle01 }}
         </li>
-        <li *ngFor="let data02 of getData.data02.ul01.ul02">
+        <li *ngFor="let data02 of getData.data02.ul01.ul01">
           {{ data02.li2 }}
         </li>
       </ul>
-      <ul *ngIf="showSecondLi">
+      <app-js-code *ngIf="showSecondLi" [showCode]="'var-let'"></app-js-code>
+      <ul *ngIf="showSecondLi" class="js-declarVar">
         <li>
           {{ getData.data02.ul02.ulTitle02 }}
         </li>
@@ -72,7 +75,8 @@
           {{ data02.li2 }}
         </li>
       </ul>
-      <ul *ngIf="showSecondLi">
+      <app-js-code *ngIf="showSecondLi" [showCode]="'var-const'"></app-js-code>
+      <ul *ngIf="showSecondLi" class="js-declarVar">
         <li>
           {{ getData.data02.ul03.ulTitle03 }}
         </li>

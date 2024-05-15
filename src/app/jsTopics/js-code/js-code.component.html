@@ -14,3 +14,110 @@ let new = “A word”
 </code>
 </pre>
 </div>
+
+<div *ngIf="showCode === 'var-let'">
+  <pre class="line-numbers">
+<code class="language-html">
+let age = 30;		// 30
+age = 31;			// 31
+console.log(age);
+</code>
+</pre>
+</div>
+
+<div *ngIf="showCode === 'var-const'">
+  <pre class="line-numbers">
+<code class="language-html">
+let birthYear = 2000;	//Error
+birthYear = 2004;
+console.log(birthYear);
+</code>
+</pre>
+</div>
+
+<div *ngIf="showCode === 'operators-typeof'">
+  <pre class="line-numbers">
+<code class="language-html">
+let birthYear = 2000;	//Error
+birthYear = 2004;
+console.log(birthYear);
+</code>
+</pre>
+</div>
+
+<div *ngIf="showCode === 'operators-assignment'">
+  <pre class="line-numbers">
+<code class="language-html">
+// Examples 1 :
+let x = 25 + 5; 
+console.log(x); // 30
+  
+let x = 10; 
+  
+// Examples 2 :
+let x += 10; 
+console.log(x); // x = x + 10 = 20
+  
+// Examples 3 :
+let x ++; 
+console.log(x); // x = x + 10 = 11
+  
+// Examples 4 :
+let x +--; 
+console.log(x); // x = x - 10 = 9
+</code>
+</pre>
+</div>
+
+<div *ngIf="showCode === 'operators-comparison'">
+  <pre class="line-numbers">
+<code class="language-html">
+// Examples :
+let x = 10; 
+let y = 20;
+console.log(x &lt; y); // true
+console.log(x >= y); // false
+</code>
+</pre>
+</div>
+
+<div *ngIf="showCode === 'template-literals'" style="width: 800px">
+  <pre class="line-numbers">
+<code class="language-html">
+const myName = "Peter";
+const year = "2024";
+const birthYear = "1990";
+
+// Instead of this
+const aboutMe = " I'm " + myName + " my birth year is " + birthYear + " and my age is " + (year - birthYear) + "!";
+// New line
+console.log(“This is a \n new line”);
+
+
+// Template Literals
+const aboutMeNew =  `I'm $&#123;myName&#125; my birth year is $&#123;birthYear&#125; and my age is $&#123;year - birthYear&#125; !`;
+// New line
+console.log(`This is a new line`);
+</code>
+</pre>
+</div>
+
+<div *ngIf="showCode === 'type-conversion'" style="width: 800px">
+  <pre class="line-numbers">
+<code class="language-html">
+const inputYear = “1991”;
+console.log(inputYear + 18); // 199118 ❌
+console.log(Number(inputYear) + 18); //  2009 ✅
+</code>
+</pre>
+</div>
+
+<div *ngIf="showCode === 'type-coercion'" style="width: 800px">
+  <pre class="line-numbers">
+<code class="language-html">
+console.log('I am' +23 + 'Years old');
+console.log('I am' + string(23) + 'Years old');
+console.log('23' - '10' - 3); // 10
+</code>
+</pre>
+</div>
