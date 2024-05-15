@@ -19,6 +19,10 @@ import { JsConversionComponent } from './jsTopics/js-conversion/js-conversion.co
 
 // Matrial
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { JsHelloComponent } from './jsTopics/js-hello/js-hello.component';
+import { JsIfelseComponent } from './jsTopics/js-ifelse/js-ifelse.component';
+import { JsSwitchComponent } from './jsTopics/js-switch/js-switch.component';
+import { JsTruefalseComponent } from './jsTopics/js-truefalse/js-truefalse.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +38,10 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
     JsOperatorsComponent,
     JsTliteralsComponent,
     JsConversionComponent,
+    JsHelloComponent,
+    JsIfelseComponent,
+    JsSwitchComponent,
+    JsTruefalseComponent,
   ],
   imports: [
     BrowserModule,

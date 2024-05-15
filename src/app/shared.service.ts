@@ -6,33 +6,58 @@ import { Injectable } from '@angular/core';
 export class SharedService {
   constructor() {}
 
-  topicList: any = [
-    {
-      key: 'js-Intro',
-      h3: 'Intro',
-      small: 'About Js',
-    },
-    {
-      key: 'js-Variables',
-      h3: 'Variables',
-      small: 'Var, Let, and Const',
-    },
-    {
-      key: 'js-Operators',
-      h3: 'Operators',
-      small: 'Mathematical, Assignment, & Etc.',
-    },
-    {
-      key: 'js-TemplateLiterals',
-      h3: 'Template Literals',
-      small: 'Strings & Template Literals',
-    },
-    {
-      key: 'js-Conversion',
-      h3: 'Conversion & Coercion',
-      small: 'Convert one type to another',
-    },
-  ];
+  topicList: any = {
+    jsTopics: [
+      {
+        key: 'js-Intro',
+        h3: 'Intro',
+        small: 'About Js',
+        route: 'jsIntroComponent',
+      },
+      {
+        key: 'js-Variables',
+        h3: 'Variables',
+        small: 'Var, Let, and Const',
+        route: 'jsVariablesComponent',
+      },
+      {
+        key: 'js-Operators',
+        h3: 'Operators',
+        small: 'Mathematical, Assignment, & Etc.',
+        route: 'jsOperatorsComponent',
+      },
+      {
+        key: 'js-TemplateLiterals',
+        h3: 'Template Literals',
+        small: 'Strings & Template Literals',
+        route: 'jsTliteralsComponent',
+      },
+      {
+        key: 'js-Conversion',
+        h3: 'Conversion & Coercion',
+        small: 'Convert one type to another',
+        route: 'jsConversionComponent',
+      },
+      {
+        key: 'js-IfElse',
+        h3: 'If else',
+        small: 'if else else if',
+        route: 'jsIfelseComponent',
+      },
+      {
+        key: 'js-Switch',
+        h3: 'Switch Case',
+        small: 'Switch Case with syntax',
+        route: 'jsSwitchComponent',
+      },
+      {
+        key: 'js-TruthyFalsy',
+        h3: 'Truthy Falsy',
+        small: 'Truthy value & Falsy value',
+        route: 'jsTruefalseComponent',
+      },
+    ],
+  };
 
   jsIntro: any = {
     titles: ['Intro', 'Releases'],
@@ -225,6 +250,89 @@ export class SharedService {
         {
           li1: 'Not all operators have type coercion',
           li2: 'Ella operator um type coercion panadhu',
+        },
+      ],
+    },
+  };
+
+  jsIfelse: any = {
+    titles: ['If Else', 'Else If'],
+    data01: {
+      h3: 'Rules to name a variable',
+      ul: [
+        {
+          li1: 'if/else statement also known as control section.',
+          li2: 'if/else statement ah control structure num soluvanga',
+        },
+        {
+          li1: 'Because this structure allows us to have more control over the way that our code is executed.',
+          li2: 'Ean apdi soluvanga if/else la namaku ethana controls venumo veachikalam namba conditions ku eatha mathri',
+        },
+        {
+          li1: 'We can control block of the code that can execute and block of the code the cannot execute.',
+          li2: 'Namaku endha block of code run aaganum aaga kudadhu nu namba set panikalam',
+        },
+        {
+          li1: 'The condition declared inside of the if/else block will not be accessible outside of the block.',
+          li2: 'If/else ulla declare pana block ah veliya access pana mudiyadhu',
+        },
+      ],
+    },
+    data02: {
+      h3: 'Rules to name a variable',
+      ul: [
+        {
+          li1: 'If the if part is false then js move to else if part.',
+          li2: 'If part false ah irundhuchina else if run aagum',
+        },
+      ],
+    },
+  };
+
+  jsSwitch: any = {
+    titles: ['Switch Case'],
+    data01: {
+      h3: 'Rules to name a variable',
+      ul: [
+        {
+          li1: 'The switch expression is evaluated once.',
+          li2: 'Oru time dha check panum',
+        },
+        {
+          li1: 'The value of the expression is compared with the values of each case.',
+          li2: 'kudutha value oru oru case la um check panum',
+        },
+        {
+          li1: 'If there is a match, the associated block of code is executed.',
+          li2: 'Edhachi oru case la value match aachina adha block of code run aagum',
+        },
+        {
+          li1: 'If there is no match, the default code block is executed.',
+          li2: 'Edha match um illana default code block run aagum',
+        },
+      ],
+    },
+  };
+
+  jsTruthyFalsy: any = {
+    titles: ['Truthy', 'Falsy'],
+    data01: {
+      ul: [
+        {
+          li1: 'Any string that is not an empty string is a truthy value.',
+          li2: 'Empty ah illadha string lam truthy value',
+        },
+      ],
+    },
+    data02: {
+      ul: [
+        {
+          li1: 'Falsy value are value that are not exactly false, but will become false when we try to convert them into a boolean.',
+          li2: 'Falsy value default ah ve false la irukadhu namba adha adha boolean ah convert panumbodhu aagum',
+        },
+        {
+          li1: 'falsy values: 0, "", undefined, null, nan',
+          li2: 'falsy values: 0, "", undefined, null, nan',
         },
       ],
     },

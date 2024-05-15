@@ -1,0 +1,32 @@
+<section class="js-content">
+  <nav>
+    <div class="nav-links">
+      <p
+        *ngFor="let title of getData.titles"
+        [ngClass]="content === title ? 'active-link' : ''"
+        (click)="showContent(title)"
+      >
+        {{ title }}
+      </p>
+    </div>
+    <div class="d-flex align-items-center gap-1">
+      <mat-slide-toggle [(ngModel)]="showSecondLi"></mat-slide-toggle>
+    </div>
+  </nav>
+
+  <div class="js-container">
+    <div *ngIf="content === 'Switch Case'" class="js-topics">
+      <ul *ngIf="!showSecondLi" class="regular-ul">
+        <li *ngFor="let ul of getData.data01.ul">
+          {{ ul.li1 }}
+        </li>
+      </ul>
+      <ul *ngIf="showSecondLi" class="regular-ul">
+        <li *ngFor="let ul of getData.data01.ul">
+          {{ ul.li2 }}
+        </li>
+      </ul>
+      <app-js-code [showCode]="'if-switch'"></app-js-code>
+    </div>
+  </div>
+</section>

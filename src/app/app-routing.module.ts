@@ -6,16 +6,35 @@ import { CssComponent } from './screens/css/css.component';
 import { ScssComponent } from './screens/scss/scss.component';
 import { TypescriptComponent } from './screens/typescript/typescript.component';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { JsIntroComponent } from './jsTopics/js-intro/js-intro.component';
+import { JsVariablesComponent } from './jsTopics/js-variables/js-variables.component';
+import { JsOperatorsComponent } from './jsTopics/js-operators/js-operators.component';
+import { JsTliteralsComponent } from './jsTopics/js-tliterals/js-tliterals.component';
+import { JsConversionComponent } from './jsTopics/js-conversion/js-conversion.component';
+import { JsHelloComponent } from './jsTopics/js-hello/js-hello.component';
+import { JsIfelseComponent } from './jsTopics/js-ifelse/js-ifelse.component';
+import { JsSwitchComponent } from './jsTopics/js-switch/js-switch.component';
+import { JsTruefalseComponent } from './jsTopics/js-truefalse/js-truefalse.component';
 
 const routes: Routes = [
+  // Screens
   { path: 'angular', component: AngularComponent },
   { path: 'javascript', component: JavascriptComponent },
   { path: 'typescript', component: TypescriptComponent },
   { path: 'css', component: CssComponent },
   { path: 'scss', component: ScssComponent },
 
-  // Default Route
-  { path: '', redirectTo: 'javascript', pathMatch: 'full' },
+  // Javascript Components
+  { path: '', redirectTo: 'jsHelloComponent', pathMatch: 'full' },
+  { path: 'jsHelloComponent', component: JsHelloComponent },
+  { path: 'jsIntroComponent', component: JsIntroComponent },
+  { path: 'jsVariablesComponent', component: JsVariablesComponent },
+  { path: 'jsOperatorsComponent', component: JsOperatorsComponent },
+  { path: 'jsTliteralsComponent', component: JsTliteralsComponent },
+  { path: 'jsConversionComponent', component: JsConversionComponent },
+  { path: 'jsIfelseComponent', component: JsIfelseComponent },
+  { path: 'jsSwitchComponent', component: JsSwitchComponent },
+  { path: 'jsTruefalseComponent', component: JsTruefalseComponent },
 ];
 
 @NgModule({

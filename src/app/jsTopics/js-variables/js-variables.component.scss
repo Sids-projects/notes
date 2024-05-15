@@ -1,17 +1,1 @@
-.js-declarVar {
-  padding-left: 14px;
 
-  li {
-    &:nth-child(1) {
-      list-style: none;
-      transform: translateX(-14px);
-      font-size: 18px;
-      font-weight: 500;
-      margin-bottom: 6px !important;
-    }
-  }
-
-  li:not(:first-child) {
-    font-size: 16px;
-  }
-}

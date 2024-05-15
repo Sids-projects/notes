@@ -121,3 +121,89 @@ console.log('23' - '10' - 3); // 10
 </code>
 </pre>
 </div>
+
+<div *ngIf="showCode === 'if-else'" style="width: 800px">
+  <pre class="line-numbers">
+<code class="language-html">
+const age = 19;
+
+if (age >= 18) &#123;
+ console.log(`You can get a Driving Licence`);
+&#125; else &#123;
+ console.log(`You need to wait for another $&#123;18 - age&#125; years`);
+&#125;
+</code>
+</pre>
+</div>
+
+<div *ngIf="showCode === 'else-if'" style="width: 800px">
+  <pre class="line-numbers">
+<code class="language-html">
+const favColor = “pink”;
+
+if (favColor === “pink”) &#123;
+  console.log(`Your favorite color is Pink`);
+&#125; else if (favColor === “red”) &#123;
+  console.log(`Your favorite color is Red`);
+&#125; else &#123;
+  console.log(`Sorry!! Your favorite color is not in the list`);
+&#125;  
+</code>
+</pre>
+</div>
+
+<div *ngIf="showCode === 'if-switch'" style="width: 800px">
+  <pre class="line-numbers">
+<code class="language-html">
+const day = “monday”;
+
+switch (day) &#123;
+ case 'monday';
+ console.log(`Today you have English Class`);
+ break;
+
+ case 'tuesday';
+ console.log(`Today you have Math Class`);
+ break;
+
+ case 'wednesday';
+ console.log(`Today you have Science Class`);
+ break;
+
+ default;
+ console.log(`Today you have No classes`)
+&#125; 
+</code>
+</pre>
+</div>
+
+<div *ngIf="showCode === 'truthy'" style="width: 800px">
+  <pre class="line-numbers">
+<code class="language-html">
+console.log(boolean('A Name'));
+</code>
+</pre>
+</div>
+
+<div *ngIf="showCode === 'falsy'" style="width: 800px">
+  <pre class="line-numbers">
+<code class="language-html">
+console.log(boolean(0)); -> False
+
+console.log(boolean(undefined)); -> False
+  
+console.log(boolean(&#123;&#125;)); -> False(Empty object)
+
+Const money = 0;
+if (money) &#123;
+  console.log(`don't spend it all`);
+&#125;  else &#123;
+  console.log(`You should get a job`);
+&#125; 
+  
+// Output : You should get a job
+// Tip: If the const money = 100; 
+// js wil print don't spend it all
+</code>
+</pre>
+</div>

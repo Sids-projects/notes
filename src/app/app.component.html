@@ -1,16 +1,76 @@
 <main>
   <nav class="app-nav">
-    <i class="fa-solid fa-note-sticky"></i>
+    <i
+      class="fa-solid fa-bars"
+      style="font-size: 20px"
+      (click)="navControl()"
+    ></i>
     <div>
-      <i routerLink="javascript" class="fa-brands fa-square-js"></i>
-      <i routerLink="css" class="fa-brands fa-css3-alt"></i>
-      <i routerLink="scss" class="fa-brands fa-sass"></i>
-      <i routerLink="angular" class="fa-brands fa-angular"></i>
+      <i
+        (click)="showTopicList('javascript')"
+        class="fa-brands fa-square-js"
+        routerLink="jsHelloComponent"
+      ></i>
+      <i (click)="showTopicList('css')" class="fa-brands fa-css3-alt"></i>
+      <i (click)="showTopicList('scss')" class="fa-brands fa-sass"></i>
+      <i (click)="showTopicList('angular')" class="fa-brands fa-angular"></i>
     </div>
     <i class="fa-solid fa-circle-exclamation"></i>
   </nav>
 
-  <div style="width: 100%">
-    <router-outlet></router-outlet>
-  </div>
+  <section
+    class="app-container"
+    [ngStyle]="
+      hideTopics
+        ? { 'grid-template-columns': '280px auto' }
+        : { 'grid-template-columns': 'auto' }
+    "
+  >
+    <section [ngClass]="hideTopics ? 'app-topics' : 'app-topics-inactive'">
+      <header>
+        <h3>Topics</h3>
+      </header>
+      <!-- Js Topics -->
+      <div class="topics-list" *ngIf="javascript">
+        <div
+          [ngClass]="{
+            'topic-item': true,
+            'topic-active': hideMainTopic === topics.key
+          }"
+          *ngFor="let topics of jsTopicList"
+          [routerLink]="topics.route"
+          (click)="matchTopic(topics.key)"
+        >
+          <h4>{{ topics.h3 }}</h4>
+          <small>{{ topics.small }}</small>
+        </div>
+      </div>
+
+      <!-- Ng Topics -->
+      <div class="topics-list" *ngIf="angular">
+        <p>Angular in Progress..</p>
+      </div>
+
+      <!-- Css Topics -->
+      <div class="topics-list" *ngIf="css">
+        <p>Css in Progress..</p>
+      </div>
+
+      <!-- Scss Topics -->
+      <div class="topics-list" *ngIf="scss">
+        <p>Scss in Progress</p>
+      </div>
+    </section>
+
+    <section class="app-content">
+      <header>
+        <h3>{{ topicName }}</h3>
+        <button>Tasks</button>
+      </header>
+
+      <div class="app-screen">
+        <router-outlet></router-outlet>
+      </div>
+    </section>
+  </section>
 </main>
