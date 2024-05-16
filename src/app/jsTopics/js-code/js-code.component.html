@@ -226,3 +226,63 @@ Output : You are an adult
 </code>
 </pre>
 </div>
+
+<div *ngIf="showCode === 'Prompt'" style="width: 800px">
+  <pre class="line-numbers">
+<code class="language-html">
+Const favNumber = prompt(`Enter your favorite number`)
+console.log(favNumber);  
+</code>
+</pre>
+</div>
+
+<div *ngIf="showCode === 'boolean-and'" style="width: 800px">
+  <pre class="line-numbers">
+<code class="language-html">
+true + true = true
+true + false = false
+false + true = false
+false + false = false
+</code>
+</pre>
+</div>
+
+<div *ngIf="showCode === 'boolean-or'" style="width: 800px">
+  <pre class="line-numbers">
+<code class="language-html">
+true + true = true
+true + false = true
+false + true = true
+false + false = false  
+</code>
+</pre>
+</div>
+
+<div *ngIf="showCode === 'boolean-not'" style="width: 800px">
+  <pre class="line-numbers">
+<code class="language-html">
+let a = false;
+Output : !a -> true
+
+Example :
+if (fav !== value); 
+Strict version ⬆ (Recommended)
+  
+if (fav != value); 
+Loose version
+</code>
+</pre>
+</div>
+
+<div *ngIf="showCode === 'statement-expression'" style="width: 800px">
+  <pre class="line-numbers">
+<code class="language-html">
+Const str = `23 is big`;
+                ⬆️ - 
+if (23 > 10) &#123;
+  console.log(str);
+&#125;
+  
+</code>
+</pre>
+</div>

@@ -1,0 +1,66 @@
+<section class="js-content">
+  <nav>
+    <div class="nav-links">
+      <p
+        *ngFor="let title of getData.titles"
+        [ngClass]="content === title ? 'active-link' : ''"
+        (click)="showContent(title)"
+      >
+        {{ title }}
+      </p>
+    </div>
+    <div class="d-flex align-items-center gap-1">
+      <mat-slide-toggle [(ngModel)]="showSecondLi"></mat-slide-toggle>
+    </div>
+  </nav>
+
+  <div class="js-container">
+    <div *ngIf="content === 'Statement and Expression'" class="js-topics">
+      <table *ngIf="!showSecondLi" class="table">
+        <thead>
+          <tr>
+            <th>{{ getData.data01.h301 }}</th>
+            <th>{{ getData.data01.h302 }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              {{ getData.data01.ul01[0].li1 }}
+            </td>
+            <td>
+              {{ getData.data01.ul02[0].li1 }}
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>{{ getData.data01.ul02[1].li1 }}</td>
+          </tr>
+        </tbody>
+      </table>
+      <table *ngIf="showSecondLi" class="table">
+        <thead>
+          <tr>
+            <th>{{ getData.data01.h301 }}</th>
+            <th>{{ getData.data01.h302 }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              {{ getData.data01.ul01[0].li2 }}
+            </td>
+            <td>
+              {{ getData.data01.ul02[0].li2 }}
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>{{ getData.data01.ul02[1].li2 }}</td>
+          </tr>
+        </tbody>
+      </table>
+      <app-js-code [showCode]="'statement-expression'"></app-js-code>
+    </div>
+  </div>
+</section>

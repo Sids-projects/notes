@@ -62,6 +62,24 @@ export class SharedService {
         small: 'Strict & Loose equality operator',
         route: 'jsEqualityComponent',
       },
+      {
+        key: 'js-Prompt',
+        h3: 'Prompt',
+        small: 'Get Input values',
+        route: 'jsPromptComponent',
+      },
+      {
+        key: 'js-Boolean',
+        h3: 'Boolean Logic',
+        small: 'and, or, not',
+        route: 'jsBooleanComponent',
+      },
+      {
+        key: 'js-StateExpres',
+        h3: 'Statement and Expression',
+        small: 'explanation with example',
+        route: 'jsStateexprComponent',
+      },
     ],
   };
 
@@ -344,6 +362,70 @@ export class SharedService {
         {
           li1: 'Loose Equality Operator does type coercion',
           li2: 'Loose Equality Operator type coercion panum',
+        },
+      ],
+    },
+  };
+
+  jsPrompt: any = {
+    titles: ['Prompt'],
+    data01: {
+      ul: [
+        {
+          li1: 'We can get the input from prompt input bar',
+          li2: 'Prompt la iruka input bar la namba user data vangikalam',
+        },
+      ],
+    },
+  };
+
+  jsBoolean: any = {
+    titles: ['And', 'Or', 'Not'],
+    data01: {
+      ul: [
+        {
+          li1: 'If one of the value is false then all of them will false.',
+          li2: 'Oru value false ah irundha aprm ella value um false aagidum',
+        },
+      ],
+    },
+    data02: {
+      ul: [
+        {
+          li1: 'If one of the value is true then all value is true.',
+          li2: 'Oru value true ah irundha ella value um true ah irukum',
+        },
+      ],
+    },
+    data03: {
+      ul: [
+        {
+          li1: 'It invert all value',
+          li2: 'value va opposite ah mathidum',
+        },
+      ],
+    },
+  };
+
+  jsStateExpres: any = {
+    titles: ['Statement and Expression'],
+    data01: {
+      h301: 'Statement',
+      ul01: [
+        {
+          li1: 'A Declaration is like a complete sentence',
+          li2: 'Declaration radhu oru sentence mathri',
+        },
+      ],
+      h302: 'Expression',
+      ul02: [
+        {
+          li1: 'A Expression are words in that build up the whole sentences',
+          li2: 'Expression radhu oru sentence la iruka word mathri',
+        },
+        {
+          li1: 'Expression is a peace of code that produces a value.',
+          li2: 'Expression radhu oru peace of code mathri oru value va kudukum',
         },
       ],
     },

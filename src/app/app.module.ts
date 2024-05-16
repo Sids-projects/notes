@@ -25,6 +25,9 @@ import { JsSwitchComponent } from './jsTopics/js-switch/js-switch.component';
 import { JsTruefalseComponent } from './jsTopics/js-truefalse/js-truefalse.component';
 import { JsEqualityComponent } from './jsTopics/js-equality/js-equality.component';
 import { CssHelloComponent } from './cssTopics/css-hello/css-hello.component';
+import { JsPromptComponent } from './jsTopics/js-prompt/js-prompt.component';
+import { JsBooleanComponent } from './jsTopics/js-boolean/js-boolean.component';
+import { JsStateexprComponent } from './jsTopics/js-stateexpr/js-stateexpr.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +49,9 @@ import { CssHelloComponent } from './cssTopics/css-hello/css-hello.component';
     JsTruefalseComponent,
     JsEqualityComponent,
     CssHelloComponent,
+    JsPromptComponent,
+    JsBooleanComponent,
+    JsStateexprComponent,
   ],
   imports: [
     BrowserModule,
