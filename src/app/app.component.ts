@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { SharedService } from './shared.service';
+import { NavigationEnd, Router } from '@angular/router';
+import { filter } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -11,6 +13,7 @@ export class AppComponent {
   hideMainTopic: any;
   hideTopics: boolean = true;
   hideContent: any;
+  hideContentHead: boolean = true;
   jsTopicList: any = '';
 
   topicName: string = 'Javascript';
@@ -19,7 +22,24 @@ export class AppComponent {
   css: boolean = false;
   scss: boolean = false;
 
-  constructor(private sharedService: SharedService) {}
+  jsHelloComponent: boolean = false;
+  cssHelloComponent: boolean = false;
+  scssHelloComponent: boolean = false;
+  ngHelloComponent: boolean = false;
+  jsIntroComponent: boolean = false;
+  jsVariablesComponent: boolean = false;
+
+  constructor(private sharedService: SharedService, private router: Router) {
+    this.router.events
+      .pipe(
+        filter(
+          (event): event is NavigationEnd => event instanceof NavigationEnd
+        )
+      )
+      .subscribe((event: NavigationEnd) => {
+        this.routeActive(event.url);
+      });
+  }
 
   ngOnInit() {
     this.jsTopicList = this.sharedService.topicList.jsTopics;
@@ -59,5 +79,17 @@ export class AppComponent {
       this.scss = true;
       this.topicName = 'Scss';
     }
+  }
+
+  routeActive(currentRoute: string) {
+    // // Main Routes
+    this.jsHelloComponent = currentRoute.includes('jsHelloComponent');
+    this.cssHelloComponent = currentRoute.includes('cssHelloComponent');
+    this.scssHelloComponent = currentRoute.includes('scssHelloComponent');
+    this.ngHelloComponent = currentRoute.includes('ngHelloComponent');
+
+    // // Js Components
+    this.jsIntroComponent = currentRoute.includes('jsIntroComponent');
+    this.jsVariablesComponent = currentRoute.includes('jsVariablesComponent');
   }
 }
