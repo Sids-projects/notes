@@ -3,25 +3,39 @@
 @import "~prismjs/themes/prism.css";
 @import "~prismjs/plugins/line-numbers/prism-line-numbers.css";
 
-$font-black: rgb(51, 51, 51);
-$font-inactive: #898989;
-$font-blue: rgb(99, 99, 238);
-$font-content: #666666;
-$font-white: #ffffff;
-$font-gray: #727272;
-$icon-inactive: #6f6f6f;
-$white-lite: #fafafa;
-$sticky-lite: rgb(243, 218, 93);
-$sticky-dark: rgb(222, 194, 56);
-$border-line: rgb(228, 228, 228);
-$outfit-font: "Outfit", sans-serif;
+// Common
+:root {
+  --font-blue: rgb(99, 99, 238);
+  --font-content: #666666;
+  --font-white: #ffffff;
+  --font-gray: #727272;
+  --sticky-lite: rgb(243, 218, 93);
+  --sticky-dark: rgb(222, 194, 56);
+  --border-line: rgb(228, 228, 228);
+  --outfit-font: "Outfit", sans-serif;
+
+  // Light Theme
+  --base-background: white;
+  --font-base: rgb(51, 51, 51);
+  --font-inactive: #898989;
+  --icon-inactive: #6f6f6f;
+  --title-active: #fafafa;
+}
+
+// Dark Theme
+.dark-theme {
+  --base-background: rgb(17, 17, 17);
+  --font-base: white;
+  --border-line: rgb(63, 63, 63);
+  --icon-inactive: #d7d7d7;
+}
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: $outfit-font;
-  color: $font-black;
+  font-family: var(--outfit-font);
+  color: var(--font-base);
 }
 
 html,
@@ -36,7 +50,7 @@ body {
 body,
 button,
 input {
-  font-family: $outfit-font;
+  font-family: var(--outfit-font);
 }
 
 h1,
@@ -57,27 +71,27 @@ p {
 .mat-typography h5,
 .mat-typography h6,
 .mat-typography p {
-  font-family: $outfit-font;
+  font-family: var(--outfit-font);
   margin: 0;
   padding: 0;
 }
 
 main {
-  width: 100dvw;
-  height: 100dvh;
+  width: 100vw;
+  height: 100vh;
   display: flex;
   overflow: hidden;
+  background-color: var(--base-background);
 
   .app-nav {
-    border-right: 1px solid $border-line;
-    width: 80px;
+    border-right: 1px solid var(--border-line);
     height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
     gap: 26px;
-    padding: 20px 0;
+    padding: 20px;
 
     i {
       font-size: 24px;
@@ -91,11 +105,11 @@ main {
 
       i {
         font-size: 26px !important;
-        color: $icon-inactive;
+        color: var(--icon-inactive);
       }
 
       .active-nav {
-        color: $font-blue;
+        color: var(--font-blue);
       }
     }
   }
@@ -103,8 +117,8 @@ main {
 
 .js-content {
   nav {
-    border-bottom: 1px solid $border-line;
-    background-color: $font-white;
+    border-bottom: 1px solid var(--border-line);
+    background-color: var(--base-background);
     height: 60px;
     padding: 0 30px;
     display: flex;
@@ -125,12 +139,12 @@ main {
     p {
       padding-bottom: 10px;
       cursor: pointer;
-      color: $font-inactive;
+      color: var(--font-inactive);
     }
 
     .active-link {
       position: relative;
-      color: $font-blue !important;
+      color: var(--font-blue) !important;
 
       &::before {
         content: "";
@@ -141,7 +155,7 @@ main {
         width: 80%;
         height: 3px;
         border-radius: 50px;
-        background-color: $font-blue !important;
+        background-color: var(--font-blue) !important;
       }
     }
   }
@@ -182,16 +196,17 @@ main {
   position: relative;
 
   .app-topics {
-    border-right: 1px solid $border-line;
+    border-right: 1px solid var(--border-line);
     height: 100%;
 
     header {
-      border-bottom: 1px solid $border-line;
-      background-color: $font-white;
+      border-bottom: 1px solid var(--border-line);
+      background-color: var(--base-background);
       width: 100%;
       height: 60px;
       display: flex;
       align-items: center;
+      justify-content: space-between;
       padding: 0 10px;
 
       h3 {
@@ -207,7 +222,7 @@ main {
       overflow-y: scroll;
 
       .topic-item {
-        border-bottom: 1px solid $border-line;
+        border-bottom: 1px solid var(--border-line);
         padding: 14px;
         cursor: pointer;
 
@@ -219,14 +234,14 @@ main {
 
         small {
           font-size: 12px;
-          color: $font-gray;
+          color: var(--font-gray);
           font-weight: 500;
         }
       }
 
       .topic-active {
-        border-right: 3px solid $font-blue;
-        background-color: $white-lite;
+        border-right: 3px solid var(--font-blue);
+        background-color: var(--title-active);
       }
     }
   }
@@ -248,8 +263,8 @@ main {
 
 li {
   .blue-txt {
-    background-color: $font-blue !important;
-    color: $font-white;
+    background-color: var(--font-blue) !important;
+    color: var(--font-white);
     padding: 1px 10px 2px 8px;
     border-radius: 50px;
     font-weight: 400;
@@ -271,7 +286,7 @@ li {
     position: relative;
     width: 100px;
     height: 100px;
-    background-color: $sticky-lite;
+    background-color: var(--sticky-lite);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -282,7 +297,7 @@ li {
     .triangle-bottomright {
       width: 0;
       height: 0;
-      border-bottom: 20px solid $font-white;
+      border-bottom: 20px solid var(--font-white);
       border-left: 20px solid transparent;
       position: absolute;
       bottom: 0;
@@ -292,7 +307,7 @@ li {
     .triangle-topleft {
       width: 0;
       height: 0;
-      border-top: 20px solid $sticky-dark;
+      border-top: 20px solid var(--sticky-dark);
       border-right: 20px solid transparent;
       position: absolute;
       bottom: 0;
@@ -335,7 +350,7 @@ li {
     top: 50%;
     left: 110%;
     transform: translateY(-50%);
-    color: $sticky-lite;
+    color: var(--sticky-lite);
   }
 }
 
@@ -358,14 +373,14 @@ li {
 
       i {
         font-size: 60px;
-        color: $font-blue;
+        color: var(--font-blue);
       }
 
       h2 {
         font-size: 40px;
         font-weight: 700;
         margin-bottom: 8px;
-        color: $font-blue;
+        color: var(--font-blue);
       }
     }
   }

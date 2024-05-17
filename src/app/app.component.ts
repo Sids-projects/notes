@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Renderer2 } from '@angular/core';
 import { SharedService } from './shared.service';
 import { NavigationEnd, Router } from '@angular/router';
 import { filter } from 'rxjs';
@@ -15,6 +15,7 @@ export class AppComponent {
   hideContent: any;
   hideContentHead: boolean = true;
   jsTopicList: any = '';
+  isDarkTheme: boolean = false;
 
   topicName: string = 'Javascript';
   javascript: boolean = true;
@@ -29,7 +30,11 @@ export class AppComponent {
   jsIntroComponent: boolean = false;
   jsVariablesComponent: boolean = false;
 
-  constructor(private sharedService: SharedService, private router: Router) {
+  constructor(
+    private sharedService: SharedService,
+    private router: Router,
+    private renderer: Renderer2
+  ) {
     this.router.events
       .pipe(
         filter(
@@ -78,6 +83,15 @@ export class AppComponent {
       this.css = false;
       this.scss = true;
       this.topicName = 'Scss';
+    }
+  }
+
+  toggleTheme() {
+    this.isDarkTheme = !this.isDarkTheme;
+    if (this.isDarkTheme) {
+      this.renderer.addClass(document.body, 'dark-theme');
+    } else {
+      this.renderer.removeClass(document.body, 'dark-theme');
     }
   }
 

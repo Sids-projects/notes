@@ -45,6 +45,7 @@
     <section [ngClass]="hideTopics ? 'app-topics' : 'app-topics-inactive'">
       <header>
         <h3>{{ topicName }}</h3>
+        <mat-slide-toggle (change)="toggleTheme()"></mat-slide-toggle>
       </header>
       <!-- Js Topics -->
       <div class="topics-list" *ngIf="javascript">

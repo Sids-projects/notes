@@ -1,10 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AngularComponent } from './screens/angular/angular.component';
-import { JavascriptComponent } from './screens/javascript/javascript.component';
-import { CssComponent } from './screens/css/css.component';
-import { ScssComponent } from './screens/scss/scss.component';
-import { TypescriptComponent } from './screens/typescript/typescript.component';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { JsIntroComponent } from './jsTopics/js-intro/js-intro.component';
 import { JsVariablesComponent } from './jsTopics/js-variables/js-variables.component';
@@ -22,13 +17,6 @@ import { JsBooleanComponent } from './jsTopics/js-boolean/js-boolean.component';
 import { JsStateexprComponent } from './jsTopics/js-stateexpr/js-stateexpr.component';
 
 const routes: Routes = [
-  // Screens
-  { path: 'angular', component: AngularComponent },
-  { path: 'javascript', component: JavascriptComponent },
-  { path: 'typescript', component: TypescriptComponent },
-  { path: 'css', component: CssComponent },
-  { path: 'scss', component: ScssComponent },
-
   // Javascript Components
   { path: '', redirectTo: 'jsHelloComponent', pathMatch: 'full' },
   { path: 'jsHelloComponent', component: JsHelloComponent },
