@@ -1,39 +1,4 @@
 <main>
-  <nav class="app-nav">
-    <i
-      class="fa-solid fa-bars"
-      style="font-size: 20px"
-      (click)="navControl()"
-    ></i>
-    <div>
-      <i
-        (click)="showTopicList('javascript')"
-        class="fa-brands fa-square-js"
-        routerLink="jsHelloComponent"
-        [ngClass]="{ 'active-nav': jsHelloComponent }"
-      ></i>
-      <i
-        (click)="showTopicList('css')"
-        class="fa-brands fa-css3-alt"
-        routerLink="cssHelloComponent"
-        [ngClass]="{ 'active-nav': cssHelloComponent }"
-      ></i>
-      <i
-        (click)="showTopicList('scss')"
-        class="fa-brands fa-sass"
-        routerLink="scssHelloComponent"
-        [ngClass]="{ 'active-nav': scssHelloComponent }"
-      ></i>
-      <i
-        (click)="showTopicList('angular')"
-        class="fa-brands fa-angular"
-        routerLink="ngHelloComponent"
-        [ngClass]="{ 'active-nav': ngHelloComponent }"
-      ></i>
-    </div>
-    <i class="fa-solid fa-circle-exclamation"></i>
-  </nav>
-
   <section
     class="app-container"
     [ngStyle]="
@@ -44,8 +9,60 @@
   >
     <section [ngClass]="hideTopics ? 'app-topics' : 'app-topics-inactive'">
       <header>
-        <h3>{{ topicName }}</h3>
-        <mat-slide-toggle (change)="toggleTheme()"></mat-slide-toggle>
+        <div class="app-headerName">
+          <div class="dropdown">
+            <p role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="fa-solid fa-note-sticky"></i>
+            </p>
+
+            <ul class="dropdown-menu">
+              <li
+                class="dropdown-item"
+                (click)="showTopicList('javascript')"
+                routerLink="jsHelloComponent"
+              >
+                Javascript
+              </li>
+              <li
+                class="dropdown-item"
+                (click)="showTopicList('css')"
+                routerLink="cssHelloComponent"
+              >
+                Css
+              </li>
+              <li
+                class="dropdown-item"
+                (click)="showTopicList('scss')"
+                routerLink="scssHelloComponent"
+              >
+                Scss
+              </li>
+              <li
+                class="dropdown-item"
+                (click)="showTopicList('angular')"
+                routerLink="ngHelloComponent"
+              >
+                Angular
+              </li>
+            </ul>
+          </div>
+          <h3>{{ topicName }}</h3>
+        </div>
+        <!-- <mat-slide-toggle (change)="toggleTheme()"></mat-slide-toggle> -->
+        <div class="app-mode">
+          <i
+            matTooltip="Light Mode"
+            *ngIf="isDarkTheme"
+            class="fa-solid fa-sun"
+            (click)="toggleTheme()"
+          ></i>
+          <i
+            matTooltip="Dark Mode"
+            *ngIf="!isDarkTheme"
+            class="fa-solid fa-moon"
+            (click)="toggleTheme()"
+          ></i>
+        </div>
       </header>
       <!-- Js Topics -->
       <div class="topics-list" *ngIf="javascript">

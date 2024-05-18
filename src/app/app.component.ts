@@ -48,6 +48,13 @@ export class AppComponent {
 
   ngOnInit() {
     this.jsTopicList = this.sharedService.topicList.jsTopics;
+
+    // Check localStorage for saved theme state
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+      this.isDarkTheme = true;
+      this.renderer.addClass(document.body, 'dark-theme');
+    }
   }
 
   navControl() {
@@ -90,8 +97,10 @@ export class AppComponent {
     this.isDarkTheme = !this.isDarkTheme;
     if (this.isDarkTheme) {
       this.renderer.addClass(document.body, 'dark-theme');
+      localStorage.setItem('theme', 'dark'); // Save theme state to localStorage
     } else {
       this.renderer.removeClass(document.body, 'dark-theme');
+      localStorage.setItem('theme', 'light'); // Save theme state to localStorage
     }
   }
 
