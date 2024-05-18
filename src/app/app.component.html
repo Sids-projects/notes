@@ -4,100 +4,111 @@
     [ngStyle]="
       hideTopics
         ? { 'grid-template-columns': '280px auto' }
-        : { 'grid-template-columns': 'auto' }
+        : { 'grid-template-columns': '40px auto' }
     "
   >
-    <section [ngClass]="hideTopics ? 'app-topics' : 'app-topics-inactive'">
+    <section class="app-topics">
       <header>
-        <div class="app-headerName">
-          <div class="dropdown">
-            <p role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              <i class="fa-solid fa-note-sticky"></i>
-            </p>
-
-            <ul class="dropdown-menu">
-              <li
-                class="dropdown-item"
-                (click)="showTopicList('javascript')"
-                routerLink="jsHelloComponent"
-              >
-                Javascript
-              </li>
-              <li
-                class="dropdown-item"
-                (click)="showTopicList('css')"
-                routerLink="cssHelloComponent"
-              >
-                Css
-              </li>
-              <li
-                class="dropdown-item"
-                (click)="showTopicList('scss')"
-                routerLink="scssHelloComponent"
-              >
-                Scss
-              </li>
-              <li
-                class="dropdown-item"
-                (click)="showTopicList('angular')"
-                routerLink="ngHelloComponent"
-              >
-                Angular
-              </li>
-            </ul>
-          </div>
-          <h3>{{ topicName }}</h3>
-        </div>
-        <!-- <mat-slide-toggle (change)="toggleTheme()"></mat-slide-toggle> -->
-        <div class="app-mode">
-          <i
-            matTooltip="Light Mode"
-            *ngIf="isDarkTheme"
-            class="fa-solid fa-sun"
-            (click)="toggleTheme()"
-          ></i>
-          <i
-            matTooltip="Dark Mode"
-            *ngIf="!isDarkTheme"
-            class="fa-solid fa-moon"
-            (click)="toggleTheme()"
-          ></i>
-        </div>
+        <h3 *ngIf="hideTopics">{{ topicName }}</h3>
+        <i class="fa-solid fa-angles-left" (click)="navControl()"></i>
       </header>
       <!-- Js Topics -->
-      <div class="topics-list" *ngIf="javascript">
-        <div
-          [ngClass]="{
-            'topic-item': true,
-            'topic-active': hideMainTopic === topics.key
-          }"
-          *ngFor="let topics of jsTopicList"
-          [routerLink]="topics.route"
-          (click)="matchTopic(topics.key)"
-        >
-          <h4>{{ topics.h3 }}</h4>
-          <small>{{ topics.small }}</small>
+      <ng-container *ngIf="hideTopics">
+        <div class="topics-list" *ngIf="javascript">
+          <div
+            [ngClass]="{
+              'topic-item': true,
+              'topic-active': hideMainTopic === topics.key
+            }"
+            *ngFor="let topics of jsTopicList"
+            [routerLink]="topics.route"
+            (click)="matchTopic(topics.key)"
+          >
+            <h4>{{ topics.h3 }}</h4>
+            <small>{{ topics.small }}</small>
+          </div>
         </div>
-      </div>
+      </ng-container>
 
       <!-- Ng Topics -->
-      <div class="topics-list" *ngIf="angular">
-        <p>Angular in Progress..</p>
-      </div>
+      <ng-container *ngIf="hideTopics">
+        <div class="topics-list" *ngIf="angular">
+          <p>Angular in Progress..</p>
+        </div>
+      </ng-container>
 
       <!-- Css Topics -->
-      <div class="topics-list" *ngIf="css">
-        <p>Css in Progress..</p>
-      </div>
+      <ng-container *ngIf="hideTopics">
+        <div class="topics-list" *ngIf="css">
+          <p>Css in Progress..</p>
+        </div>
+      </ng-container>
 
       <!-- Scss Topics -->
-      <div class="topics-list" *ngIf="scss">
-        <p>Scss in Progress</p>
-      </div>
+      <ng-container *ngIf="hideTopics">
+        <div class="topics-list" *ngIf="scss">
+          <p>Scss in Progress</p>
+        </div>
+      </ng-container>
     </section>
 
     <section class="app-content">
       <div class="app-screen">
+        <header>
+          <div class="app-headerName">
+            <div class="dropdown">
+              <p role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fa-solid fa-note-sticky"></i>
+              </p>
+
+              <ul class="dropdown-menu">
+                <li
+                  class="dropdown-item"
+                  (click)="showTopicList('javascript')"
+                  routerLink="jsHelloComponent"
+                >
+                  Javascript
+                </li>
+                <li
+                  class="dropdown-item"
+                  (click)="showTopicList('css')"
+                  routerLink="cssHelloComponent"
+                >
+                  Css
+                </li>
+                <li
+                  class="dropdown-item"
+                  (click)="showTopicList('scss')"
+                  routerLink="scssHelloComponent"
+                >
+                  Scss
+                </li>
+                <li
+                  class="dropdown-item"
+                  (click)="showTopicList('angular')"
+                  routerLink="ngHelloComponent"
+                >
+                  Angular
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- <mat-slide-toggle (change)="toggleTheme()"></mat-slide-toggle> -->
+          <div class="app-mode">
+            <i
+              matTooltip="Light Mode"
+              *ngIf="isDarkTheme"
+              class="fa-solid fa-sun"
+              (click)="toggleTheme()"
+            ></i>
+            <i
+              matTooltip="Dark Mode"
+              *ngIf="!isDarkTheme"
+              class="fa-solid fa-moon"
+              (click)="toggleTheme()"
+            ></i>
+          </div>
+        </header>
         <router-outlet></router-outlet>
       </div>
     </section>
