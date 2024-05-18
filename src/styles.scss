@@ -566,3 +566,9 @@ th {
 tr {
   border-color: var(--border-line);
 }
+
+.code-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  overflow-x: scroll;
+}
