@@ -10,7 +10,12 @@
     <section class="app-topics">
       <header>
         <h3 *ngIf="hideTopics">{{ topicName }}</h3>
-        <i class="fa-solid fa-angles-left" (click)="navControl()"></i>
+        <i
+          [ngClass]="
+            hideTopics ? 'fa-solid fa-angles-left' : 'fa-solid fa-angles-right'
+          "
+          (click)="navControl()"
+        ></i>
       </header>
       <!-- Js Topics -->
       <ng-container *ngIf="hideTopics">
