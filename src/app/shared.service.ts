@@ -80,6 +80,18 @@ export class SharedService {
         small: 'explanation with example',
         route: 'jsStateexprComponent',
       },
+      {
+        key: 'js-StrictMode',
+        h3: 'Strict Mode',
+        small: 'Sucure Code',
+        route: 'jsStrictComponent',
+      },
+      {
+        key: 'js-Functions',
+        h3: 'Functions',
+        small: 'Code Blocks',
+        route: 'jsFunctionComponent',
+      },
     ],
   };
 
@@ -426,6 +438,79 @@ export class SharedService {
         {
           li1: 'Expression is a peace of code that produces a value.',
           li2: 'Expression radhu oru peace of code mathri oru value va kudukum',
+        },
+      ],
+    },
+  };
+
+  jsStrictMode: any = {
+    titles: ['Strict Mode'],
+    data01: {
+      ul: [
+        {
+          li1: 'Strict is a special mode that we activate in the JavaScript which make it easier to write a secure code.',
+          li2: 'Strict mode use pana nambe secure code panalam.',
+        },
+        {
+          li1: 'This line must be the first line of the JavaScript Code.',
+          li2: 'Indha line dha js la 1st line ah irukanum',
+        },
+        {
+          li1: 'It creates visible errors in the developer console.',
+          li2: 'Developer console la error la kamikum',
+        },
+      ],
+    },
+  };
+
+  jsFunctions: any = {
+    titles: [
+      'Functions',
+      'Expression & Declaration',
+      'Arrow Function',
+      'Functions calling other function',
+    ],
+    data01: {
+      ul: [
+        {
+          li1: 'Function is a piece of code that we can reuse over and over again',
+          li2: 'Strict mode use pana nambe secure code panalam.',
+        },
+        {
+          li1: 'A variable holds value but a function can hold one or more complete lines of code.',
+          li2: 'Indha line dha js la 1st line ah irukanum',
+        },
+        {
+          li1: 'We can also pass data into a function and additionally, a function can also return data as well.',
+          li2: 'Developer console la error la kamikum',
+        },
+        {
+          li1: 'Parameters are like variables that are specific only to this function and they will get defined when we call that function.',
+          li2: 'Parameters lam andha function oda variables function ah call panumbodhu define aagum',
+        },
+      ],
+    },
+    data02: {
+      h301: 'Expression & Declaration',
+      ul01: [
+        {
+          li1: 'A Function without name is called as synonyms function so this code is basically an expression.',
+          li2: 'Name illadha function ah synonyms function nu soluvanga andha function code oru expression ah irukum',
+        },
+      ],
+      h302: 'Function Declaration',
+      ul02: [
+        {
+          li1: 'A normal function',
+          li2: 'Sadha function',
+        },
+      ],
+    },
+    data03: {
+      ul: [
+        {
+          li1: 'An Arrow Function is simply a special form of function expression that is shorter and therefore faster to write.',
+          li2: 'Arrow function simple aana oru function expression. short ah irukum',
         },
       ],
     },

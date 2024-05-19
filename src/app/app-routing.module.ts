@@ -15,6 +15,8 @@ import { CssHelloComponent } from './cssTopics/css-hello/css-hello.component';
 import { JsPromptComponent } from './jsTopics/js-prompt/js-prompt.component';
 import { JsBooleanComponent } from './jsTopics/js-boolean/js-boolean.component';
 import { JsStateexprComponent } from './jsTopics/js-stateexpr/js-stateexpr.component';
+import { JsStrictComponent } from './jsTopics/js-strict/js-strict.component';
+import { JsFunctionComponent } from './jsTopics/js-function/js-function.component';
 
 const routes: Routes = [
   // Javascript Components
@@ -32,6 +34,8 @@ const routes: Routes = [
   { path: 'jsPromptComponent', component: JsPromptComponent },
   { path: 'jsBooleanComponent', component: JsBooleanComponent },
   { path: 'jsStateexprComponent', component: JsStateexprComponent },
+  { path: 'jsStrictComponent', component: JsStrictComponent },
+  { path: 'jsFunctionComponent', component: JsFunctionComponent },
 
   // Css Components
   { path: 'cssHelloComponent', component: CssHelloComponent },

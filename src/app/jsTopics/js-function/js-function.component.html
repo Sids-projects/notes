@@ -1,0 +1,92 @@
+<section class="js-content">
+  <nav>
+    <div class="nav-links">
+      <p
+        *ngFor="let title of getData.titles"
+        [ngClass]="content === title ? 'active-link' : ''"
+        (click)="showContent(title)"
+      >
+        {{ title }}
+      </p>
+    </div>
+    <div class="d-flex align-items-center gap-1">
+      <mat-slide-toggle [(ngModel)]="showSecondLi"></mat-slide-toggle>
+    </div>
+  </nav>
+
+  <div class="js-container">
+    <div *ngIf="content === 'Functions'" class="js-topics">
+      <ul *ngIf="!showSecondLi" class="regular-ul">
+        <li *ngFor="let ul of getData.data01.ul">
+          {{ ul.li1 }}
+        </li>
+      </ul>
+      <ul *ngIf="showSecondLi" class="regular-ul">
+        <li *ngFor="let ul of getData.data01.ul">
+          {{ ul.li2 }}
+        </li>
+      </ul>
+      <app-js-code [showCode]="'function-01'"></app-js-code>
+    </div>
+
+    <div *ngIf="content === 'Expression & Declaration'" class="js-topics">
+      <table *ngIf="!showSecondLi" class="table">
+        <thead>
+          <tr>
+            <th style="width: 50%">{{ getData.data02.h301 }}</th>
+            <th style="width: 50%">{{ getData.data02.h302 }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ getData.data02.ul01[0].li1 }}</td>
+            <td>{{ getData.data02.ul02[0].li1 }}</td>
+          </tr>
+          <tr>
+            <td><app-js-code [showCode]="'function-02'"></app-js-code></td>
+            <td><app-js-code [showCode]="'function-03'"></app-js-code></td>
+          </tr>
+        </tbody>
+      </table>
+      <table *ngIf="showSecondLi" class="table">
+        <thead>
+          <tr>
+            <th style="width: 50%">{{ getData.data02.h301 }}</th>
+            <th style="width: 50%">{{ getData.data02.h302 }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ getData.data02.ul01[0].li2 }}</td>
+            <td>{{ getData.data02.ul02[0].li2 }}</td>
+          </tr>
+          <tr>
+            <td><app-js-code [showCode]="'function-02'"></app-js-code></td>
+            <td><app-js-code [showCode]="'function-03'"></app-js-code></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div *ngIf="content === 'Arrow Function'" class="js-topics">
+      <ul *ngIf="!showSecondLi" class="regular-ul">
+        <li *ngFor="let ul of getData.data03.ul">
+          {{ ul.li1 }}
+        </li>
+      </ul>
+      <ul *ngIf="showSecondLi" class="regular-ul">
+        <li *ngFor="let ul of getData.data03.ul">
+          {{ ul.li2 }}
+        </li>
+      </ul>
+      <app-js-code [showCode]="'function-04'"></app-js-code>
+    </div>
+
+    <div
+      *ngIf="content === 'Functions calling other function'"
+      class="js-topics"
+    >
+      <app-js-code [showCode]="'function-05'"></app-js-code>
+    </div>
+  </div>
+</section>

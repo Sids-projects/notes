@@ -28,6 +28,8 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { JsStrictComponent } from './jsTopics/js-strict/js-strict.component';
+import { JsFunctionComponent } from './jsTopics/js-function/js-function.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +49,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     JsPromptComponent,
     JsBooleanComponent,
     JsStateexprComponent,
+    JsStrictComponent,
+    JsFunctionComponent,
   ],
   imports: [
     BrowserModule,

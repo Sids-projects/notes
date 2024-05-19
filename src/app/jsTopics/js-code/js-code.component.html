@@ -1,14 +1,14 @@
 <div *ngIf="showCode === 'var-data01'" class="code-container">
   <pre class="line-numbers">
-<code class="language-html">
-&lt;!-- camelCase --&gt;
+<code class="language-javascript">
+// camelCase
 let firstName
 
-&lt;!-- Letters, Underscore, or the Dollar --&gt;
+// Letters, Underscore, or the Dollar 
 let first_Name = “Mark”
 et $firstName = “Peter”
 
-&lt;!-- How not to use --&gt;
+// How not to use 
 let 2boys = “2”;
 let new = “A word”
 </code>
@@ -17,7 +17,7 @@ let new = “A word”
 
 <div *ngIf="showCode === 'var-let'" class="code-container">
   <pre class="line-numbers">
-<code class="language-html">
+<code class="language-javascript">
 let age = 30;		// 30
 age = 31;			// 31
 console.log(age);
@@ -27,7 +27,7 @@ console.log(age);
 
 <div *ngIf="showCode === 'var-const'" class="code-container">
   <pre class="line-numbers">
-<code class="language-html">
+<code class="language-javascript">
 let birthYear = 2000;	//Error
 birthYear = 2004;
 console.log(birthYear);
@@ -37,7 +37,7 @@ console.log(birthYear);
 
 <div *ngIf="showCode === 'operators-typeof'" class="code-container">
   <pre class="line-numbers">
-<code class="language-html">
+<code class="language-javascript">
 let birthYear = 2000;	//Error
 birthYear = 2004;
 console.log(birthYear);
@@ -47,7 +47,7 @@ console.log(birthYear);
 
 <div *ngIf="showCode === 'operators-assignment'" class="code-container">
   <pre class="line-numbers">
-<code class="language-html">
+<code class="language-javascript">
 // Examples 1 :
 let x = 25 + 5; 
 console.log(x); // 30
@@ -71,7 +71,7 @@ console.log(x); // x = x - 10 = 9
 
 <div *ngIf="showCode === 'operators-comparison'" class="code-container">
   <pre class="line-numbers">
-<code class="language-html">
+<code class="language-javascript">
 // Examples :
 let x = 10; 
 let y = 20;
@@ -83,7 +83,7 @@ console.log(x >= y); // false
 
 <div *ngIf="showCode === 'template-literals'" class="code-container">
   <pre class="line-numbers">
-<code class="language-html">
+<code class="language-javascript">
 const myName = "Peter";
 const year = "2024";
 const birthYear = "1990";
@@ -104,7 +104,7 @@ console.log(`This is a new line`);
 
 <div *ngIf="showCode === 'type-conversion'" class="code-container">
   <pre class="line-numbers">
-<code class="language-html">
+<code class="language-javascript">
 const inputYear = “1991”;
 console.log(inputYear + 18); // 199118 ❌
 console.log(Number(inputYear) + 18); //  2009 ✅
@@ -114,7 +114,7 @@ console.log(Number(inputYear) + 18); //  2009 ✅
 
 <div *ngIf="showCode === 'type-coercion'" class="code-container">
   <pre class="line-numbers">
-<code class="language-html">
+<code class="language-javascript">
 console.log('I am' +23 + 'Years old');
 console.log('I am' + string(23) + 'Years old');
 console.log('23' - '10' - 3); // 10
@@ -124,7 +124,7 @@ console.log('23' - '10' - 3); // 10
 
 <div *ngIf="showCode === 'if-else'" class="code-container">
   <pre class="line-numbers">
-<code class="language-html">
+<code class="language-javascript">
 const age = 19;
 
 if (age >= 18) &#123;
@@ -138,7 +138,7 @@ if (age >= 18) &#123;
 
 <div *ngIf="showCode === 'else-if'" class="code-container">
   <pre class="line-numbers">
-<code class="language-html">
+<code class="language-javascript">
 const favColor = “pink”;
 
 if (favColor === “pink”) &#123;
@@ -154,7 +154,7 @@ if (favColor === “pink”) &#123;
 
 <div *ngIf="showCode === 'if-switch'" class="code-container">
   <pre class="line-numbers">
-<code class="language-html">
+<code class="language-javascript">
 const day = “monday”;
 
 switch (day) &#123;
@@ -179,7 +179,7 @@ switch (day) &#123;
 
 <div *ngIf="showCode === 'truthy'" class="code-container">
   <pre class="line-numbers">
-<code class="language-html">
+<code class="language-javascript">
 console.log(boolean('A Name'));
 </code>
 </pre>
@@ -187,7 +187,7 @@ console.log(boolean('A Name'));
 
 <div *ngIf="showCode === 'falsy'" class="code-container">
   <pre class="line-numbers">
-<code class="language-html">
+<code class="language-javascript">
 console.log(boolean(0)); -> False
 
 console.log(boolean(undefined)); -> False
@@ -210,7 +210,7 @@ if (money) &#123;
 
 <div *ngIf="showCode === 'Loose Equality'" class="code-container">
   <pre class="line-numbers">
-<code class="language-html">
+<code class="language-javascript">
 '18' == 18
 Output : True
 </code>
@@ -219,7 +219,7 @@ Output : True
 
 <div *ngIf="showCode === 'Strict Equality'" class="code-container">
   <pre class="line-numbers">
-<code class="language-html">
+<code class="language-javascript">
 Const age = 18;
 if (age === 18) console.log(`You are an adult`);
 Output : You are an adult
@@ -229,7 +229,7 @@ Output : You are an adult
 
 <div *ngIf="showCode === 'Prompt'" class="code-container">
   <pre class="line-numbers">
-<code class="language-html">
+<code class="language-javascript">
 Const favNumber = prompt(`Enter your favorite number`)
 console.log(favNumber);  
 </code>
@@ -238,7 +238,7 @@ console.log(favNumber);
 
 <div *ngIf="showCode === 'boolean-and'" class="code-container">
   <pre class="line-numbers">
-<code class="language-html">
+<code class="language-javascript">
 true + true = true
 true + false = false
 false + true = false
@@ -249,7 +249,7 @@ false + false = false
 
 <div *ngIf="showCode === 'boolean-or'" class="code-container">
   <pre class="line-numbers">
-<code class="language-html">
+<code class="language-javascript">
 true + true = true
 true + false = true
 false + true = true
@@ -260,7 +260,7 @@ false + false = false
 
 <div *ngIf="showCode === 'boolean-not'" class="code-container">
   <pre class="line-numbers">
-<code class="language-html">
+<code class="language-javascript">
 let a = false;
 Output : !a -> true
 
@@ -276,13 +276,102 @@ Loose version
 
 <div *ngIf="showCode === 'statement-expression'" class="code-container">
   <pre class="line-numbers">
-<code class="language-html">
+<code class="language-javascript">
+      Statement
+          ⬇️
 Const str = `23 is big`;
                  ⬆️
+             Expression
 if (23 > 10) &#123;
   console.log(str);
 &#125;
+</code>
+</pre>
+</div>
+
+<div *ngIf="showCode === 'strict-mode'" class="code-container">
+  <pre class="line-numbers">
+<code class="language-javascript">
+'use strict'
+</code>
+</pre>
+</div>
+
+<div *ngIf="showCode === 'function-01'" class="code-container">
+  <pre class="line-numbers">
+<code class="language-javascript">
+function logger() &#123;
+  console.log(`Hello !!`);
+&#125;
+logger() // Calling/ Running/ Invoking Function
+
+function fruitProcessor(apples, oranges) &#123;
+  const juice = `Juice with $&#123;apples&#125; apples and $&#123;oranges&#125; oranges`;
+  console.log(juice);
+  return
+&#125;
+ 
+const appleJuice = fruitProcessor(5, 0);
+console.log(appleJuice);
+// Output - Juice with 5 apples and 0 oranges
+</code>
+</pre>
+</div>
+
+<div *ngIf="showCode === 'function-02'" class="code-container">
+  <pre class="line-numbers">
+<code class="language-javascript">
+const calcAge = function(birthYear) &#123;
+  return 2037 - brithYear;
+&#125;   
+</code>
+</pre>
+</div>
+
+<div *ngIf="showCode === 'function-03'" class="code-container">
+  <pre class="line-numbers">
+<code class="language-javascript">
+function calcAge(birthYear) &#123;
+  Return 2037 - birthYear;
+&#125;      
+</code>
+</pre>
+</div>
+
+<div *ngIf="showCode === 'function-04'" class="code-container">
+  <pre class="line-numbers">
+<code class="language-javascript">
+const calcAge = birthYear => 2037 - birthYear;
+const age = calcAge(1991);
+console.log(age); 
   
+More than one parameter:
+const yearsUntilRetirement = (birthYear, firstName) => &#123;
+  const age = 2037 - birthYear;
+  const retirement = 65 - age;
+  return $&#123;firstName&#125; retires in $&#123;retirement&#125; years`;
+&#125;  
+console.log(yearsUntilRetirement(1980, 'Mark'));
+</code>
+</pre>
+</div>
+
+<div *ngIf="showCode === 'function-05'" class="code-container">
+  <pre class="line-numbers">
+<code class="language-javascript">
+const cutPieces = function(fruit) &#123;
+  return fruit * 4;
+&#125;
+
+const fruitProcessor = function(apples, oranges) &#123;
+  const applePieces = cutPieces(apples);
+  const orangePieces = cutPieces(oranges);
+  const juice = `juice with $&#123;apples&#125; apples and $&#123;oranges&#125; oranges`;
+  return juice;
+&#125;
+
+console.log(fruitProcessor(2,3));
+// Output - juice with 2 apples and 3 oranges
 </code>
 </pre>
 </div>
