@@ -14,8 +14,10 @@ export class AppComponent {
   hideTopics: boolean = true;
   hideContent: any;
   hideContentHead: boolean = true;
-  jsTopicList: any = '';
   isDarkTheme: boolean = false;
+  mainContent: boolean = true;
+  taskContent: boolean = false;
+  contentMenu: boolean = false;
 
   topicName: string = 'Javascript';
   javascript: boolean = true;
@@ -47,8 +49,6 @@ export class AppComponent {
   }
 
   ngOnInit() {
-    this.jsTopicList = this.sharedService.topicList.jsTopics;
-
     // Check localStorage for saved theme state
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme === 'dark') {
@@ -114,5 +114,19 @@ export class AppComponent {
     // // Js Components
     this.jsIntroComponent = currentRoute.includes('jsIntroComponent');
     this.jsVariablesComponent = currentRoute.includes('jsVariablesComponent');
+  }
+
+  tasks() {
+    this.mainContent = false;
+    this.taskContent = true;
+  }
+
+  content() {
+    this.mainContent = true;
+    this.taskContent = false;
+  }
+
+  showMenu() {
+    this.contentMenu = !this.contentMenu;
   }
 }

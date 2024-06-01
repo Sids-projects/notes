@@ -92,6 +92,12 @@ export class SharedService {
         small: 'Code Blocks',
         route: 'jsFunctionComponent',
       },
+      {
+        key: 'js-Array',
+        h3: 'Array',
+        small: 'Group of elements',
+        route: 'jsArrayComponent',
+      },
     ],
   };
 
@@ -158,7 +164,10 @@ export class SharedService {
   };
 
   jsVariables: any = {
-    titles: ['Variable', 'Declaration'],
+    titles: [
+      { title: 'Variable', percent: '50%' },
+      { title: 'Declaration', percent: '100%' },
+    ],
     data01: {
       p: {
         p1: 'We can store a value into a variables and this way we can reuse them over and over again.',
@@ -274,7 +283,7 @@ export class SharedService {
         },
         {
           li1: "If js don't have type coercion we need to use the string function in between them.",
-          li2: 'String nadula oru number irundha andha number string ah convert aagidum',
+          li2: 'Type coercion js la illana nmaba dha manual ah type convert panra mathri irukum',
         },
         {
           li1: 'Not all operators have type coercion',
@@ -474,15 +483,15 @@ export class SharedService {
       ul: [
         {
           li1: 'Function is a piece of code that we can reuse over and over again',
-          li2: 'Strict mode use pana nambe secure code panalam.',
+          li2: 'Functions radhu oru piece of code namba adhu ethana time venalum reuse panikalam',
         },
         {
           li1: 'A variable holds value but a function can hold one or more complete lines of code.',
-          li2: 'Indha line dha js la 1st line ah irukanum',
+          li2: 'Variable la oru value store panalam ana oru function la namba oru line ah ye store panikalam',
         },
         {
           li1: 'We can also pass data into a function and additionally, a function can also return data as well.',
-          li2: 'Developer console la error la kamikum',
+          li2: 'Namba oru function ulla data va pass panikalam adhu andha data va return um panum',
         },
         {
           li1: 'Parameters are like variables that are specific only to this function and they will get defined when we call that function.',
@@ -511,6 +520,36 @@ export class SharedService {
         {
           li1: 'An Arrow Function is simply a special form of function expression that is shorter and therefore faster to write.',
           li2: 'Arrow function simple aana oru function expression. short ah irukum',
+        },
+      ],
+    },
+  };
+
+  jsArray: any = {
+    titles: [
+      { title: 'Array', percent: '10%' },
+      { title: 'Property', percent: '30%' },
+      { title: 'Usage', percent: '50%' },
+      { title: 'Operators', percent: '80%' },
+      { title: 'Tips', percent: '100%' },
+    ],
+    data01: {
+      ul: [
+        {
+          li1: 'An Array is like a big container into which we can throw variables and then later reference them.',
+          li2: 'Array vandhu oru periya container mathri adhukulla namba variables lam potutu aprm refer panikalam',
+        },
+        {
+          li1: 'Array are 0 based',
+          li2: 'Array ellam 0 based',
+        },
+        {
+          li1: 'Array is not a primitive value so we can change the element inside an array even if we using const Keyword.',
+          li2: 'Array oru primitive value adhunala array ulla iruka variable la const keyword use panirundhalum namba adha change panikalam',
+        },
+        {
+          li1: 'We should not write a statement inside an array.',
+          li2: 'Array ulla oru statement use pana mudiyadhu',
         },
       ],
     },

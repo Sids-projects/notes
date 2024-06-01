@@ -30,6 +30,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { JsStrictComponent } from './jsTopics/js-strict/js-strict.component';
 import { JsFunctionComponent } from './jsTopics/js-function/js-function.component';
+import { JsArrayComponent } from './jsTopics/js-array/js-array.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import { JsFunctionComponent } from './jsTopics/js-function/js-function.componen
     JsStateexprComponent,
     JsStrictComponent,
     JsFunctionComponent,
+    JsArrayComponent,
   ],
   imports: [
     BrowserModule,

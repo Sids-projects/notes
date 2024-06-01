@@ -60,10 +60,10 @@ console.log(x); // x = x + 10 = 20
   
 // Examples 3 :
 let x ++; 
-console.log(x); // x = x + 10 = 11
+console.log(x); // x = x + 1 = 11
   
 // Examples 4 :
-let x +--; 
+let x --; 
 console.log(x); // x = x - 10 = 9
 </code>
 </pre>
@@ -158,19 +158,19 @@ if (favColor === “pink”) &#123;
 const day = “monday”;
 
 switch (day) &#123;
- case 'monday';
+ case 'monday':
  console.log(`Today you have English Class`);
  break;
 
- case 'tuesday';
+ case 'tuesday':
  console.log(`Today you have Math Class`);
  break;
 
- case 'wednesday';
+ case 'wednesday':
  console.log(`Today you have Science Class`);
  break;
 
- default;
+ default:
  console.log(`Today you have No classes`)
 &#125; 
 </code>
@@ -194,7 +194,7 @@ console.log(boolean(undefined)); -> False
   
 console.log(boolean(&#123;&#125;)); -> False(Empty object)
 
-Const money = 0;
+const money = 0;
 if (money) &#123;
   console.log(`don't spend it all`);
 &#125;  else &#123;
@@ -220,7 +220,7 @@ Output : True
 <div *ngIf="showCode === 'Strict Equality'" class="code-container">
   <pre class="line-numbers">
 <code class="language-javascript">
-Const age = 18;
+const age = 18;
 if (age === 18) console.log(`You are an adult`);
 Output : You are an adult
 </code>
@@ -230,7 +230,7 @@ Output : You are an adult
 <div *ngIf="showCode === 'Prompt'" class="code-container">
   <pre class="line-numbers">
 <code class="language-javascript">
-Const favNumber = prompt(`Enter your favorite number`)
+const favNumber = prompt(`Enter your favorite number`)
 console.log(favNumber);  
 </code>
 </pre>
@@ -279,7 +279,7 @@ Loose version
 <code class="language-javascript">
       Statement
           ⬇️
-Const str = `23 is big`;
+const str = `23 is big`;
                  ⬆️
              Expression
 if (23 > 10) &#123;

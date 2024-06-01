@@ -1,121 +1,427 @@
 <main>
-  <section
-    class="app-container"
-    [ngStyle]="
-      hideTopics
-        ? { 'grid-template-columns': '280px auto' }
-        : { 'grid-template-columns': '40px auto' }
-    "
-  >
-    <section class="app-topics">
-      <header>
-        <h3 *ngIf="hideTopics">{{ topicName }}</h3>
-        <i
-          [ngClass]="
-            hideTopics ? 'fa-solid fa-angles-left' : 'fa-solid fa-angles-right'
-          "
-          (click)="navControl()"
-        ></i>
-      </header>
-      <!-- Js Topics -->
-      <ng-container *ngIf="hideTopics">
-        <div class="topics-list" *ngIf="javascript">
-          <div
-            [ngClass]="{
-              'topic-item': true,
-              'topic-active': hideMainTopic === topics.key
-            }"
-            *ngFor="let topics of jsTopicList"
-            [routerLink]="topics.route"
-            (click)="matchTopic(topics.key)"
-          >
-            <h4>{{ topics.h3 }}</h4>
-            <small>{{ topics.small }}</small>
-          </div>
-        </div>
-      </ng-container>
+  <header>
+    <div class="header-links">
+      <p
+        (click)="showTopicList('javascript')"
+        routerLink="jsHelloComponent"
+        matTooltip="Javascript"
+      >
+        <i class="fa-brands fa-js"></i>
+      </p>
+      <p
+        (click)="showTopicList('css')"
+        routerLink="cssHelloComponent"
+        matTooltip="Css"
+      >
+        <i class="fa-brands fa-css3-alt"></i>
+      </p>
+      <p
+        (click)="showTopicList('scss')"
+        routerLink="scssHelloComponent"
+        matTooltip="Scss"
+      >
+        <i class="fa-brands fa-sass"></i>
+      </p>
+      <p
+        (click)="showTopicList('angular')"
+        routerLink="ngHelloComponent"
+        matTooltip="Angular"
+      >
+        <i class="fa-brands fa-angular"></i>
+      </p>
+    </div>
 
-      <!-- Ng Topics -->
-      <ng-container *ngIf="hideTopics">
-        <div class="topics-list" *ngIf="angular">
-          <p>Angular in Progress..</p>
-        </div>
-      </ng-container>
-
-      <!-- Css Topics -->
-      <ng-container *ngIf="hideTopics">
-        <div class="topics-list" *ngIf="css">
-          <p>Css in Progress..</p>
-        </div>
-      </ng-container>
-
-      <!-- Scss Topics -->
-      <ng-container *ngIf="hideTopics">
-        <div class="topics-list" *ngIf="scss">
-          <p>Scss in Progress</p>
-        </div>
-      </ng-container>
-    </section>
-
-    <section class="app-content">
-      <div class="app-screen">
-        <header>
-          <div class="app-headerName">
-            <div class="dropdown">
-              <p role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                <i class="fa-solid fa-note-sticky"></i>
-              </p>
-
-              <ul class="dropdown-menu">
-                <li
-                  class="dropdown-item"
-                  (click)="showTopicList('javascript')"
-                  routerLink="jsHelloComponent"
-                >
-                  Javascript
-                </li>
-                <li
-                  class="dropdown-item"
-                  (click)="showTopicList('css')"
-                  routerLink="cssHelloComponent"
-                >
-                  Css
-                </li>
-                <li
-                  class="dropdown-item"
-                  (click)="showTopicList('scss')"
-                  routerLink="scssHelloComponent"
-                >
-                  Scss
-                </li>
-                <li
-                  class="dropdown-item"
-                  (click)="showTopicList('angular')"
-                  routerLink="ngHelloComponent"
-                >
-                  Angular
-                </li>
-              </ul>
-            </div>
-          </div>
-          <!-- <mat-slide-toggle (change)="toggleTheme()"></mat-slide-toggle> -->
-          <div class="app-mode">
-            <i
-              matTooltip="Light Mode"
-              *ngIf="isDarkTheme"
-              class="fa-solid fa-sun"
-              (click)="toggleTheme()"
-            ></i>
-            <i
-              matTooltip="Dark Mode"
-              *ngIf="!isDarkTheme"
-              class="fa-solid fa-moon"
-              (click)="toggleTheme()"
-            ></i>
-          </div>
-        </header>
-        <router-outlet></router-outlet>
+    <div class="main-menu">
+      <div class="header-links-2" (click)="showMenu()">
+        <i class="fa-solid fa-book"></i>
       </div>
-    </section>
+      <div *ngIf="contentMenu" class="menu-list">
+        <p (click)="content()">
+          <i class="fa-solid fa-book"></i>
+          Notes
+        </p>
+        <p (click)="tasks()">
+          <i class="fa-solid fa-dumbbell"></i>
+          Tasks
+        </p>
+      </div>
+    </div>
+
+    <div class="app-mode" (click)="toggleTheme()">
+      <i
+        matTooltip="Light Mode"
+        *ngIf="isDarkTheme"
+        class="fa-solid fa-sun"
+      ></i>
+      <i
+        matTooltip="Dark Mode"
+        *ngIf="!isDarkTheme"
+        class="fa-solid fa-moon"
+      ></i>
+    </div>
+  </header>
+
+  <section class="app-content">
+    <div class="content-1" *ngIf="mainContent">
+      <div class="content-about">
+        <h2>Javascript</h2>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores,
+          dicta.
+        </p>
+      </div>
+
+      <div class="topics-list">
+        <div class="topics-icons-div">
+          <div
+            class="topics-icons"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
+            routerLink="jsIntroComponent"
+          >
+            <i class="fa-solid fa-note-sticky"></i>
+          </div>
+          <p>Intro</p>
+        </div>
+        <div class="topic-item">
+          <div class="card-arrowView"></div>
+          <h4>Intro</h4>
+          <small>About Js</small>
+        </div>
+      </div>
+
+      <div class="flex-container">
+        <div class="topics-list">
+          <div class="topics-icons-div">
+            <div
+              class="topics-icons"
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModal"
+              routerLink="jsStrictComponent"
+            >
+              <i class="fa-solid fa-hand-fist"></i>
+            </div>
+            <p>Strict Mode</p>
+          </div>
+          <div class="topic-item">
+            <div class="card-arrowView"></div>
+            <h4>Strict Mode</h4>
+            <small>Sucure Code</small>
+          </div>
+        </div>
+
+        <div class="topics-list">
+          <div class="topics-icons-div">
+            <div
+              class="topics-icons"
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModal"
+              routerLink="jsVariablesComponent"
+            >
+              <i class="fa-solid fa-database"></i>
+            </div>
+            <p>Variables</p>
+          </div>
+          <div class="topic-item">
+            <div class="card-arrowView"></div>
+            <h4>Variables</h4>
+            <small>Var, Let, and Const</small>
+          </div>
+        </div>
+
+        <div class="topics-list">
+          <div class="topics-icons-div">
+            <div
+              class="topics-icons"
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModal"
+              routerLink="jsOperatorsComponent"
+            >
+              <i class="fa-solid fa-equals"></i>
+            </div>
+            <p>Operators</p>
+          </div>
+          <div class="topic-item">
+            <div class="card-arrowView"></div>
+            <h4>Operators</h4>
+            <small>Mathematical, Assignment, & Etc.</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex-container">
+        <div class="topics-list">
+          <div class="topics-icons-div">
+            <div
+              class="topics-icons"
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModal"
+              routerLink="jsTliteralsComponent"
+            >
+              <i class="fa-solid fa-link"></i>
+            </div>
+            <p>Template <br />Literals</p>
+          </div>
+          <div class="topic-item">
+            <div class="card-arrowView"></div>
+            <h4>Template Literals</h4>
+            <small>Strings & Template Literals</small>
+          </div>
+        </div>
+
+        <div class="topics-list">
+          <div class="topics-icons-div">
+            <div
+              class="topics-icons"
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModal"
+              routerLink="jsTliteralsComponent"
+            >
+              <i class="fa-solid fa-shuffle"></i>
+            </div>
+            <p>
+              Conversion <br />
+              & Coercion
+            </p>
+          </div>
+          <div class="topic-item">
+            <div class="card-arrowView"></div>
+            <h4>Conversion & Coercion</h4>
+            <small>Convert one type to another</small>
+          </div>
+        </div>
+
+        <div class="topics-list">
+          <div class="topics-icons-div">
+            <div
+              class="topics-icons"
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModal"
+              routerLink="jsTruefalseComponent"
+            >
+              <i class="fa-solid fa-code-fork"></i>
+            </div>
+            <p>Truthy Falsy</p>
+          </div>
+          <div class="topic-item">
+            <div class="card-arrowView"></div>
+            <h4>Truthy Falsy</h4>
+            <small>Truthy value & Falsy value</small>
+          </div>
+        </div>
+
+        <div class="topics-list">
+          <div class="topics-icons-div">
+            <div
+              class="topics-icons"
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModal"
+              routerLink="jsBooleanComponent"
+            >
+              <i class="fa-solid fa-network-wired"></i>
+            </div>
+            <p>Boolean <br />Logic</p>
+          </div>
+          <div class="topic-item">
+            <div class="card-arrowView"></div>
+            <h4>Boolean Logic</h4>
+            <small>and, or, not</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex-container">
+        <div class="topics-list">
+          <div class="topics-icons-div">
+            <div
+              class="topics-icons"
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModal"
+              routerLink="jsEqualityComponent"
+            >
+              <i class="fa-solid fa-scale-balanced"></i>
+            </div>
+            <p>Equality <br />Operator</p>
+          </div>
+          <div class="topic-item">
+            <div class="card-arrowView"></div>
+            <h4>Equality Operator</h4>
+            <small>Strict & Loose equality operator</small>
+          </div>
+        </div>
+
+        <div class="topics-list">
+          <div class="topics-icons-div">
+            <div
+              class="topics-icons"
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModal"
+              routerLink="jsStateexprComponent"
+            >
+              <i class="fa-solid fa-file-signature"></i>
+            </div>
+            <p>
+              Statement <br />
+              Expression
+            </p>
+          </div>
+          <div class="topic-item">
+            <div class="card-arrowView"></div>
+            <h4>Statement & Expression</h4>
+            <small>explanation with example</small>
+          </div>
+        </div>
+
+        <div class="topics-list">
+          <div class="topics-icons-div">
+            <div
+              class="topics-icons"
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModal"
+              routerLink="jsIfelseComponent"
+            >
+              <i class="fa-solid fa-spell-check"></i>
+            </div>
+            <p>If else</p>
+          </div>
+          <div class="topic-item">
+            <div class="card-arrowView"></div>
+            <h4>If else</h4>
+            <small>if else else if</small>
+          </div>
+        </div>
+
+        <div class="topics-list">
+          <div class="topics-icons-div">
+            <div
+              class="topics-icons"
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModal"
+              routerLink="jsSwitchComponent"
+            >
+              <i class="fa-solid fa-list-check"></i>
+            </div>
+            <p>Switch Case</p>
+          </div>
+          <div class="topic-item">
+            <div class="card-arrowView"></div>
+            <h4>Switch Case</h4>
+            <small>Switch Case with syntax</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex-container">
+        <div class="topics-list">
+          <div class="topics-icons-div">
+            <div
+              class="topics-icons"
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModal"
+              routerLink="jsPromptComponent"
+            >
+              <i class="fa-regular fa-window-maximize"></i>
+            </div>
+            <p>Prompt</p>
+          </div>
+          <div class="topic-item">
+            <div class="card-arrowView"></div>
+            <h4>Prompt</h4>
+            <small>Get Input values</small>
+          </div>
+        </div>
+
+        <div class="topics-list">
+          <div class="topics-icons-div">
+            <div
+              class="topics-icons"
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModal"
+              routerLink="jsFunctionComponent"
+            >
+              <i class="fa-solid fa-box"></i>
+            </div>
+            <p>Functions</p>
+          </div>
+          <div class="topic-item">
+            <div class="card-arrowView"></div>
+            <h4>Functions</h4>
+            <small>Code Blocks</small>
+          </div>
+        </div>
+
+        <div class="topics-list">
+          <div class="topics-icons-div">
+            <div
+              class="topics-icons"
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModal"
+              routerLink="jsArrayComponent"
+            >
+              <i class="fa-regular fa-object-group"></i>
+            </div>
+            <p>Array</p>
+          </div>
+          <div class="topic-item">
+            <div class="card-arrowView"></div>
+            <h4>Array</h4>
+            <small>Group of elements</small>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-2" *ngIf="taskContent">
+      <div class="task-about">
+        <h2>Tasks</h2>
+      </div>
+      <div class="task-container">
+        <img src="./../assets/flag.svg" />
+        <div class="task-common">
+          <div class="card-arrowView"></div>
+          <h3>Task 1</h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam,
+            est.
+          </p>
+        </div>
+      </div>
+
+      <div class="task-container">
+        <img src="./../assets/flag.svg" />
+        <div class="task-common">
+          <div class="card-arrowView"></div>
+          <h3>Task 1</h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam,
+            est.
+          </p>
+        </div>
+      </div>
+
+      <div class="task-container">
+        <img src="./../assets/treasure.svg" />
+        <div class="task-common">
+          <div class="card-arrowView"></div>
+          <h3>Task Completed</h3>
+        </div>
+      </div>
+    </div>
   </section>
 </main>
+
+<div
+  class="modal fade"
+  id="exampleModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-xl modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-body" style="padding: 30px">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</div>

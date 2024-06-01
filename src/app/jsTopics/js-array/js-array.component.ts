@@ -2,20 +2,20 @@ import { Component } from '@angular/core';
 import { SharedService } from 'src/app/shared.service';
 
 @Component({
-  selector: 'app-js-variables',
-  templateUrl: './js-variables.component.html',
-  styleUrls: ['./js-variables.component.scss'],
+  selector: 'app-js-array',
+  templateUrl: './js-array.component.html',
+  styleUrls: ['./js-array.component.scss'],
 })
-export class JsVariablesComponent {
-  content: any = 'Variable';
-  contentPercent: any = '50%';
+export class JsArrayComponent {
+  content: any = 'Array';
+  contentPercent: any = '10%';
   getData: any;
   showSecondLi: any = false;
 
   constructor(private sharedService: SharedService) {}
 
   ngOnInit() {
-    this.getData = this.sharedService.jsVariables;
+    this.getData = this.sharedService.jsArray;
   }
 
   showContent(param1: any, param2: any) {
