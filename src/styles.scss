@@ -185,6 +185,7 @@ html,
 body {
   height: 100%;
 }
+
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
@@ -221,8 +222,6 @@ p {
 }
 
 .main-1 {
-  width: 100vw;
-  height: 100vh;
   display: flex;
   overflow: hidden;
   background-color: var(--base-background);
@@ -471,7 +470,7 @@ main {
 }
 
 .app-content {
-  padding: 40px 50px 50px 50px;
+  padding: 40px 20px;
 
   .content-1 {
     display: flex;
