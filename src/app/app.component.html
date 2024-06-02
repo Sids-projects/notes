@@ -33,7 +33,7 @@
 
     <div class="main-menu">
       <div class="header-links-2" (click)="showMenu()">
-        <i class="fa-solid fa-book"></i>
+        <i class="fa-solid fa-ellipsis"></i>
       </div>
       <div *ngIf="contentMenu" class="menu-list">
         <p (click)="content()">
@@ -44,20 +44,17 @@
           <i class="fa-solid fa-dumbbell"></i>
           Tasks
         </p>
+        <p (click)="toggleTheme()">
+          <span *ngIf="isDarkTheme">
+            <i class="fa-solid fa-sun"></i>
+            Light
+          </span>
+          <span *ngIf="!isDarkTheme">
+            <i class="fa-solid fa-moon"></i>
+            Dark
+          </span>
+        </p>
       </div>
-    </div>
-
-    <div class="app-mode" (click)="toggleTheme()">
-      <i
-        matTooltip="Light Mode"
-        *ngIf="isDarkTheme"
-        class="fa-solid fa-sun"
-      ></i>
-      <i
-        matTooltip="Dark Mode"
-        *ngIf="!isDarkTheme"
-        class="fa-solid fa-moon"
-      ></i>
     </div>
   </header>
 
