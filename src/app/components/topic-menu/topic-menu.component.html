@@ -1,0 +1,15 @@
+<div class="flex-container">
+  <div class="topics-list">
+    <div class="topics-icons-div">
+      <div
+        class="topics-icons"
+        data-bs-toggle="modal"
+        data-bs-target="#exampleModal"
+        [routerLink]="routerLink"
+      >
+        <i [class]="icon"></i>
+      </div>
+      <p [innerHTML]="sanitizeHtml(p)">{{ p }}</p>
+    </div>
+  </div>
+</div>

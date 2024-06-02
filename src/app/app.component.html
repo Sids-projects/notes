@@ -1,60 +1,23 @@
 <main>
   <header>
-    <div class="header-links">
+    <div class="header-01">
       <p
-        (click)="showTopicList('javascript')"
-        routerLink="jsHelloComponent"
-        matTooltip="Javascript"
+        *ngFor="let data of appHeader.headOne"
+        (click)="showTopicList(data.Key)"
+        [routerLink]="data.routeLink"
+        [matTooltip]="data.toolTip"
       >
-        <i class="fa-brands fa-js"></i>
-      </p>
-      <p
-        (click)="showTopicList('css')"
-        routerLink="cssHelloComponent"
-        matTooltip="Css"
-      >
-        <i class="fa-brands fa-css3-alt"></i>
-      </p>
-      <p
-        (click)="showTopicList('scss')"
-        routerLink="scssHelloComponent"
-        matTooltip="Scss"
-      >
-        <i class="fa-brands fa-sass"></i>
-      </p>
-      <p
-        (click)="showTopicList('angular')"
-        routerLink="ngHelloComponent"
-        matTooltip="Angular"
-      >
-        <i class="fa-brands fa-angular"></i>
+        <i [class]="data.icon"></i>
       </p>
     </div>
 
-    <div class="main-menu">
-      <div class="header-links-2" (click)="showMenu()">
-        <i class="fa-solid fa-ellipsis"></i>
-      </div>
-      <div *ngIf="contentMenu" class="menu-list">
-        <p (click)="content()">
-          <i class="fa-solid fa-book"></i>
-          Notes
-        </p>
-        <p (click)="tasks()">
-          <i class="fa-solid fa-dumbbell"></i>
-          Tasks
-        </p>
-        <p (click)="toggleTheme()">
-          <span *ngIf="isDarkTheme">
-            <i class="fa-solid fa-sun"></i>
-            Light
-          </span>
-          <span *ngIf="!isDarkTheme">
-            <i class="fa-solid fa-moon"></i>
-            Dark
-          </span>
-        </p>
-      </div>
+    <div
+      class="header-02"
+      (click)="showMenu()"
+      data-bs-toggle="modal"
+      data-bs-target="#menuModal"
+    >
+      <i class="fa-solid fa-ellipsis"></i>
     </div>
   </header>
 
@@ -68,303 +31,49 @@
         </p>
       </div>
 
-      <div class="topics-list">
-        <div class="topics-icons-div">
-          <div
-            class="topics-icons"
-            data-bs-toggle="modal"
-            data-bs-target="#exampleModal"
-            routerLink="jsIntroComponent"
-          >
-            <i class="fa-solid fa-note-sticky"></i>
-          </div>
-          <p>Intro</p>
-        </div>
-        <div class="topic-item">
-          <div class="card-arrowView"></div>
-          <h4>Intro</h4>
-          <small>About Js</small>
-        </div>
+      <div class="flex-container">
+        <app-topic-menu
+          *ngFor="let data of jsTopics.set01"
+          [routerLink]="data.route"
+          [icon]="data.icon"
+          [p]="data.h3"
+        ></app-topic-menu>
       </div>
 
       <div class="flex-container">
-        <div class="topics-list">
-          <div class="topics-icons-div">
-            <div
-              class="topics-icons"
-              data-bs-toggle="modal"
-              data-bs-target="#exampleModal"
-              routerLink="jsStrictComponent"
-            >
-              <i class="fa-solid fa-hand-fist"></i>
-            </div>
-            <p>Strict Mode</p>
-          </div>
-          <div class="topic-item">
-            <div class="card-arrowView"></div>
-            <h4>Strict Mode</h4>
-            <small>Sucure Code</small>
-          </div>
-        </div>
-
-        <div class="topics-list">
-          <div class="topics-icons-div">
-            <div
-              class="topics-icons"
-              data-bs-toggle="modal"
-              data-bs-target="#exampleModal"
-              routerLink="jsVariablesComponent"
-            >
-              <i class="fa-solid fa-database"></i>
-            </div>
-            <p>Variables</p>
-          </div>
-          <div class="topic-item">
-            <div class="card-arrowView"></div>
-            <h4>Variables</h4>
-            <small>Var, Let, and Const</small>
-          </div>
-        </div>
-
-        <div class="topics-list">
-          <div class="topics-icons-div">
-            <div
-              class="topics-icons"
-              data-bs-toggle="modal"
-              data-bs-target="#exampleModal"
-              routerLink="jsOperatorsComponent"
-            >
-              <i class="fa-solid fa-equals"></i>
-            </div>
-            <p>Operators</p>
-          </div>
-          <div class="topic-item">
-            <div class="card-arrowView"></div>
-            <h4>Operators</h4>
-            <small>Mathematical, Assignment, & Etc.</small>
-          </div>
-        </div>
+        <app-topic-menu
+          *ngFor="let data of jsTopics.set02"
+          [routerLink]="data.route"
+          [icon]="data.icon"
+          [p]="data.h3"
+        ></app-topic-menu>
       </div>
 
       <div class="flex-container">
-        <div class="topics-list">
-          <div class="topics-icons-div">
-            <div
-              class="topics-icons"
-              data-bs-toggle="modal"
-              data-bs-target="#exampleModal"
-              routerLink="jsTliteralsComponent"
-            >
-              <i class="fa-solid fa-link"></i>
-            </div>
-            <p>Template <br />Literals</p>
-          </div>
-          <div class="topic-item">
-            <div class="card-arrowView"></div>
-            <h4>Template Literals</h4>
-            <small>Strings & Template Literals</small>
-          </div>
-        </div>
-
-        <div class="topics-list">
-          <div class="topics-icons-div">
-            <div
-              class="topics-icons"
-              data-bs-toggle="modal"
-              data-bs-target="#exampleModal"
-              routerLink="jsTliteralsComponent"
-            >
-              <i class="fa-solid fa-shuffle"></i>
-            </div>
-            <p>
-              Conversion <br />
-              & Coercion
-            </p>
-          </div>
-          <div class="topic-item">
-            <div class="card-arrowView"></div>
-            <h4>Conversion & Coercion</h4>
-            <small>Convert one type to another</small>
-          </div>
-        </div>
-
-        <div class="topics-list">
-          <div class="topics-icons-div">
-            <div
-              class="topics-icons"
-              data-bs-toggle="modal"
-              data-bs-target="#exampleModal"
-              routerLink="jsTruefalseComponent"
-            >
-              <i class="fa-solid fa-code-fork"></i>
-            </div>
-            <p>Truthy Falsy</p>
-          </div>
-          <div class="topic-item">
-            <div class="card-arrowView"></div>
-            <h4>Truthy Falsy</h4>
-            <small>Truthy value & Falsy value</small>
-          </div>
-        </div>
-
-        <div class="topics-list">
-          <div class="topics-icons-div">
-            <div
-              class="topics-icons"
-              data-bs-toggle="modal"
-              data-bs-target="#exampleModal"
-              routerLink="jsBooleanComponent"
-            >
-              <i class="fa-solid fa-network-wired"></i>
-            </div>
-            <p>Boolean <br />Logic</p>
-          </div>
-          <div class="topic-item">
-            <div class="card-arrowView"></div>
-            <h4>Boolean Logic</h4>
-            <small>and, or, not</small>
-          </div>
-        </div>
+        <app-topic-menu
+          *ngFor="let data of jsTopics.set03"
+          [routerLink]="data.route"
+          [icon]="data.icon"
+          [p]="data.h3"
+        ></app-topic-menu>
       </div>
 
       <div class="flex-container">
-        <div class="topics-list">
-          <div class="topics-icons-div">
-            <div
-              class="topics-icons"
-              data-bs-toggle="modal"
-              data-bs-target="#exampleModal"
-              routerLink="jsEqualityComponent"
-            >
-              <i class="fa-solid fa-scale-balanced"></i>
-            </div>
-            <p>Equality <br />Operator</p>
-          </div>
-          <div class="topic-item">
-            <div class="card-arrowView"></div>
-            <h4>Equality Operator</h4>
-            <small>Strict & Loose equality operator</small>
-          </div>
-        </div>
-
-        <div class="topics-list">
-          <div class="topics-icons-div">
-            <div
-              class="topics-icons"
-              data-bs-toggle="modal"
-              data-bs-target="#exampleModal"
-              routerLink="jsStateexprComponent"
-            >
-              <i class="fa-solid fa-file-signature"></i>
-            </div>
-            <p>
-              Statement <br />
-              Expression
-            </p>
-          </div>
-          <div class="topic-item">
-            <div class="card-arrowView"></div>
-            <h4>Statement & Expression</h4>
-            <small>explanation with example</small>
-          </div>
-        </div>
-
-        <div class="topics-list">
-          <div class="topics-icons-div">
-            <div
-              class="topics-icons"
-              data-bs-toggle="modal"
-              data-bs-target="#exampleModal"
-              routerLink="jsIfelseComponent"
-            >
-              <i class="fa-solid fa-spell-check"></i>
-            </div>
-            <p>If else</p>
-          </div>
-          <div class="topic-item">
-            <div class="card-arrowView"></div>
-            <h4>If else</h4>
-            <small>if else else if</small>
-          </div>
-        </div>
-
-        <div class="topics-list">
-          <div class="topics-icons-div">
-            <div
-              class="topics-icons"
-              data-bs-toggle="modal"
-              data-bs-target="#exampleModal"
-              routerLink="jsSwitchComponent"
-            >
-              <i class="fa-solid fa-list-check"></i>
-            </div>
-            <p>Switch Case</p>
-          </div>
-          <div class="topic-item">
-            <div class="card-arrowView"></div>
-            <h4>Switch Case</h4>
-            <small>Switch Case with syntax</small>
-          </div>
-        </div>
+        <app-topic-menu
+          *ngFor="let data of jsTopics.set04"
+          [routerLink]="data.route"
+          [icon]="data.icon"
+          [p]="data.h3"
+        ></app-topic-menu>
       </div>
 
       <div class="flex-container">
-        <div class="topics-list">
-          <div class="topics-icons-div">
-            <div
-              class="topics-icons"
-              data-bs-toggle="modal"
-              data-bs-target="#exampleModal"
-              routerLink="jsPromptComponent"
-            >
-              <i class="fa-regular fa-window-maximize"></i>
-            </div>
-            <p>Prompt</p>
-          </div>
-          <div class="topic-item">
-            <div class="card-arrowView"></div>
-            <h4>Prompt</h4>
-            <small>Get Input values</small>
-          </div>
-        </div>
-
-        <div class="topics-list">
-          <div class="topics-icons-div">
-            <div
-              class="topics-icons"
-              data-bs-toggle="modal"
-              data-bs-target="#exampleModal"
-              routerLink="jsFunctionComponent"
-            >
-              <i class="fa-solid fa-box"></i>
-            </div>
-            <p>Functions</p>
-          </div>
-          <div class="topic-item">
-            <div class="card-arrowView"></div>
-            <h4>Functions</h4>
-            <small>Code Blocks</small>
-          </div>
-        </div>
-
-        <div class="topics-list">
-          <div class="topics-icons-div">
-            <div
-              class="topics-icons"
-              data-bs-toggle="modal"
-              data-bs-target="#exampleModal"
-              routerLink="jsArrayComponent"
-            >
-              <i class="fa-regular fa-object-group"></i>
-            </div>
-            <p>Array</p>
-          </div>
-          <div class="topic-item">
-            <div class="card-arrowView"></div>
-            <h4>Array</h4>
-            <small>Group of elements</small>
-          </div>
-        </div>
+        <app-topic-menu
+          *ngFor="let data of jsTopics.set05"
+          [routerLink]="data.route"
+          [icon]="data.icon"
+          [p]="data.h3"
+        ></app-topic-menu>
       </div>
     </div>
 
@@ -372,6 +81,7 @@
       <div class="task-about">
         <h2>Tasks</h2>
       </div>
+
       <div class="task-container">
         <img src="./../assets/flag.svg" />
         <div class="task-common">
@@ -418,6 +128,49 @@
     <div class="modal-content">
       <div class="modal-body" style="padding: 30px">
         <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div
+  class="modal fade"
+  id="menuModal"
+  tabindex="-1"
+  aria-labelledby="menuModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="d-flex align-items-center justify-content-end">
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="menu-list">
+          <p (click)="content()" data-bs-dismiss="modal" aria-label="Close">
+            <i class="fa-solid fa-book"></i>
+            Notes
+          </p>
+          <p (click)="tasks()" data-bs-dismiss="modal" aria-label="Close">
+            <i class="fa-solid fa-dumbbell"></i>
+            Tasks
+          </p>
+          <p (click)="toggleTheme()" data-bs-dismiss="modal" aria-label="Close">
+            <span *ngIf="isDarkTheme">
+              <i class="fa-solid fa-sun"></i>
+              Light
+            </span>
+            <span *ngIf="!isDarkTheme">
+              <i class="fa-solid fa-moon"></i>
+              Dark
+            </span>
+          </p>
+        </div>
       </div>
     </div>
   </div>

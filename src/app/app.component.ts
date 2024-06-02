@@ -2,6 +2,7 @@ import { Component, Renderer2 } from '@angular/core';
 import { SharedService } from './shared.service';
 import { NavigationEnd, Router } from '@angular/router';
 import { filter } from 'rxjs';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-root',
@@ -18,6 +19,8 @@ export class AppComponent {
   mainContent: boolean = true;
   taskContent: boolean = false;
   contentMenu: boolean = false;
+  appHeader: any;
+  jsTopics: any;
 
   topicName: string = 'Javascript';
   javascript: boolean = true;
@@ -35,8 +38,11 @@ export class AppComponent {
   constructor(
     private sharedService: SharedService,
     private router: Router,
-    private renderer: Renderer2
+    private renderer: Renderer2,
+    private sanitizer: DomSanitizer
   ) {
+    this.appHeader = this.sharedService.appHeader;
+    this.jsTopics = this.sharedService.topicList.jsTopics;
     this.router.events
       .pipe(
         filter(
@@ -128,5 +134,9 @@ export class AppComponent {
 
   showMenu() {
     this.contentMenu = !this.contentMenu;
+  }
+
+  sanitizeHtml(html: string): any {
+    return this.sanitizer.bypassSecurityTrustHtml(html);
   }
 }

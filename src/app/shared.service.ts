@@ -6,99 +6,123 @@ import { Injectable } from '@angular/core';
 export class SharedService {
   constructor() {}
 
-  topicList: any = {
-    jsTopics: [
+  appHeader: any = {
+    headOne: [
       {
-        key: 'js-Intro',
-        h3: 'Intro',
-        small: 'About Js',
-        route: 'jsIntroComponent',
+        Key: 'javascript',
+        routeLink: 'jsHelloComponent',
+        toolTip: 'Javascript',
+        icon: 'fa-brands fa-js',
       },
       {
-        key: 'js-Variables',
-        h3: 'Variables',
-        small: 'Var, Let, and Const',
-        route: 'jsVariablesComponent',
+        Key: 'css',
+        routeLink: 'cssHelloComponent',
+        toolTip: 'Css',
+        icon: 'fa-brands fa-css3-alt',
       },
       {
-        key: 'js-Operators',
-        h3: 'Operators',
-        small: 'Mathematical, Assignment, & Etc.',
-        route: 'jsOperatorsComponent',
+        Key: 'javascript',
+        routeLink: 'jsHelloComponent',
+        toolTip: 'Javascript',
+        icon: 'fa-brands fa-sass',
       },
       {
-        key: 'js-TemplateLiterals',
-        h3: 'Template Literals',
-        small: 'Strings & Template Literals',
-        route: 'jsTliteralsComponent',
-      },
-      {
-        key: 'js-Conversion',
-        h3: 'Conversion & Coercion',
-        small: 'Convert one type to another',
-        route: 'jsConversionComponent',
-      },
-      {
-        key: 'js-IfElse',
-        h3: 'If else',
-        small: 'if else else if',
-        route: 'jsIfelseComponent',
-      },
-      {
-        key: 'js-Switch',
-        h3: 'Switch Case',
-        small: 'Switch Case with syntax',
-        route: 'jsSwitchComponent',
-      },
-      {
-        key: 'js-TruthyFalsy',
-        h3: 'Truthy Falsy',
-        small: 'Truthy value & Falsy value',
-        route: 'jsTruefalseComponent',
-      },
-      {
-        key: 'js-Equality',
-        h3: 'Equality Operator',
-        small: 'Strict & Loose equality operator',
-        route: 'jsEqualityComponent',
-      },
-      {
-        key: 'js-Prompt',
-        h3: 'Prompt',
-        small: 'Get Input values',
-        route: 'jsPromptComponent',
-      },
-      {
-        key: 'js-Boolean',
-        h3: 'Boolean Logic',
-        small: 'and, or, not',
-        route: 'jsBooleanComponent',
-      },
-      {
-        key: 'js-StateExpres',
-        h3: 'Statement and Expression',
-        small: 'explanation with example',
-        route: 'jsStateexprComponent',
-      },
-      {
-        key: 'js-StrictMode',
-        h3: 'Strict Mode',
-        small: 'Sucure Code',
-        route: 'jsStrictComponent',
-      },
-      {
-        key: 'js-Functions',
-        h3: 'Functions',
-        small: 'Code Blocks',
-        route: 'jsFunctionComponent',
-      },
-      {
-        key: 'js-Array',
-        h3: 'Array',
-        small: 'Group of elements',
-        route: 'jsArrayComponent',
+        Key: 'javascript',
+        routeLink: 'jsHelloComponent',
+        toolTip: 'Javascript',
+        icon: 'fa-brands fa-angular',
       },
     ],
+  };
+
+  topicList: any = {
+    jsTopics: {
+      set01: [
+        {
+          route: 'jsIntroComponent',
+          icon: 'fa-solid fa-note-sticky',
+          h3: 'Intro',
+        },
+      ],
+      set02: [
+        {
+          route: 'jsStrictComponent',
+          icon: 'fa-solid fa-hand-fist',
+          h3: 'Strict Mode',
+        },
+        {
+          route: 'jsVariablesComponent',
+          icon: 'fa-solid fa-database',
+          h3: 'Variables',
+        },
+        {
+          route: 'jsOperatorsComponent',
+          icon: 'fa-solid fa-equals',
+          h3: 'Operators',
+        },
+      ],
+      set03: [
+        {
+          route: 'jsTliteralsComponent',
+          icon: 'fa-solid fa-link',
+          h3: 'Template <br />Literals',
+        },
+        {
+          route: 'jsTliteralsComponent',
+          icon: 'fa-solid fa-shuffle',
+          h3: 'Conversion <br />& Coercion',
+        },
+        {
+          route: 'jsTruefalseComponent',
+          icon: 'fa-solid fa-code-fork',
+          h3: 'Truthy Falsy',
+        },
+        {
+          route: 'jsBooleanComponent',
+          icon: 'fa-solid fa-network-wired',
+          h3: 'Boolean Logic',
+        },
+      ],
+      set04: [
+        {
+          route: 'jsEqualityComponent',
+          icon: 'fa-solid fa-scale-balanced',
+          h3: 'Equality <br />Operators',
+        },
+        {
+          route: 'jsStateexprComponent',
+          icon: 'fa-solid fa-file-signature',
+          h3: 'Statement <br />Expression',
+        },
+        {
+          route: 'jsIfelseComponent',
+          icon: 'fa-solid fa-spell-check',
+          h3: 'If else',
+        },
+        {
+          route: 'jsSwitchComponent',
+          icon: 'fa-solid fa-list-check',
+          h3: 'Switch Case',
+        },
+      ],
+      set05: [
+        {
+          route: 'jsPromptComponent',
+          icon: 'fa-regular fa-window-maximize',
+          h3: 'Prompt',
+        },
+        {
+          route: 'jsFunctionComponent',
+          icon: 'fa-solid fa-box',
+          h3: 'Functions',
+        },
+        {
+          route: 'jsArrayComponent',
+          icon: 'fa-regular fa-object-group',
+          h3: 'Array',
+        },
+      ],
+    },
   };
 
   jsIntro: any = {

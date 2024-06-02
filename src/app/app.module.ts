@@ -31,6 +31,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { JsStrictComponent } from './jsTopics/js-strict/js-strict.component';
 import { JsFunctionComponent } from './jsTopics/js-function/js-function.component';
 import { JsArrayComponent } from './jsTopics/js-array/js-array.component';
+import { TopicMenuComponent } from './components/topic-menu/topic-menu.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +54,7 @@ import { JsArrayComponent } from './jsTopics/js-array/js-array.component';
     JsStrictComponent,
     JsFunctionComponent,
     JsArrayComponent,
+    TopicMenuComponent,
   ],
   imports: [
     BrowserModule,
