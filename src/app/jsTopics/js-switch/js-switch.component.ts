@@ -8,6 +8,7 @@ import { SharedService } from 'src/app/shared.service';
 })
 export class JsSwitchComponent {
   content: any = 'Switch Case';
+  contentPercent: any = '100%';
   getData: any;
   showSecondLi: any = false;
 
@@ -17,7 +18,8 @@ export class JsSwitchComponent {
     this.getData = this.sharedService.jsSwitch;
   }
 
-  showContent(param: any) {
-    this.content = param;
+  showContent(param1: any, param2: any) {
+    this.content = param1;
+    this.contentPercent = param2;
   }
 }

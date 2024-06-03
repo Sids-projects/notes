@@ -8,6 +8,7 @@ import { SharedService } from 'src/app/shared.service';
 })
 export class JsStrictComponent {
   content: any = 'Strict Mode';
+  contentPercent: any = '100%';
   getData: any;
   showSecondLi: any = false;
 
@@ -17,7 +18,12 @@ export class JsStrictComponent {
     this.getData = this.sharedService.jsStrictMode;
   }
 
-  showContent(param: any) {
-    this.content = param;
+  showContent(param1: any, param2: any) {
+    this.content = param1;
+    this.contentPercent = param2;
+  }
+
+  translateFn() {
+    this.showSecondLi = !this.showSecondLi;
   }
 }

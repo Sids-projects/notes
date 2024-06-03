@@ -8,6 +8,7 @@ import { SharedService } from 'src/app/shared.service';
 })
 export class JsFunctionComponent {
   content: any = 'Functions';
+  contentPercent: any = '20%';
   getData: any;
   showSecondLi: any = false;
 
@@ -17,7 +18,8 @@ export class JsFunctionComponent {
     this.getData = this.sharedService.jsFunctions;
   }
 
-  showContent(param: any) {
-    this.content = param;
+  showContent(param1: any, param2: any) {
+    this.content = param1;
+    this.contentPercent = param2;
   }
 }

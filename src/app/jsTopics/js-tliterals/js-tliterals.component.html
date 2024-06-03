@@ -1,16 +1,19 @@
 <section class="js-content">
+  <app-poopup-header
+    [contentPercent]="contentPercent"
+    [showSecondLi]="showSecondLi"
+    (toggleSecondLi)="showSecondLi = $event"
+  ></app-poopup-header>
+
   <nav>
     <div class="nav-links">
       <p
         *ngFor="let title of getData.titles"
-        [ngClass]="content === title ? 'active-link' : ''"
-        (click)="showContent(title)"
+        [ngClass]="content === title.title ? 'active-link' : ''"
+        (click)="showContent(title.title, title.percent)"
       >
-        {{ title }}
+        {{ title.title }}
       </p>
-    </div>
-    <div class="d-flex align-items-center gap-1">
-      <mat-slide-toggle [(ngModel)]="showSecondLi"></mat-slide-toggle>
     </div>
   </nav>
 

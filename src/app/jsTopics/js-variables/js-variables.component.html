@@ -1,27 +1,9 @@
 <section class="js-content">
-  <section class="progress-sec">
-    <div
-      class="progress"
-      role="progressbar"
-      aria-label="Basic example"
-      aria-valuemin="0"
-      aria-valuemax="100"
-    >
-      <div class="progress-bar" [style]="'width:' + contentPercent">
-        <div class="progrss-shade"></div>
-      </div>
-    </div>
-    <div class="progress-icons">
-      <i class="fa-solid fa-caret-left"></i>
-      <i class="fa-solid fa-caret-right"></i>
-      <i class="fa-solid fa-language" (click)="translateFn()"></i>
-      <i
-        class="fa-solid fa-xmark"
-        data-bs-dismiss="modal"
-        aria-label="Close"
-      ></i>
-    </div>
-  </section>
+  <app-poopup-header
+    [contentPercent]="contentPercent"
+    [showSecondLi]="showSecondLi"
+    (toggleSecondLi)="showSecondLi = $event"
+  ></app-poopup-header>
 
   <nav>
     <div class="nav-links">

@@ -68,7 +68,7 @@ export class SharedService {
           h3: 'Template <br />Literals',
         },
         {
-          route: 'jsTliteralsComponent',
+          route: 'jsConversionComponent',
           icon: 'fa-solid fa-shuffle',
           h3: 'Conversion <br />& Coercion',
         },
@@ -126,7 +126,10 @@ export class SharedService {
   };
 
   jsIntro: any = {
-    titles: ['Intro', 'Releases'],
+    titles: [
+      { title: 'Intro', percent: '50%' },
+      { title: 'Releases', percent: '100%' },
+    ],
     data01: {
       ul: [
         {
@@ -182,6 +185,26 @@ export class SharedService {
         {
           li: 'ES11/',
           small: 'ES2020',
+        },
+      ],
+    },
+  };
+
+  jsStrictMode: any = {
+    titles: [{ title: 'Strict Mode', percent: '100%' }],
+    data01: {
+      ul: [
+        {
+          li1: 'Strict is a special mode that we activate in the JavaScript which make it easier to write a secure code.',
+          li2: 'Strict mode use pana nambe secure code panalam.',
+        },
+        {
+          li1: 'This line must be the first line of the JavaScript Code.',
+          li2: 'Indha line dha js la 1st line ah irukanum',
+        },
+        {
+          li1: 'It creates visible errors in the developer console.',
+          li2: 'Developer console la error la kamikum',
         },
       ],
     },
@@ -262,7 +285,11 @@ export class SharedService {
   };
 
   jsOperators: any = {
-    titles: ['Typeof', 'Assignment', 'Comparison'],
+    titles: [
+      { title: 'Typeof', percent: '30%' },
+      { title: 'Assignment', percent: '60%' },
+      { title: 'Comparison', percent: '100%' },
+    ],
     data01: {
       ul: [
         {
@@ -274,7 +301,7 @@ export class SharedService {
   };
 
   jsTliterals: any = {
-    titles: ['Template Literals ES6'],
+    titles: [{ title: 'Template Literals ES6', percent: '100%' }],
     data01: {
       ul: [
         {
@@ -286,7 +313,11 @@ export class SharedService {
   };
 
   jsConversion: any = {
-    titles: ['Type Conversion', 'Type Coercion'],
+    titles: [
+      { title: 'Type Conversion', percent: '50%' },
+      { title: 'Type Coercion', percent: '100%' },
+    ],
+
     data01: {
       ul: [
         {
@@ -317,8 +348,38 @@ export class SharedService {
     },
   };
 
+  jsTruthyFalsy: any = {
+    titles: [
+      { title: 'Truthy', percent: '50%' },
+      { title: 'Falsy', percent: '100%' },
+    ],
+    data01: {
+      ul: [
+        {
+          li1: 'Any string that is not an empty string is a truthy value.',
+          li2: 'Empty ah illadha string lam truthy value',
+        },
+      ],
+    },
+    data02: {
+      ul: [
+        {
+          li1: 'Falsy value are value that are not exactly false, but will become false when we try to convert them into a boolean.',
+          li2: 'Falsy value default ah ve false la irukadhu namba adha adha boolean ah convert panumbodhu aagum',
+        },
+        {
+          li1: 'falsy values: 0, "", undefined, null, nan',
+          li2: 'falsy values: 0, "", undefined, null, nan',
+        },
+      ],
+    },
+  };
+
   jsIfelse: any = {
-    titles: ['If Else', 'Else If'],
+    titles: [
+      { title: 'If Else', percent: '50%' },
+      { title: 'Else If', percent: '100%' },
+    ],
     data01: {
       h3: 'Rules to name a variable',
       ul: [
@@ -352,7 +413,7 @@ export class SharedService {
   };
 
   jsSwitch: any = {
-    titles: ['Switch Case'],
+    titles: [{ title: 'Switch Case', percent: '100%' }],
     data01: {
       h3: 'Rules to name a variable',
       ul: [
@@ -376,32 +437,11 @@ export class SharedService {
     },
   };
 
-  jsTruthyFalsy: any = {
-    titles: ['Truthy', 'Falsy'],
-    data01: {
-      ul: [
-        {
-          li1: 'Any string that is not an empty string is a truthy value.',
-          li2: 'Empty ah illadha string lam truthy value',
-        },
-      ],
-    },
-    data02: {
-      ul: [
-        {
-          li1: 'Falsy value are value that are not exactly false, but will become false when we try to convert them into a boolean.',
-          li2: 'Falsy value default ah ve false la irukadhu namba adha adha boolean ah convert panumbodhu aagum',
-        },
-        {
-          li1: 'falsy values: 0, "", undefined, null, nan',
-          li2: 'falsy values: 0, "", undefined, null, nan',
-        },
-      ],
-    },
-  };
-
   jsEquality: any = {
-    titles: ['Loose Equality Opeartor', 'Strict Equality Opeartor'],
+    titles: [
+      { title: 'Loose Equality Opeartor', percent: '50%' },
+      { title: 'Strict Equality Opeartor', percent: '100%' },
+    ],
     data01: {
       ul: [
         {
@@ -413,7 +453,7 @@ export class SharedService {
   };
 
   jsPrompt: any = {
-    titles: ['Prompt'],
+    titles: [{ title: 'Prompt', percent: '100%' }],
     data01: {
       ul: [
         {
@@ -425,7 +465,11 @@ export class SharedService {
   };
 
   jsBoolean: any = {
-    titles: ['And', 'Or', 'Not'],
+    titles: [
+      { title: 'And', percent: '30%' },
+      { title: 'Or', percent: '50%' },
+      { title: 'Not', percent: '100%' },
+    ],
     data01: {
       ul: [
         {
@@ -453,7 +497,7 @@ export class SharedService {
   };
 
   jsStateExpres: any = {
-    titles: ['Statement and Expression'],
+    titles: [{ title: 'Statement and Expression', percent: '100%' }],
     data01: {
       h301: 'Statement',
       ul01: [
@@ -476,32 +520,12 @@ export class SharedService {
     },
   };
 
-  jsStrictMode: any = {
-    titles: ['Strict Mode'],
-    data01: {
-      ul: [
-        {
-          li1: 'Strict is a special mode that we activate in the JavaScript which make it easier to write a secure code.',
-          li2: 'Strict mode use pana nambe secure code panalam.',
-        },
-        {
-          li1: 'This line must be the first line of the JavaScript Code.',
-          li2: 'Indha line dha js la 1st line ah irukanum',
-        },
-        {
-          li1: 'It creates visible errors in the developer console.',
-          li2: 'Developer console la error la kamikum',
-        },
-      ],
-    },
-  };
-
   jsFunctions: any = {
     titles: [
-      'Functions',
-      'Expression & Declaration',
-      'Arrow Function',
-      'Functions calling other function',
+      { title: 'Functions', percent: '20%' },
+      { title: 'Expression & Declaration', percent: '40%' },
+      { title: 'Arrow Function', percent: '60%' },
+      { title: 'Functions calling other function', percent: '100%' },
     ],
     data01: {
       ul: [

@@ -1,0 +1,17 @@
+<section class="progress-sec">
+  <div
+    class="progress"
+    role="progressbar"
+    aria-label="Basic example"
+    aria-valuemin="0"
+    aria-valuemax="100"
+  >
+    <div class="progress-bar" [style]="'width:' + contentPercent">
+      <div class="progrss-shade"></div>
+    </div>
+  </div>
+  <div class="progress-icons">
+    <i class="fa-solid fa-language" (click)="translateFn()"></i>
+    <i class="fa-solid fa-xmark" data-bs-dismiss="modal" aria-label="Close"></i>
+  </div>
+</section>

@@ -9,6 +9,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 })
 export class JsIntroComponent {
   content: any = 'Intro';
+  contentPercent: any = '50%';
   getData: any;
   showSecondLi: any = false;
 
@@ -25,7 +26,8 @@ export class JsIntroComponent {
     return this.sanitizer.bypassSecurityTrustHtml(html);
   }
 
-  showContent(param: any) {
-    this.content = param;
+  showContent(param1: any, param2: any) {
+    this.content = param1;
+    this.contentPercent = param2;
   }
 }

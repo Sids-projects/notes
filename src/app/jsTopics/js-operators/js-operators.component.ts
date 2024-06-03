@@ -8,6 +8,7 @@ import { SharedService } from 'src/app/shared.service';
 })
 export class JsOperatorsComponent {
   content: any = 'Typeof';
+  contentPercent: any = '30%';
   getData: any;
   showSecondLi: any = false;
 
@@ -17,7 +18,12 @@ export class JsOperatorsComponent {
     this.getData = this.sharedService.jsOperators;
   }
 
-  showContent(param: any) {
-    this.content = param;
+  showContent(param1: any, param2: any) {
+    this.content = param1;
+    this.contentPercent = param2;
+  }
+
+  translateFn() {
+    this.showSecondLi = !this.showSecondLi;
   }
 }

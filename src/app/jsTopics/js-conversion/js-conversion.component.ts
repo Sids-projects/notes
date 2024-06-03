@@ -8,6 +8,7 @@ import { SharedService } from 'src/app/shared.service';
 })
 export class JsConversionComponent {
   content: any = 'Type Conversion';
+  contentPercent: any = '50%';
   getData: any;
   showSecondLi: any = false;
 
@@ -17,7 +18,12 @@ export class JsConversionComponent {
     this.getData = this.sharedService.jsConversion;
   }
 
-  showContent(param: any) {
-    this.content = param;
+  showContent(param1: any, param2: any) {
+    this.content = param1;
+    this.contentPercent = param2;
+  }
+
+  translateFn() {
+    this.showSecondLi = !this.showSecondLi;
   }
 }

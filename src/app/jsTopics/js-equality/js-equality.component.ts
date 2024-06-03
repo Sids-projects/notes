@@ -8,6 +8,7 @@ import { SharedService } from 'src/app/shared.service';
 })
 export class JsEqualityComponent {
   content: any = 'Loose Equality Opeartor';
+  contentPercent: any = '50%';
   getData: any;
   showSecondLi: any = false;
 
@@ -17,7 +18,8 @@ export class JsEqualityComponent {
     this.getData = this.sharedService.jsEquality;
   }
 
-  showContent(param: any) {
-    this.content = param;
+  showContent(param1: any, param2: any) {
+    this.content = param1;
+    this.contentPercent = param2;
   }
 }

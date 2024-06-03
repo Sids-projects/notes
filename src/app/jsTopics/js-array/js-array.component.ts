@@ -22,8 +22,4 @@ export class JsArrayComponent {
     this.content = param1;
     this.contentPercent = param2;
   }
-
-  translateFn() {
-    this.showSecondLi = !this.showSecondLi;
-  }
 }

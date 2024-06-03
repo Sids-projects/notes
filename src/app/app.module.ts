@@ -32,6 +32,7 @@ import { JsStrictComponent } from './jsTopics/js-strict/js-strict.component';
 import { JsFunctionComponent } from './jsTopics/js-function/js-function.component';
 import { JsArrayComponent } from './jsTopics/js-array/js-array.component';
 import { TopicMenuComponent } from './components/topic-menu/topic-menu.component';
+import { PoopupHeaderComponent } from './components/poopup-header/poopup-header.component';
 
 @NgModule({
   declarations: [
@@ -55,6 +56,7 @@ import { TopicMenuComponent } from './components/topic-menu/topic-menu.component
     JsFunctionComponent,
     JsArrayComponent,
     TopicMenuComponent,
+    PoopupHeaderComponent,
   ],
   imports: [
     BrowserModule,

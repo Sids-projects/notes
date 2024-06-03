@@ -8,6 +8,7 @@ import { SharedService } from 'src/app/shared.service';
 })
 export class JsIfelseComponent {
   content: any = 'If Else';
+  contentPercent: any = '50%';
   getData: any;
   showSecondLi: any = false;
 
@@ -17,7 +18,8 @@ export class JsIfelseComponent {
     this.getData = this.sharedService.jsIfelse;
   }
 
-  showContent(param: any) {
-    this.content = param;
+  showContent(param1: any, param2: any) {
+    this.content = param1;
+    this.contentPercent = param2;
   }
 }

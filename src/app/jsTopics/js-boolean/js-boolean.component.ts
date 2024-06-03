@@ -8,6 +8,7 @@ import { SharedService } from 'src/app/shared.service';
 })
 export class JsBooleanComponent {
   content: any = 'And';
+  contentPercent: any = '30%';
   getData: any;
   showSecondLi: any = false;
 
@@ -17,7 +18,8 @@ export class JsBooleanComponent {
     this.getData = this.sharedService.jsBoolean;
   }
 
-  showContent(param: any) {
-    this.content = param;
+  showContent(param1: any, param2: any) {
+    this.content = param1;
+    this.contentPercent = param2;
   }
 }
