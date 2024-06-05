@@ -9,27 +9,23 @@ export class SharedService {
   appHeader: any = {
     headOne: [
       {
-        Key: 'javascript',
-        routeLink: 'jsHelloComponent',
+        key: 'javascript',
         toolTip: 'Javascript',
         icon: 'fa-brands fa-js',
       },
       {
-        Key: 'css',
-        routeLink: 'cssHelloComponent',
+        key: 'css',
         toolTip: 'Css',
         icon: 'fa-brands fa-css3-alt',
       },
       {
-        Key: 'javascript',
-        routeLink: 'jsHelloComponent',
-        toolTip: 'Javascript',
+        key: 'scss',
+        toolTip: 'Scss',
         icon: 'fa-brands fa-sass',
       },
       {
-        Key: 'javascript',
-        routeLink: 'jsHelloComponent',
-        toolTip: 'Javascript',
+        key: 'angular',
+        toolTip: 'Angular',
         icon: 'fa-brands fa-angular',
       },
     ],
@@ -598,6 +594,39 @@ export class SharedService {
         {
           li1: 'We should not write a statement inside an array.',
           li2: 'Array ulla oru statement use pana mudiyadhu',
+        },
+      ],
+    },
+    data02: {
+      h3: '.length Property',
+      ul: [
+        {
+          li1: 'Exact amount of elements in the array.',
+          li2: 'Correct ah array la ethana element irukumo adhu solum',
+        },
+        {
+          li1: 'It is not 0 based',
+          li2: '0 la irundhu start aagadhu',
+        },
+        {
+          li1: 'We can use this to get last element in the array',
+          li2: 'Array oda last element ah get panikalmam',
+        },
+      ],
+    },
+    data03: {
+      ul: [
+        {
+          li1: 'Exact amount of elements in the array.',
+          li2: 'Correct ah array la ethana element irukumo adhu solum',
+        },
+        {
+          li1: 'It is not 0 based',
+          li2: '0 la irundhu start aagadhu',
+        },
+        {
+          li1: 'We can use this to get last element in the array',
+          li2: 'Array oda last element ah get panikalmam',
         },
       ],
     },

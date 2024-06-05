@@ -18,7 +18,7 @@
   </nav>
 
   <div class="js-container">
-    <div *ngIf="content === 'And'" class="js-topics">
+    <div *ngIf="content === 'Array'" class="js-topics">
       <ul *ngIf="!showSecondLi" class="regular-ul">
         <li *ngFor="let ul of getData.data01.ul">
           {{ ul.li1 }}
@@ -29,9 +29,10 @@
           {{ ul.li2 }}
         </li>
       </ul>
-      <app-js-code [showCode]="'boolean-and'"></app-js-code>
     </div>
-    <div *ngIf="content === 'Or'" class="js-topics">
+
+    <div *ngIf="content === 'Property'" class="js-topics">
+      <h3>{{ getData.data02.h3 }}</h3>
       <ul *ngIf="!showSecondLi" class="regular-ul">
         <li *ngFor="let ul of getData.data02.ul">
           {{ ul.li1 }}
@@ -42,21 +43,11 @@
           {{ ul.li2 }}
         </li>
       </ul>
-      <app-js-code [showCode]="'boolean-or'"></app-js-code>
+      <app-js-code [showCode]="'array-01'"></app-js-code>
     </div>
-    <div *ngIf="content === 'Not'" class="js-topics">
-      <ul *ngIf="!showSecondLi" class="regular-ul">
-        <li *ngFor="let ul of getData.data03.ul">
-          {{ ul.li1 }}
-        </li>
-      </ul>
-      <ul *ngIf="showSecondLi" class="regular-ul">
-        <li *ngFor="let ul of getData.data03.ul">
-          {{ ul.li2 }}
-        </li>
-      </ul>
-      <app-js-code [showCode]="'boolean-not'"></app-js-code>
+
+    <div *ngIf="content === 'Usage'" class="js-topics">
+      <app-js-code [showCode]="'array-02'"></app-js-code>
     </div>
   </div>
 </section>
-<p>js-array works!</p>

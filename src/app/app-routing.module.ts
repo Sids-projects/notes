@@ -18,10 +18,15 @@ import { JsStateexprComponent } from './jsTopics/js-stateexpr/js-stateexpr.compo
 import { JsStrictComponent } from './jsTopics/js-strict/js-strict.component';
 import { JsFunctionComponent } from './jsTopics/js-function/js-function.component';
 import { JsArrayComponent } from './jsTopics/js-array/js-array.component';
+import { NgHelloComponent } from './ngTopics/ng-hello/ng-hello.component';
+import { NgIntroComponent } from './ngTopics/ng-intro/ng-intro.component';
+import { TasksComponent } from './components/tasks/tasks.component';
 
 const routes: Routes = [
+  // common
+  { path: 'tasks', component: TasksComponent },
+
   // Javascript Components
-  { path: '', redirectTo: 'jsHelloComponent', pathMatch: 'full' },
   { path: 'jsHelloComponent', component: JsHelloComponent },
   { path: 'jsIntroComponent', component: JsIntroComponent },
   { path: 'jsVariablesComponent', component: JsVariablesComponent },
@@ -41,6 +46,10 @@ const routes: Routes = [
 
   // Css Components
   { path: 'cssHelloComponent', component: CssHelloComponent },
+
+  // Angular Components
+  { path: 'ngHelloComponent', component: NgHelloComponent },
+  { path: 'ngIntroComponent', component: NgIntroComponent },
 ];
 
 @NgModule({

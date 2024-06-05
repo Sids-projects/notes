@@ -3,120 +3,23 @@
     <div class="header-01">
       <p
         *ngFor="let data of appHeader.headOne"
-        (click)="showTopicList(data.Key)"
-        [routerLink]="data.routeLink"
+        (click)="componentMain(data.key)"
         [matTooltip]="data.toolTip"
       >
         <i [class]="data.icon"></i>
       </p>
     </div>
 
-    <div
-      class="header-02"
-      (click)="showMenu()"
-      data-bs-toggle="modal"
-      data-bs-target="#menuModal"
-    >
+    <div class="header-02" data-bs-toggle="modal" data-bs-target="#menuModal">
       <i class="fa-solid fa-ellipsis"></i>
     </div>
   </header>
 
-  <section class="app-content">
-    <div class="content-1" *ngIf="mainContent">
-      <div class="content-about">
-        <h2>Javascript</h2>
-        <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores,
-          dicta.
-        </p>
-      </div>
-
-      <div class="flex-container">
-        <app-topic-menu
-          *ngFor="let data of jsTopics.set01"
-          [routerLink]="data.route"
-          [icon]="data.icon"
-          [p]="data.h3"
-        ></app-topic-menu>
-      </div>
-
-      <div class="flex-container">
-        <app-topic-menu
-          *ngFor="let data of jsTopics.set02"
-          [routerLink]="data.route"
-          [icon]="data.icon"
-          [p]="data.h3"
-        ></app-topic-menu>
-      </div>
-
-      <div class="flex-container">
-        <app-topic-menu
-          *ngFor="let data of jsTopics.set03"
-          [routerLink]="data.route"
-          [icon]="data.icon"
-          [p]="data.h3"
-        ></app-topic-menu>
-      </div>
-
-      <div class="flex-container">
-        <app-topic-menu
-          *ngFor="let data of jsTopics.set04"
-          [routerLink]="data.route"
-          [icon]="data.icon"
-          [p]="data.h3"
-        ></app-topic-menu>
-      </div>
-
-      <div class="flex-container">
-        <app-topic-menu
-          *ngFor="let data of jsTopics.set05"
-          [routerLink]="data.route"
-          [icon]="data.icon"
-          [p]="data.h3"
-        ></app-topic-menu>
-      </div>
-    </div>
-
-    <div class="content-2" *ngIf="taskContent">
-      <div class="task-about">
-        <h2>Tasks</h2>
-      </div>
-
-      <div class="task-container">
-        <img src="./assets/flag.svg" />
-        <div class="task-common">
-          <div class="card-arrowView"></div>
-          <h3>Task 1</h3>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam,
-            est.
-          </p>
-        </div>
-      </div>
-
-      <div class="task-container">
-        <img src="./assets/flag.svg" />
-        <div class="task-common">
-          <div class="card-arrowView"></div>
-          <h3>Task 1</h3>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam,
-            est.
-          </p>
-        </div>
-      </div>
-
-      <div class="task-container">
-        <img src="./assets/treasure.svg" />
-        <div class="task-common">
-          <div class="card-arrowView"></div>
-          <h3>Task Completed</h3>
-        </div>
-      </div>
-    </div>
-  </section>
+  <app-js-hello *ngIf="components === 'javascript'"></app-js-hello>
+  <app-ng-hello *ngIf="components === 'angular'"></app-ng-hello>
 </main>
 
+<!-- Popups -->
 <div
   class="modal fade"
   id="exampleModal"
@@ -152,11 +55,15 @@
           ></button>
         </div>
         <div class="menu-list">
-          <p (click)="content()" data-bs-dismiss="modal" aria-label="Close">
+          <p data-bs-dismiss="modal" aria-label="Close">
             <i class="fa-solid fa-book"></i>
             Notes
           </p>
-          <p (click)="tasks()" data-bs-dismiss="modal" aria-label="Close">
+          <p
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
+            routerLink="tasks"
+          >
             <i class="fa-solid fa-dumbbell"></i>
             Tasks
           </p>

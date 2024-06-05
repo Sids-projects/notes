@@ -375,3 +375,43 @@ console.log(fruitProcessor(2,3));
 </code>
 </pre>
 </div>
+
+<div *ngIf="showCode === 'array-01'" class="code-container">
+  <pre class="line-numbers">
+<code class="language-javascript">
+  // Literal Syntax :
+  const animals = ['dog', 'cat', 'cow'];
+  
+  // Otherway :
+  const years = new array(1991, 1984, 1998);
+  
+  const animals = ['dog', 'cat', 'cow'];
+  console.log(animals.length);
+  console.log(animals[animals.length - 1]);
+  animals[2];
+  
+  // Output : cow
+  
+  // We can change the element in a array
+  const animals = ['dog', 'cat', 'cow'];
+
+  animals[2] = 'chicken';
+</code>
+</pre>
+</div>
+
+<div *ngIf="showCode === 'array-02'" class="code-container">
+  <pre class="line-numbers">
+<code class="language-javascript">
+const firstName = 'Peter';
+const peterData = [firstName, 'male', 2037 - 1998];  
+
+// Should not use ❌
+const years = [1998, 1999, 2000, 2001];
+const calcAge = function(birthYear) &#123;
+  Return 2037 - birthYear;
+&#125;
+calcAge(years);
+</code>
+</pre>
+</div>
