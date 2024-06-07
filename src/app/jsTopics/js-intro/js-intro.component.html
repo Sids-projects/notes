@@ -18,16 +18,13 @@
   </nav>
   <div class="js-container">
     <div *ngIf="content === 'Intro'" class="js-topics">
-      <ul *ngIf="!showSecondLi" class="regular-ul">
-        <li *ngFor="let ul of getData.data01.ul">
-          <p [innerHTML]="sanitizeHtml(ul.li1)">{{ ul.li1 }}</p>
-        </li>
-      </ul>
-      <ul *ngIf="showSecondLi" class="regular-ul">
-        <li *ngFor="let ul of getData.data01.ul">
-          {{ ul.li2 }}
-        </li>
-      </ul>
+      <app-list-tag
+        [equalityProp]="content"
+        [equalityValue]="'Intro'"
+        [loopli1]="getData.data01.ul"
+        [loopli2]="getData.data01.ul"
+        [showSecondLi]="!showSecondLi"
+      ></app-list-tag>
     </div>
 
     <div *ngIf="content === 'Releases'" class="js-topics">

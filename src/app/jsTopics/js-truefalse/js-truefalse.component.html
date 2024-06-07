@@ -19,29 +19,23 @@
 
   <div class="js-container">
     <div *ngIf="content === 'Truthy'" class="js-topics">
-      <ul *ngIf="!showSecondLi" class="regular-ul">
-        <li *ngFor="let ul of getData.data01.ul">
-          {{ ul.li1 }}
-        </li>
-      </ul>
-      <ul *ngIf="showSecondLi" class="regular-ul">
-        <li *ngFor="let ul of getData.data01.ul">
-          {{ ul.li2 }}
-        </li>
-      </ul>
+      <app-list-tag
+        [equalityProp]="content"
+        [equalityValue]="'Truthy'"
+        [loopli1]="getData.data01.ul"
+        [loopli2]="getData.data01.ul"
+        [showSecondLi]="!showSecondLi"
+      ></app-list-tag>
       <app-js-code [showCode]="'truthy'"></app-js-code>
     </div>
     <div *ngIf="content === 'Falsy'" class="js-topics">
-      <ul *ngIf="!showSecondLi" class="regular-ul">
-        <li *ngFor="let ul of getData.data02.ul">
-          {{ ul.li1 }}
-        </li>
-      </ul>
-      <ul *ngIf="showSecondLi" class="regular-ul">
-        <li *ngFor="let ul of getData.data02.ul">
-          {{ ul.li2 }}
-        </li>
-      </ul>
+      <app-list-tag
+        [equalityProp]="content"
+        [equalityValue]="'Falsy'"
+        [loopli1]="getData.data02.ul"
+        [loopli2]="getData.data02.ul"
+        [showSecondLi]="!showSecondLi"
+      ></app-list-tag>
       <app-js-code [showCode]="'falsy'"></app-js-code>
     </div>
   </div>

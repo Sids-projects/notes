@@ -1,1 +1,48 @@
-<p>ng-intro works!</p>
+<section class="js-content">
+  <app-poopup-header
+    [contentPercent]="contentPercent"
+    [showSecondLi]="showSecondLi"
+    (toggleSecondLi)="showSecondLi = $event"
+  ></app-poopup-header>
+
+  <nav>
+    <div class="nav-links">
+      <p
+        *ngFor="let title of getData.titles"
+        [ngClass]="content === title.title ? 'active-link' : ''"
+        (click)="showContent(title.title, title.percent)"
+      >
+        {{ title.title }}
+      </p>
+    </div>
+  </nav>
+
+  <div class="js-container">
+    <div *ngIf="content === 'What is Angular'" class="js-topics">
+      <app-list-tag
+        [equalityProp]="content"
+        [equalityValue]="'What is Angular'"
+        [loopli1]="getData.data01.ul"
+        [loopli2]="getData.data01.ul"
+        [showSecondLi]="!showSecondLi"
+      ></app-list-tag>
+    </div>
+
+    <div *ngIf="content === 'Why a Framework ?'" class="js-topics">
+      <app-list-tag
+        [equalityProp]="content"
+        [equalityValue]="'Why a Framework ?'"
+        [loopli1]="getData.data02.ul"
+        [loopli2]="getData.data02.ul"
+        [showSecondLi]="!showSecondLi"
+      ></app-list-tag>
+      <app-table-tag
+        [equalityProp]="content"
+        [equalityValue]="'Why a Framework ?'"
+        [th]="getData.data02.th"
+        [tr]="getData.data02.tr"
+        [showSecondLi]="!showSecondLi"
+      ></app-table-tag>
+    </div>
+  </div>
+</section>

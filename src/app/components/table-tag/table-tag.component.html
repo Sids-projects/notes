@@ -1,0 +1,31 @@
+<div *ngIf="equalityProp === equalityValue">
+  <table *ngIf="showSecondLi" class="table">
+    <thead>
+      <tr>
+        <th *ngFor="let th of th">{{ th }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let tr of tr">
+        <td *ngFor="let td01 of tr.td01" [innerHTML]="sanitizeHtml(td01)">
+          {{ td01 }}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <table *ngIf="!showSecondLi" class="table">
+    <thead>
+      <tr>
+        <th *ngFor="let th of th">{{ th }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let tr of tr">
+        <td *ngFor="let td02 of tr.td02" [innerHTML]="sanitizeHtml(td02)">
+          {{ td02 }}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

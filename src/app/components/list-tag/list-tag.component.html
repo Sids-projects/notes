@@ -1,0 +1,12 @@
+<div *ngIf="equalityProp === equalityValue" class="js-topics">
+  <ul *ngIf="showSecondLi" class="regular-ul">
+    <li *ngFor="let ul of loopli1" [innerHTML]="sanitizeHtml(ul.li1)">
+      {{ ul.li1 }}
+    </li>
+  </ul>
+  <ul *ngIf="!showSecondLi" class="regular-ul">
+    <li *ngFor="let ul of loopli2" [innerHTML]="sanitizeHtml(ul.li2)">
+      {{ ul.li2 }}
+    </li>
+  </ul>
+</div>

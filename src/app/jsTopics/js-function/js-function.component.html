@@ -19,16 +19,13 @@
 
   <div class="js-container">
     <div *ngIf="content === 'Functions'" class="js-topics">
-      <ul *ngIf="!showSecondLi" class="regular-ul">
-        <li *ngFor="let ul of getData.data01.ul">
-          {{ ul.li1 }}
-        </li>
-      </ul>
-      <ul *ngIf="showSecondLi" class="regular-ul">
-        <li *ngFor="let ul of getData.data01.ul">
-          {{ ul.li2 }}
-        </li>
-      </ul>
+      <app-list-tag
+        [equalityProp]="content"
+        [equalityValue]="'Functions'"
+        [loopli1]="getData.data01.ul"
+        [loopli2]="getData.data01.ul"
+        [showSecondLi]="!showSecondLi"
+      ></app-list-tag>
       <app-js-code [showCode]="'function-01'"></app-js-code>
     </div>
 
@@ -72,16 +69,13 @@
     </div>
 
     <div *ngIf="content === 'Arrow Function'" class="js-topics">
-      <ul *ngIf="!showSecondLi" class="regular-ul">
-        <li *ngFor="let ul of getData.data03.ul">
-          {{ ul.li1 }}
-        </li>
-      </ul>
-      <ul *ngIf="showSecondLi" class="regular-ul">
-        <li *ngFor="let ul of getData.data03.ul">
-          {{ ul.li2 }}
-        </li>
-      </ul>
+      <app-list-tag
+        [equalityProp]="content"
+        [equalityValue]="'Arrow Function'"
+        [loopli1]="getData.data03.ul"
+        [loopli2]="getData.data03.ul"
+        [showSecondLi]="!showSecondLi"
+      ></app-list-tag>
       <app-js-code [showCode]="'function-04'"></app-js-code>
     </div>
 

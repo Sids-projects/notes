@@ -1,5 +1,6 @@
 import { Component, Renderer2 } from '@angular/core';
 import { SharedService } from './shared.service';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-root',
@@ -14,7 +15,8 @@ export class AppComponent {
 
   constructor(
     private sharedService: SharedService,
-    private renderer: Renderer2
+    private renderer: Renderer2,
+    private spinner: NgxSpinnerService
   ) {
     this.appHeader = this.sharedService.appHeader;
     const storedComponents = localStorage.getItem('components');
@@ -22,8 +24,11 @@ export class AppComponent {
   }
 
   ngOnInit() {
+    this.spinner.show();
+    setTimeout(() => {
+      this.spinner.hide();
+    }, 2000);
     const savedTheme = localStorage.getItem('theme');
-    const mainComponent = localStorage.getItem('components');
     if (savedTheme === 'dark') {
       this.isDarkTheme = true;
       this.renderer.addClass(document.body, 'dark-theme');

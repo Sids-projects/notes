@@ -1,1 +1,56 @@
-<p>ng-hello works!</p>
+<section class="app-content">
+  <div class="content-1">
+    <div class="content-about">
+      <h2>Angular</h2>
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores,
+        dicta.
+      </p>
+    </div>
+
+    <div class="flex-container">
+      <app-topic-menu
+        *ngFor="let data of jsTopics.set01"
+        [routerLink]="data.route"
+        [icon]="data.icon"
+        [p]="data.h3"
+      ></app-topic-menu>
+    </div>
+
+    <div class="flex-container">
+      <app-topic-menu
+        *ngFor="let data of jsTopics.set02"
+        [routerLink]="data.route"
+        [icon]="data.icon"
+        [p]="data.h3"
+      ></app-topic-menu>
+    </div>
+
+    <div class="flex-container">
+      <app-topic-menu
+        *ngFor="let data of jsTopics.set03"
+        [routerLink]="data.route"
+        [icon]="data.icon"
+        [p]="data.h3"
+      ></app-topic-menu>
+    </div>
+
+    <div class="flex-container">
+      <app-topic-menu
+        *ngFor="let data of jsTopics.set04"
+        [routerLink]="data.route"
+        [icon]="data.icon"
+        [p]="data.h3"
+      ></app-topic-menu>
+    </div>
+
+    <div class="flex-container">
+      <app-topic-menu
+        *ngFor="let data of jsTopics.set05"
+        [routerLink]="data.route"
+        [icon]="data.icon"
+        [p]="data.h3"
+      ></app-topic-menu>
+    </div>
+  </div>
+</section>

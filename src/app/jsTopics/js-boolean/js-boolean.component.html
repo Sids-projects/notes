@@ -19,42 +19,33 @@
 
   <div class="js-container">
     <div *ngIf="content === 'And'" class="js-topics">
-      <ul *ngIf="!showSecondLi" class="regular-ul">
-        <li *ngFor="let ul of getData.data01.ul">
-          {{ ul.li1 }}
-        </li>
-      </ul>
-      <ul *ngIf="showSecondLi" class="regular-ul">
-        <li *ngFor="let ul of getData.data01.ul">
-          {{ ul.li2 }}
-        </li>
-      </ul>
+      <app-list-tag
+        [equalityProp]="content"
+        [equalityValue]="'And'"
+        [loopli1]="getData.data01.ul"
+        [loopli2]="getData.data01.ul"
+        [showSecondLi]="!showSecondLi"
+      ></app-list-tag>
       <app-js-code [showCode]="'boolean-and'"></app-js-code>
     </div>
     <div *ngIf="content === 'Or'" class="js-topics">
-      <ul *ngIf="!showSecondLi" class="regular-ul">
-        <li *ngFor="let ul of getData.data02.ul">
-          {{ ul.li1 }}
-        </li>
-      </ul>
-      <ul *ngIf="showSecondLi" class="regular-ul">
-        <li *ngFor="let ul of getData.data02.ul">
-          {{ ul.li2 }}
-        </li>
-      </ul>
+      <app-list-tag
+        [equalityProp]="content"
+        [equalityValue]="'Or'"
+        [loopli1]="getData.data02.ul"
+        [loopli2]="getData.data02.ul"
+        [showSecondLi]="!showSecondLi"
+      ></app-list-tag>
       <app-js-code [showCode]="'boolean-or'"></app-js-code>
     </div>
     <div *ngIf="content === 'Not'" class="js-topics">
-      <ul *ngIf="!showSecondLi" class="regular-ul">
-        <li *ngFor="let ul of getData.data03.ul">
-          {{ ul.li1 }}
-        </li>
-      </ul>
-      <ul *ngIf="showSecondLi" class="regular-ul">
-        <li *ngFor="let ul of getData.data03.ul">
-          {{ ul.li2 }}
-        </li>
-      </ul>
+      <app-list-tag
+        [equalityProp]="content"
+        [equalityValue]="'Not'"
+        [loopli1]="getData.data03.ul"
+        [loopli2]="getData.data03.ul"
+        [showSecondLi]="!showSecondLi"
+      ></app-list-tag>
       <app-js-code [showCode]="'boolean-not'"></app-js-code>
     </div>
   </div>

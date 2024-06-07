@@ -1,4 +1,4 @@
-import { Component, Renderer2 } from '@angular/core';
+import { Component } from '@angular/core';
 import { SharedService } from 'src/app/shared.service';
 
 @Component({

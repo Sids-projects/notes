@@ -119,8 +119,19 @@ export class SharedService {
         },
       ],
     },
+
+    ngTopics: {
+      set01: [
+        {
+          route: 'ngIntroComponent',
+          icon: 'fa-solid fa-note-sticky',
+          h3: 'Intro',
+        },
+      ],
+    },
   };
 
+  // Javascript
   jsIntro: any = {
     titles: [
       { title: 'Intro', percent: '50%' },
@@ -627,6 +638,115 @@ export class SharedService {
         {
           li1: 'We can use this to get last element in the array',
           li2: 'Array oda last element ah get panikalmam',
+        },
+      ],
+    },
+    data04: {
+      ul: [
+        {
+          li1: '<b>Push : (Add Element)</b>',
+          li2: '<b>Push : (Add Element)</b>',
+        },
+        {
+          li1: 'Push method adds elements to the end of an array.',
+          li2: 'Array oda end la element ah add panum',
+        },
+        {
+          li1: '<b>Unshift : (Add Element)</b>',
+          li2: '<b>Unshift : (Add Element)</b>',
+        },
+        {
+          li1: 'Adds element to the beginning of the array.',
+          li2: 'Array oda starting la element ah add panum',
+        },
+        {
+          li1: '<b>Pop : (Remove Element)</b>',
+          li2: '<b>Pop : (Remove Element)</b>',
+        },
+        {
+          li1: 'Opposite to Push.',
+          li2: 'Push ku opposite',
+        },
+        {
+          li1: '<b>Shift: (Remove Element)</b>',
+          li2: '<b>Shift: (Remove Element)</b>',
+        },
+        {
+          li1: 'Opposite to unshift.',
+          li2: 'Unshift ku opposite',
+        },
+      ],
+    },
+  };
+
+  // Angular
+  ngIntro: any = {
+    titles: [
+      { title: 'What is Angular', percent: '50%' },
+      { title: 'Why a Framework ?', percent: '100%' },
+    ],
+    data01: {
+      ul: [
+        {
+          li1: 'Angular is a font-end javascript framework',
+          li2: 'Angular oru font-end javascript framwork',
+        },
+        {
+          li1: 'It helps with building interactive, modern web use interfaces',
+          li2: 'Idhu modern web interface aprm user interaction ku easy and useful a irukum',
+        },
+        {
+          li1: 'It is also a collection of tools and features',
+          li2: 'Angular la nariya tools and features iruku',
+        },
+        {
+          li1: 'CLI, Debugging Tools, IDE Plugins',
+          li2: 'CLI, Debugging Tools, IDE Plugins idhelam angular provide panuran',
+        },
+      ],
+    },
+    data02: {
+      ul: [
+        {
+          li1: 'Simplifies the process of building complex, Interactive web user interfaces',
+          li2: 'Web user interface build panra velaiya simplify pani tharum',
+        },
+        {
+          li1: 'Components (Custom Html Tags)',
+          li2: 'Components (Custom Html Tags)',
+        },
+        {
+          li1: 'Object-oriented programming',
+          li2: 'Object-oriented programming',
+        },
+        {
+          li1: 'Typescript',
+          li2: 'Typescript',
+        },
+      ],
+      th: ['Javascript', 'Angular'],
+      tr: [
+        {
+          td01: [
+            'Imperative code - Step-by-step instructions (in code) that tells the browser what to do',
+            'Declarative code - Define the target UI States & how they change and angular do that rest',
+          ],
+          td02: [
+            'Imperative code - Next next ena pananum nu browser ku code la solum',
+            'Declarative code - Response ah poruthu ui and content change aagum',
+          ],
+          code: '',
+        },
+        {
+          td01: [
+            '<b>Example:</b> <ul><li>Find DOM Elements and store in variables</li> <li> Add Event Listener to elements</li> <li>In Triggered Function: Find another element</li><ul>',
+            '<b>Example:</b> <ul><li>Manage “activeTab” state propert</li> <li>Depending on “activeTab”, show different content</li> <li>Change “activeTab” upon click on the element</li><ul>',
+          ],
+          td02: [
+            'Tamil - <b>Example:</b> <ul><li>Find DOM Elements and store in variables</li> <li> Add Event Listener to elements</li> <li>In Triggered Function: Find another element</li><ul>',
+            'Tamil - <b>Example:</b> <ul><li>Manage “activeTab” state propert</li> <li>Depending on “activeTab”, show different content</li> <li>Change “activeTab” upon click on the element</li><ul>',
+          ],
+          code: '',
         },
       ],
     },

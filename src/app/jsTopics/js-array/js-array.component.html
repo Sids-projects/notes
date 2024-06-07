@@ -19,35 +19,44 @@
 
   <div class="js-container">
     <div *ngIf="content === 'Array'" class="js-topics">
-      <ul *ngIf="!showSecondLi" class="regular-ul">
-        <li *ngFor="let ul of getData.data01.ul">
-          {{ ul.li1 }}
-        </li>
-      </ul>
-      <ul *ngIf="showSecondLi" class="regular-ul">
-        <li *ngFor="let ul of getData.data01.ul">
-          {{ ul.li2 }}
-        </li>
-      </ul>
+      <app-list-tag
+        [equalityProp]="content"
+        [equalityValue]="'Array'"
+        [loopli1]="getData.data01.ul"
+        [loopli2]="getData.data01.ul"
+        [showSecondLi]="!showSecondLi"
+      ></app-list-tag>
     </div>
 
     <div *ngIf="content === 'Property'" class="js-topics">
       <h3>{{ getData.data02.h3 }}</h3>
-      <ul *ngIf="!showSecondLi" class="regular-ul">
-        <li *ngFor="let ul of getData.data02.ul">
-          {{ ul.li1 }}
-        </li>
-      </ul>
-      <ul *ngIf="showSecondLi" class="regular-ul">
-        <li *ngFor="let ul of getData.data02.ul">
-          {{ ul.li2 }}
-        </li>
-      </ul>
+      <app-list-tag
+        [equalityProp]="content"
+        [equalityValue]="'Property'"
+        [loopli1]="getData.data01.ul"
+        [loopli2]="getData.data01.ul"
+        [showSecondLi]="!showSecondLi"
+      ></app-list-tag>
       <app-js-code [showCode]="'array-01'"></app-js-code>
     </div>
 
     <div *ngIf="content === 'Usage'" class="js-topics">
       <app-js-code [showCode]="'array-02'"></app-js-code>
+    </div>
+
+    <div *ngIf="content === 'Operators'" class="js-topics">
+      <app-list-tag
+        [equalityProp]="content"
+        [equalityValue]="'Operators'"
+        [loopli1]="getData.data04.ul"
+        [loopli2]="getData.data04.ul"
+        [showSecondLi]="!showSecondLi"
+      ></app-list-tag>
+      <app-js-code [showCode]="'array-03'"></app-js-code>
+    </div>
+
+    <div *ngIf="content === 'Tips'" class="js-topics">
+      <app-js-code [showCode]="'array-04'"></app-js-code>
     </div>
   </div>
 </section>

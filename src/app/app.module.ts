@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
@@ -8,6 +8,7 @@ import { JsIntroComponent } from './jsTopics/js-intro/js-intro.component';
 import { JsVariablesComponent } from './jsTopics/js-variables/js-variables.component';
 import { JsCodeComponent } from './jsTopics/js-code/js-code.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 // Matrial
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
@@ -42,6 +43,8 @@ import { NgIntroComponent } from './ngTopics/ng-intro/ng-intro.component';
 import { TopicMenuComponent } from './components/topic-menu/topic-menu.component';
 import { PoopupHeaderComponent } from './components/poopup-header/poopup-header.component';
 import { TasksComponent } from './components/tasks/tasks.component';
+import { ListTagComponent } from './components/list-tag/list-tag.component';
+import { TableTagComponent } from './components/table-tag/table-tag.component';
 
 @NgModule({
   declarations: [
@@ -69,6 +72,8 @@ import { TasksComponent } from './components/tasks/tasks.component';
     NgHelloComponent,
     NgIntroComponent,
     TasksComponent,
+    ListTagComponent,
+    TableTagComponent,
   ],
   imports: [
     BrowserModule,
@@ -79,7 +84,9 @@ import { TasksComponent } from './components/tasks/tasks.component';
     MatMenuModule,
     MatButtonModule,
     MatTooltipModule,
+    NgxSpinnerModule,
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],
   bootstrap: [AppComponent],
 })
