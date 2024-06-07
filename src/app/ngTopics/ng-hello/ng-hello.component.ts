@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { SharedService } from 'src/app/shared.service';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-ng-hello',
@@ -9,8 +10,17 @@ import { SharedService } from 'src/app/shared.service';
 export class NgHelloComponent {
   mainContent: boolean = true;
   taskContent: boolean = false;
-  jsTopics: any;
-  constructor(private sharedService: SharedService) {
-    this.jsTopics = this.sharedService.topicList.ngTopics;
+  ngTopics: any;
+  constructor(
+    private sharedService: SharedService,
+    private spinner: NgxSpinnerService
+  ) {}
+
+  ngOnInit() {
+    this.spinner.show();
+    setTimeout(() => {
+      this.ngTopics = this.sharedService.topicList.ngTopics;
+      this.spinner.hide();
+    }, 2000);
   }
 }
