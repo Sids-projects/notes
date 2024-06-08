@@ -12,11 +12,10 @@ export class AppComponent {
   isDarkTheme: boolean = false;
   appHeader: any;
   components: string = 'javascript';
-  loginForm: FormGroup;
+  loginForm!: FormGroup;
   errorMessage: string | null = null;
-
-  private predefinedUsername: string = 'admin';
-  private predefinedPassword: string = 'password123';
+  loginScreen: boolean = true;
+  mainScreen: boolean = false;
 
   constructor(
     private sharedService: SharedService,
@@ -25,23 +24,39 @@ export class AppComponent {
     this.appHeader = this.sharedService.appHeader;
     const storedComponents = localStorage.getItem('components');
     this.components = storedComponents ? storedComponents : 'javascript'; // Set default if not found
+  }
+
+  ngOnInit() {
+    const savedTheme = localStorage.getItem('theme');
+    const getLoginScreen = localStorage.getItem('loginScreen');
+    const getMainScreen = localStorage.getItem('mainScreen');
+
+    if (savedTheme === 'dark') {
+      this.isDarkTheme = true;
+      this.renderer.addClass(document.body, 'dark-theme');
+    }
+
+    if (getLoginScreen === 'true') {
+      this.loginScreen = true;
+    } else {
+      this.loginScreen = false;
+    }
+
+    if (getMainScreen === 'true') {
+      this.mainScreen = true;
+    } else {
+      this.mainScreen = false;
+    }
 
     this.loginForm = new FormGroup({
       username: new FormControl('', Validators.required),
       password: new FormControl('', Validators.required),
     });
-
-    // Restore login and main screen state from localStorage
-    this.loginScreen = localStorage.getItem('loginScreen') === 'true';
-    this.mainScreen = localStorage.getItem('mainScreen') === 'true';
   }
 
-  ngOnInit() {
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark') {
-      this.isDarkTheme = true;
-      this.renderer.addClass(document.body, 'dark-theme');
-    }
+  componentMain(param: string) {
+    this.components = param;
+    localStorage.setItem('components', param); // Save immediately on change
   }
 
   toggleTheme() {
@@ -55,21 +70,15 @@ export class AppComponent {
     }
   }
 
-  componentMain(param: string) {
-    this.components = param;
-    localStorage.setItem('components', param); // Save immediately on change
-  }
-
   login() {
     const username = this.loginForm.get('username')?.value;
     const password = this.loginForm.get('password')?.value;
 
-    if (
-      username === this.predefinedUsername &&
-      password === this.predefinedPassword
-    ) {
+    if (username === 'user01' && password === 'pass01') {
       this.loginScreen = false;
       this.mainScreen = true;
+      localStorage.setItem('loginScreen', 'false');
+      localStorage.setItem('mainScreen', 'true');
     } else {
       this.errorMessage = 'Invalid username or password';
     }
@@ -78,23 +87,7 @@ export class AppComponent {
   logout() {
     this.loginScreen = true;
     this.mainScreen = false;
-  }
-
-  // Getter and Setter for loginScreen
-  get loginScreen(): boolean {
-    return localStorage.getItem('loginScreen') === 'true';
-  }
-
-  set loginScreen(value: boolean) {
-    localStorage.setItem('loginScreen', value.toString());
-  }
-
-  // Getter and Setter for mainScreen
-  get mainScreen(): boolean {
-    return localStorage.getItem('mainScreen') === 'true';
-  }
-
-  set mainScreen(value: boolean) {
-    localStorage.setItem('mainScreen', value.toString());
+    localStorage.setItem('loginScreen', 'true');
+    localStorage.setItem('mainScreen', 'false');
   }
 }
