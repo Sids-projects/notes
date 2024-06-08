@@ -24,6 +24,13 @@ export class AppComponent {
     this.appHeader = this.sharedService.appHeader;
     const storedComponents = localStorage.getItem('components');
     this.components = storedComponents ? storedComponents : 'javascript'; // Set default if not found
+    if (
+      localStorage.getItem('loginScreen') === undefined ||
+      localStorage.getItem('loginScreen') === null
+    ) {
+      localStorage.setItem('loginScreen', 'true');
+      localStorage.setItem('mainScreen', 'false');
+    }
   }
 
   ngOnInit() {
