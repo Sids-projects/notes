@@ -1,1 +1,51 @@
-<p>css-hello works!</p>
+<section class="app-content">
+  <div class="content-1">
+    <div class="content-about">
+      <h2>Css</h2>
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores,
+        dicta.
+      </p>
+    </div>
+
+    <div class="flex-container">
+      <app-topic-menu
+        *ngFor="let data of cssTopics.set01"
+        [routerLink]="data.route"
+        [icon]="data.icon"
+        [p]="data.h3"
+      ></app-topic-menu>
+    </div>
+  </div>
+</section>
+
+<!-- 
+Css - Cascading style sheet
+There are no web pages without HTML. 
+CSS on the other hand is optional, because CSS allows you to style that HTML content. 
+
+History
+CSS was first introduced in 1996 - version 1
+Two years later 1998, we got CSS - version 2
+Latest Version of css - version 3 (Under Development)
+We'll never get a CSS version 4 because with CSS version 3, 
+The concept or the approach toward CSS, towards the development of CSS, changed. Rather than focusing on different versions, they now split up CSS into a couple of modules which are organized by the feature they cover.
+
+Three ways to add css
+- Inline styling
+Ex. <h2 style="text-align: center">Heading</h2>
+Property & Value
+
+- Style Tag
+Ex. 
+<head>
+  <style>
+    section { // Selector
+      background-color: white; // Rule
+    }
+  </style>
+</heaad>
+
+- External stylesheet
+<link href="/path" rel="stylesheet" />
+-->

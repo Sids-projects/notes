@@ -1,0 +1,44 @@
+<section class="js-content">
+  <app-poopup-header
+    [contentPercent]="contentPercent"
+    [showSecondLi]="showSecondLi"
+    (toggleSecondLi)="showSecondLi = $event"
+  ></app-poopup-header>
+  <nav>
+    <div class="nav-links">
+      <p
+        *ngFor="let title of getData.titles"
+        [ngClass]="content === title.title ? 'active-link' : ''"
+        (click)="showContent(title.title, title.percent)"
+      >
+        {{ title.title }}
+      </p>
+    </div>
+  </nav>
+
+  <div class="js-container">
+    <div *ngIf="content === 'Intro'" class="js-topics">
+      <app-list-tag
+        [equalityProp]="content"
+        [equalityValue]="'Intro'"
+        [loopli1]="getData.data01.ul"
+        [loopli2]="getData.data01.ul"
+        [showSecondLi]="!showSecondLi"
+      ></app-list-tag>
+    </div>
+
+    <div *ngIf="content === 'History'" class="js-topics">
+      <app-list-tag
+        [equalityProp]="content"
+        [equalityValue]="'History'"
+        [loopli1]="getData.data02.ul"
+        [loopli2]="getData.data02.ul"
+        [showSecondLi]="!showSecondLi"
+      ></app-list-tag>
+    </div>
+
+    <div *ngIf="content === '3 Ways'" class="js-topics">
+      <app-css-code [showCode]="'css-3ways'"></app-css-code>
+    </div>
+  </div>
+</section>

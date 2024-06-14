@@ -21,6 +21,7 @@ import { JsArrayComponent } from './jsTopics/js-array/js-array.component';
 import { NgHelloComponent } from './ngTopics/ng-hello/ng-hello.component';
 import { NgIntroComponent } from './ngTopics/ng-intro/ng-intro.component';
 import { TasksComponent } from './components/tasks/tasks.component';
+import { CssIntroComponent } from './cssTopics/css-intro/css-intro.component';
 
 const routes: Routes = [
   // common
@@ -46,6 +47,7 @@ const routes: Routes = [
 
   // Css Components
   { path: 'cssHelloComponent', component: CssHelloComponent },
+  { path: 'cssIntroComponent', component: CssIntroComponent },
 
   // Angular Components
   { path: 'ngHelloComponent', component: NgHelloComponent },

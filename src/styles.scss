@@ -22,6 +22,7 @@
   --icon-inactive: #6f6f6f;
   --title-active: #fafafa;
   --code-container: rgb(209, 209, 209);
+  --input-bg: rgb(243, 243, 243);
 }
 
 // Dark Theme
@@ -34,6 +35,7 @@
   --title-active: rgb(32, 32, 32);
   --code-container: rgb(63, 63, 63);
   --font-gray: #a0a0a0;
+  --input-bg: rgb(34, 34, 34);
 
   code[class*="language-"],
   pre[class*="language-"] {
@@ -758,7 +760,7 @@ main {
   height: 100dvh;
   display: grid;
   place-items: center;
-  background-color: white;
+  background-color: var(--base-background);
   z-index: 100;
 
   .login-content {
@@ -769,15 +771,48 @@ main {
     width: 360px;
     padding: 24px;
 
+    label {
+      display: block;
+      font-size: 16px;
+      margin-bottom: 6px;
+      letter-spacing: 0.8px;
+    }
+
+    .input-field {
+      display: flex;
+
+      p {
+        width: 46px;
+        height: 46px;
+        display: grid;
+        place-items: center;
+        font-size: 18px;
+        border-top: 2px solid var(--border-line);
+        border-left: 2px solid var(--border-line);
+        border-bottom: 2px solid var(--border-line);
+        border-radius: 8px 0 0 8px;
+        background-color: var(--input-bg);
+      }
+
+      input {
+        border: 2px solid var(--border-line);
+        background-color: var(--base-background);
+        width: 100%;
+        letter-spacing: 1px;
+        border-radius: 0 8px 8px 0;
+        padding-left: 10px;
+
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+
     h3 {
       text-align: center;
       font-size: 28px;
       font-weight: 600;
       margin-bottom: 30px;
-    }
-
-    label {
-      display: block;
     }
 
     button {

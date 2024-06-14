@@ -46,7 +46,8 @@ import { PoopupHeaderComponent } from './components/poopup-header/poopup-header.
 import { TasksComponent } from './components/tasks/tasks.component';
 import { ListTagComponent } from './components/list-tag/list-tag.component';
 import { TableTagComponent } from './components/table-tag/table-tag.component';
-import { LoginComponent } from './components/login/login.component';
+import { CssIntroComponent } from './cssTopics/css-intro/css-intro.component';
+import { CssCodeComponent } from './cssTopics/css-code/css-code.component';
 
 @NgModule({
   declarations: [
@@ -76,7 +77,8 @@ import { LoginComponent } from './components/login/login.component';
     TasksComponent,
     ListTagComponent,
     TableTagComponent,
-    LoginComponent,
+    CssIntroComponent,
+    CssCodeComponent,
   ],
   imports: [
     BrowserModule,

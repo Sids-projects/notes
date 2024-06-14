@@ -129,6 +129,16 @@ export class SharedService {
         },
       ],
     },
+
+    cssTopics: {
+      set01: [
+        {
+          route: 'cssIntroComponent',
+          icon: 'fa-solid fa-note-sticky',
+          h3: 'Intro',
+        },
+      ],
+    },
   };
 
   // Javascript
@@ -728,12 +738,12 @@ export class SharedService {
       tr: [
         {
           td01: [
-            'Imperative code - Step-by-step instructions (in code) that tells the browser what to do',
-            'Declarative code - Define the target UI States & how they change and angular do that rest',
+            '<b>Imperative code</b><br /> Step-by-step instructions (in code) that tells the browser what to do',
+            '<b>Declarative code</b><br /> Define the target UI States & how they change and angular do that rest',
           ],
           td02: [
-            'Imperative code - Next next ena pananum nu browser ku code la solum',
-            'Declarative code - Response ah poruthu ui and content change aagum',
+            '<b>Imperative code</b><br /> Next next ena pananum nu browser ku code la solum',
+            '<b>Declarative code</b><br /> - Response ah poruthu ui and content change aagum',
           ],
           code: '',
         },
@@ -749,6 +759,58 @@ export class SharedService {
           code: '',
         },
       ],
+    },
+  };
+
+  // Css
+  cssIntro: any = {
+    titles: [
+      { title: 'Intro', percent: '30%' },
+      { title: 'History', percent: '50%' },
+      { title: '3 Ways', percent: '100%' },
+    ],
+    data01: {
+      ul: [
+        {
+          li1: 'Css - Cascading style sheet',
+          li2: 'Css - Cascading style sheet',
+        },
+        {
+          li1: 'There are no web pages without HTML.',
+          li2: 'Html illamma edha webpage um irukadhu',
+        },
+        {
+          li1: 'CSS on the other hand is optional, because CSS allows you to style that HTML content.',
+          li2: 'Css optional dha html content ah style pana use panuvanga',
+        },
+      ],
+    },
+    data02: {
+      ul: [
+        {
+          li1: 'CSS was first introduced in 1996 - version 1',
+          li2: 'CSS was first introduced in 1996 - version 1',
+        },
+        {
+          li1: 'Two years later 1998, we got CSS - version 2',
+          li2: 'Two years later 1998, we got CSS - version 2',
+        },
+        {
+          li1: 'Latest Version of css - version 3 (Under Development)',
+          li2: 'Latest Version of css - version 3 (Under Development)',
+        },
+        {
+          li1: "We'll never get a CSS version 4 because with CSS version 3",
+          li2: "We'll never get a CSS version 4 because with CSS version 3",
+        },
+        {
+          li1: 'Rather than focusing on versions, they now organize CSS into modules by feature.',
+          li2: 'Version and update ah mela gavanam seluthama css ah moduls ah konduvaranga features lam add pani',
+        },
+      ],
+    },
+    data03: {
+      h3: 'Three ways to add css',
     },
   };
 }
