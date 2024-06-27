@@ -1,0 +1,51 @@
+<section class="js-content">
+  <app-poopup-header
+    [contentPercent]="contentPercent"
+    [showSecondLi]="showSecondLi"
+    (toggleSecondLi)="showSecondLi = $event"
+  ></app-poopup-header>
+
+  <nav>
+    <div class="nav-links">
+      <p
+        *ngFor="let title of getData.titles"
+        [ngClass]="content === title.title ? 'active-link' : ''"
+        (click)="showContent(title.title, title.percent)"
+      >
+        {{ title.title }}
+      </p>
+    </div>
+  </nav>
+
+  <div class="js-container">
+    <div *ngIf="content === 'Intro'" class="js-topics">
+      <app-list-tag
+        [equalityProp]="content"
+        [equalityValue]="'Intro'"
+        [loopli1]="getData.data01.ul"
+        [loopli2]="getData.data01.ul"
+        [showSecondLi]="!showSecondLi"
+      ></app-list-tag>
+    </div>
+
+    <div *ngIf="content === 'Methods'" class="js-topics">
+      <h3>{{ getData.data02.h301 }}</h3>
+      <app-source-code [showCode]="'split-method01'"></app-source-code>
+
+      <h3>{{ getData.data02.h302 }}</h3>
+      <app-source-code [showCode]="'split-method02'"></app-source-code>
+
+      <h3>{{ getData.data02.h303 }}</h3>
+      <app-source-code [showCode]="'split-method03'"></app-source-code>
+
+      <h3>{{ getData.data02.h304 }}</h3>
+      <app-source-code [showCode]="'split-method04'"></app-source-code>
+
+      <h3>{{ getData.data02.h305 }}</h3>
+      <app-source-code [showCode]="'split-method05'"></app-source-code>
+
+      <h3>{{ getData.data02.h306 }}</h3>
+      <app-source-code [showCode]="'split-method06'"></app-source-code>
+    </div>
+  </div>
+</section>

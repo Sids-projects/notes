@@ -28,6 +28,11 @@ export class SharedService {
         toolTip: 'Angular',
         icon: 'fa-brands fa-angular',
       },
+      {
+        key: 'source',
+        toolTip: 'Other Source',
+        icon: 'fa-solid fa-code-merge',
+      },
     ],
   };
 
@@ -118,6 +123,13 @@ export class SharedService {
           h3: 'Array',
         },
       ],
+      set06: [
+        {
+          route: 'jsAdvIntroComponent',
+          icon: 'fa-regular fa-window-maximize',
+          h3: 'What is Js',
+        },
+      ],
     },
 
     ngTopics: {
@@ -136,6 +148,24 @@ export class SharedService {
           route: 'cssIntroComponent',
           icon: 'fa-solid fa-note-sticky',
           h3: 'Intro',
+        },
+      ],
+    },
+
+    sourceTopics: {
+      set01: [
+        {
+          route: 'sourceSplitComponent',
+          icon: 'fa-solid fa-note-sticky',
+          h3: 'Split()',
+        },
+      ],
+
+      set02: [
+        {
+          route: 'sourceHistorybackComponent',
+          icon: 'fa-solid fa-hand-fist',
+          h3: 'History Back',
         },
       ],
     },
@@ -689,6 +719,73 @@ export class SharedService {
     },
   };
 
+  jsAdvIntro: any = {
+    titles: [{ title: 'What is Js?', percent: '100%' }],
+    data01: {
+      h301: 'High level program',
+      ul01: [
+        {
+          li1: 'Every program that run on a computer needs some hardware resources such as memory, Cpu, Mouse, Keyboard to do its work.',
+          li2: 'Computer la run aagura ella peogram kum eadho oru hardware theva padum link memory, Cpu, Mouse, Keyboard adhoda velaiya seiradhukaga',
+        },
+        {
+          li1: 'Languages: Js & python',
+          li2: 'Languages: Js & python',
+        },
+        {
+          li1: "We don't need to manage resources.",
+          li2: 'Program run aaguradhuku theva padura ellathaum namba manual ah manage pana vendam.',
+        },
+        {
+          li1: 'The languages have so-called abstractions that take the work all away from us.',
+          li2: 'Idhu mathri run aagura program ellam abstractions nu soluvanga namba kitta velaiya kudukama adhuve pathukum',
+        },
+        {
+          li1: 'The program that takes memory management away from us is garbage-collection.',
+          li2: 'Memory management ah adhuve pathukura program ah garbage-collection. soluvanga',
+        },
+        {
+          li1: 'Inside the js engine which automatically removes old,unused objects from the computer memory.',
+          li2: 'Js engine palaya use aagadha objects ah adhuvave automatic ah computer memory la irundhu remove panikum',
+        },
+      ],
+      h302: 'Low level language',
+      ul02: [
+        {
+          li1: 'We need to manually manage these resourses.',
+          li2: 'Program run aaguradhuku theva padura ellathaum nambalave dha manage pananum',
+        },
+        {
+          li1: 'Ex - Ask the computer for memory to create a new veriable.',
+          li2: 'Ex - Computer kita ketu oru variable create panradhuku memory create pana solanum',
+        },
+      ],
+      h303: 'Computer processor : ',
+      ul03: [
+        {
+          li1: 'It only understand zeroes and ones (0101001).',
+          li2: 'Zero and one mattum dha computer understand panikum',
+        },
+        {
+          li1: 'It is not possible to write code in 0 & 1.',
+          li2: 'Zero and one la program eludha mudiyadhu',
+        },
+        {
+          li1: 'We simply write human - readable js code.',
+          li2: 'Namba human readable code dha eludhuvom',
+        },
+        {
+          li1: 'Which is an abstraction over machine code but this code eventually needs to be translated to machine code.',
+          li2: 'Machine code kum idhukum samandham illa dha ana konjam konjama indha code machine code ku translate aagidum',
+        },
+        {
+          li1: 'This process happens inside js engine.',
+          li2: 'Indha peocess js engine ulla nadakum',
+        },
+      ],
+    },
+  };
+
   // Angular
   ngIntro: any = {
     titles: [
@@ -811,6 +908,96 @@ export class SharedService {
     },
     data03: {
       h3: 'Three ways to add css',
+    },
+  };
+
+  // Source
+  srcSplit: any = {
+    titles: [
+      { title: 'Intro', percent: '50%' },
+      { title: 'Methods', percent: '100%' },
+    ],
+    data01: {
+      ul: [
+        {
+          li1: 'Purpose: To split a string into an array of substrings.',
+          li2: 'Purpose: Oru string a split pani oru array la thani thani sub string a kudukum',
+        },
+        {
+          li1: 'separator (optional): Specifies the character, regular expression, or substring to use for splitting the string. If omitted, the entire string is returned as a single element in an array.',
+          li2: 'separator (optional): Array va split pana ana character, substring specify panum. Idhu illana month string um andha oru array va vandhudum',
+        },
+        {
+          li1: 'limit (optional): An integer that specifies the maximum number of splits. The array will contain at most limit elements.',
+          li2: 'limit (optional): Idhu oru number evlo split pananum nu maximum number solum',
+        },
+        {
+          li1: 'Return Value: An array of substrings.',
+          li2: 'Return Value: An array of substrings.',
+        },
+      ],
+    },
+    data02: {
+      h301: 'Basic Usage',
+      h302: 'Using a Different Separator',
+      h303: 'Limiting the Number of Splits',
+      h304: 'Using a Regular Expression as a Separator',
+      h305: 'Without a Separator',
+      h306: 'Additional Notes',
+    },
+  };
+
+  srcHistoryBack: any = {
+    titles: [
+      { title: 'Intro', percent: '30%' },
+      { title: 'Key Points', percent: '50%' },
+      { title: 'Examples', percent: '100%' },
+    ],
+    data01: {
+      ul: [
+        {
+          li1: 'The window.history.back() method in JavaScript is used to navigate the browser to the previous page in the session history.',
+          li2: '<b>Purpose:</b> Oru string a split pani oru array la thani thani sub string a kudukum',
+        },
+        {
+          li1: "It is equivalent to clicking the browser's back button.",
+          li2: "It is equivalent to clicking the browser's back button.",
+        },
+      ],
+    },
+    data02: {
+      ul: [
+        {
+          li1: '<b>Purpose:</b> To go back to the previous page in the browser history.',
+          li2: '<b>Purpose:</b> Oru string a split pani oru array la thani thani sub string a kudukum',
+        },
+        {
+          li1: '<b>Method:</b> window.history.back()',
+          li2: '<b>Method:</b> window.history.back()',
+        },
+        {
+          li1: '<b>Equivalent:</b> Similar to calling window.history.go(-1).',
+          li2: '<b>Equivalent:</b> Similar to calling window.history.go(-1).',
+        },
+      ],
+    },
+    data03: {
+      h301: 'Example',
+      h302: 'Explanation',
+      ul: [
+        {
+          li1: '<b>Navigation:</b> The user starts on page1.html and clicks the link to go to page2.html.',
+          li2: '<b>Navigation:</b> The user starts on page1.html and clicks the link to go to page2.html.',
+        },
+        {
+          li1: '<b>Go Back:</b> On page2.html, the user clicks the "Go Back to Page 1" button.',
+          li2: '<b>Go Back:</b> On page2.html, the user clicks the "Go Back to Page 1" button.',
+        },
+        {
+          li1: '<b>JavaScript Execution:</b> The window.history.back() method is called, and the browser navigates back to page1.html.',
+          li2: '<b>JavaScript Execution:</b> The window.history.back() method is called, and the browser navigates back to page1.html.',
+        },
+      ],
     },
   };
 }

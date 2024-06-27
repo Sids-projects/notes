@@ -3,14 +3,14 @@ import { SharedService } from 'src/app/shared.service';
 import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
-  selector: 'app-js-hello',
-  templateUrl: './js-hello.component.html',
-  styleUrls: ['./js-hello.component.scss'],
+  selector: 'app-sourse-hello',
+  templateUrl: './sourse-hello.component.html',
+  styleUrls: ['./sourse-hello.component.scss'],
 })
-export class JsHelloComponent {
+export class SourseHelloComponent {
   mainContent: boolean = true;
   taskContent: boolean = false;
-  jsTopics: any;
+  sourceTopics: any;
 
   constructor(
     private sharedService: SharedService,
@@ -18,7 +18,7 @@ export class JsHelloComponent {
   ) {}
 
   ngOnInit() {
-    this.jsTopics = this.sharedService.topicList.jsTopics;
+    this.sourceTopics = this.sharedService.topicList.sourceTopics;
     // this.spinner.show();
     // setTimeout(() => {
     //   this.spinner.hide();

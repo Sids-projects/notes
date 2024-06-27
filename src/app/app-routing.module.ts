@@ -20,8 +20,11 @@ import { JsFunctionComponent } from './jsTopics/js-function/js-function.componen
 import { JsArrayComponent } from './jsTopics/js-array/js-array.component';
 import { NgHelloComponent } from './ngTopics/ng-hello/ng-hello.component';
 import { NgIntroComponent } from './ngTopics/ng-intro/ng-intro.component';
-import { TasksComponent } from './components/tasks/tasks.component';
 import { CssIntroComponent } from './cssTopics/css-intro/css-intro.component';
+import { SourceSplitComponent } from './source/source-split/source-split.component';
+import { SourceHistorybackComponent } from './source/source-historyback/source-historyback.component';
+import { TasksComponent } from './components/tasks/tasks.component';
+import { JsAdvIntroComponent } from './jsTopics/js-adv-intro/js-adv-intro.component';
 
 const routes: Routes = [
   // common
@@ -44,6 +47,7 @@ const routes: Routes = [
   { path: 'jsStrictComponent', component: JsStrictComponent },
   { path: 'jsFunctionComponent', component: JsFunctionComponent },
   { path: 'jsArrayComponent', component: JsArrayComponent },
+  { path: 'jsAdvIntroComponent', component: JsAdvIntroComponent },
 
   // Css Components
   { path: 'cssHelloComponent', component: CssHelloComponent },
@@ -52,6 +56,10 @@ const routes: Routes = [
   // Angular Components
   { path: 'ngHelloComponent', component: NgHelloComponent },
   { path: 'ngIntroComponent', component: NgIntroComponent },
+
+  // Source
+  { path: 'sourceSplitComponent', component: SourceSplitComponent },
+  { path: 'sourceHistorybackComponent', component: SourceHistorybackComponent },
 ];
 
 @NgModule({

@@ -1,0 +1,93 @@
+<div *ngIf="showCode === 'split-method01'" class="code-container">
+  <pre class="line-numbers">
+<code class="language-javascript">
+let text = "Hello World";
+let result = text.split(" ");
+console.log(result); // Output: ["Hello", "World"]
+</code>
+</pre>
+</div>
+
+<div *ngIf="showCode === 'split-method02'" class="code-container">
+  <pre class="line-numbers">
+<code class="language-javascript">
+let text = "apple,banana,orange";
+let result = text.split(",");
+console.log(result); // Output: ["apple", "banana", "orange"]
+</code>
+</pre>
+</div>
+
+<div *ngIf="showCode === 'split-method03'" class="code-container">
+  <pre class="line-numbers">
+<code class="language-javascript">
+let text = "one, two, three, four, five";
+let result = text.split(",", 3);
+console.log(result); // Output: ["one", " two", " three"]
+</code>
+</pre>
+</div>
+
+<div *ngIf="showCode === 'split-method04'" class="code-container">
+  <pre class="line-numbers">
+<code class="language-javascript">
+let text = "Jan-2022,Feb-2022,Mar-2022";
+let result = text.split(/[-,]/);
+console.log(result); // Output: ["Jan", "2022", "Feb", "2022", "Mar", "2022"]
+</code>
+</pre>
+</div>
+
+<div *ngIf="showCode === 'split-method05'" class="code-container">
+  <pre class="line-numbers">
+<code class="language-javascript">
+let text = "Hello";
+let result = text.split();
+console.log(result); // Output: ["Hello"]  
+</code>
+</pre>
+</div>
+
+<div *ngIf="showCode === 'split-method06'" class="code-container">
+  <pre class="line-numbers">
+<code class="language-javascript">
+let text = "Hello";
+let result = text.split("");
+console.log(result); // Output: ["H", "e", "l", "l", "o"]
+</code>
+</pre>
+</div>
+
+<div *ngIf="showCode === 'historyBack'" class="code-container">
+  <pre class="line-numbers">
+<code class="language-html">
+&lt;!-- page1.html --&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;Page 1&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;This is Page 1&lt;/h1&gt;
+  &lt;a href="page2.html"&gt;Go to Page 2&lt;/a&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+
+&lt;!-- page2.html --&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;Page 2&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;This is Page 2&lt;/h1&gt;
+  &lt;button onclick="window.history.back()"&gt;Go Back to Page 1&lt;/button&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code>
+</pre>
+</div>

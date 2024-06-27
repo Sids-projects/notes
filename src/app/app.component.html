@@ -45,6 +45,7 @@
   <app-js-hello *ngIf="components === 'javascript'"></app-js-hello>
   <app-css-hello *ngIf="components === 'css'"></app-css-hello>
   <app-ng-hello *ngIf="components === 'angular'"></app-ng-hello>
+  <app-sourse-hello *ngIf="components === 'source'"></app-sourse-hello>
 </main>
 
 <!-- Popups -->
@@ -75,12 +76,11 @@
     <div class="modal-content">
       <div class="modal-body">
         <div class="d-flex align-items-center justify-content-end">
-          <button
-            type="button"
-            class="btn-close"
+          <i
+            class="fa-solid fa-xmark"
             data-bs-dismiss="modal"
             aria-label="Close"
-          ></button>
+          ></i>
         </div>
         <div class="menu-list">
           <p data-bs-dismiss="modal" aria-label="Close">

@@ -49,6 +49,13 @@ import { TableTagComponent } from './components/table-tag/table-tag.component';
 import { CssIntroComponent } from './cssTopics/css-intro/css-intro.component';
 import { CssCodeComponent } from './cssTopics/css-code/css-code.component';
 
+// Source
+import { SourseHelloComponent } from './source/sourse-hello/sourse-hello.component';
+import { SourceSplitComponent } from './source/source-split/source-split.component';
+import { SourceCodeComponent } from './source/source-code/source-code.component';
+import { SourceHistorybackComponent } from './source/source-historyback/source-historyback.component';
+import { JsAdvIntroComponent } from './jsTopics/js-adv-intro/js-adv-intro.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -79,6 +86,11 @@ import { CssCodeComponent } from './cssTopics/css-code/css-code.component';
     TableTagComponent,
     CssIntroComponent,
     CssCodeComponent,
+    SourseHelloComponent,
+    SourceSplitComponent,
+    SourceCodeComponent,
+    SourceHistorybackComponent,
+    JsAdvIntroComponent,
   ],
   imports: [
     BrowserModule,

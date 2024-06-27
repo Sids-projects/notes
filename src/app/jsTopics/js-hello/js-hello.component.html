@@ -8,6 +8,8 @@
       </p>
     </div>
 
+    <h3 class="content-split">Basic</h3>
+
     <div class="flex-container">
       <app-topic-menu
         *ngFor="let data of jsTopics.set01"
@@ -47,6 +49,16 @@
     <div class="flex-container">
       <app-topic-menu
         *ngFor="let data of jsTopics.set05"
+        [routerLink]="data.route"
+        [icon]="data.icon"
+        [p]="data.h3"
+      ></app-topic-menu>
+    </div>
+
+    <h3 class="content-split">High-level Overview</h3>
+    <div class="flex-container">
+      <app-topic-menu
+        *ngFor="let data of jsTopics.set06"
         [routerLink]="data.route"
         [icon]="data.icon"
         [p]="data.h3"

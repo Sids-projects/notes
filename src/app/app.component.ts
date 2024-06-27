@@ -23,7 +23,7 @@ export class AppComponent {
   ) {
     this.appHeader = this.sharedService.appHeader;
     const storedComponents = localStorage.getItem('components');
-    this.components = storedComponents ? storedComponents : 'javascript'; // Set default if not found
+    this.components = storedComponents ? storedComponents : 'javascript';
     if (
       localStorage.getItem('loginScreen') === undefined ||
       localStorage.getItem('loginScreen') === null

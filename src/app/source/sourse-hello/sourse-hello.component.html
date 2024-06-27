@@ -1,0 +1,29 @@
+<section class="app-content">
+  <div class="content-1">
+    <div class="content-about">
+      <h2>Other Sourse</h2>
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores,
+        dicta.
+      </p>
+    </div>
+
+    <div class="flex-container">
+      <app-topic-menu
+        *ngFor="let data of sourceTopics.set01"
+        [routerLink]="data.route"
+        [icon]="data.icon"
+        [p]="data.h3"
+      ></app-topic-menu>
+    </div>
+
+    <div class="flex-container">
+      <app-topic-menu
+        *ngFor="let data of sourceTopics.set02"
+        [routerLink]="data.route"
+        [icon]="data.icon"
+        [p]="data.h3"
+      ></app-topic-menu>
+    </div>
+  </div>
+</section>
